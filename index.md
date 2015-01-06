@@ -38,7 +38,7 @@ If you want to install locally in a node.js project, then install as a package
 dependency with the command:
 
 ``` bash
-    $ npm install --save rational-number
+$ npm install --save rational-number
 ```
 
 Here is an example of loading the module into a node script:
@@ -85,8 +85,8 @@ and the JavaScript files in the `test` directory.  To test from a node
 installation:
 
 ``` bash
-    $ npm install   # to download mocha dependency if necessary
-    $ npm test
+$ npm install   # to download mocha dependency if necessary
+$ npm test
 ```
 
 If you have [mocha](http://mochajs.org) installed globally in your search
