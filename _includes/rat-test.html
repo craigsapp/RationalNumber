@@ -48,7 +48,6 @@
       var mathsub = document.getElementById('mathsub');
       var mathmul = document.getElementById('mathmul');
       var mathdiv = document.getElementById('mathdiv');
-      var mathinv = document.getElementById('mathinv');
 
       var rnadd = new RationalNumber(n1, d1);
       rnadd.addTo(rn2);
@@ -113,15 +112,6 @@
       divout += rn2.toNumber(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
       divout += rndiv.toNumber(" ");
       mathdiv.innerHTML = divout;
-
-      var invout = "";
-      invout += 1 + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
-      invout += String(rn1) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
-      invout += String(rn1.getInversion()) + ",&nbsp;&nbsp;&nbsp;&nbsp;";
-      invout += 1 + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
-      invout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
-      invout += String(rn2.getInversion());
-      mathinv.innerHTML = invout;
    }
 
    function clearMath() {
@@ -129,7 +119,6 @@
       document.getElementById('mathsub').textContent = '';
       document.getElementById('mathmul').textContent = '';
       document.getElementById('mathdiv').textContent = '';
-      document.getElementById('mathinv').textContent = '';
    }
 
 </script>
@@ -138,7 +127,7 @@
    div.rat {
       margin-left: 10px;
       margin-right: 10px;
-      margin-top: 50px;
+      margin-top: 20px;
    }
    div.rat h1 {
       font-size: 160%;
@@ -150,7 +139,7 @@
       text-align: right;
    }
    table.rat2 > tbody > td {
-      border-bottom: 1px solid #aaa !important;
+      border-bottom: none !important;
    }
    td.fixw {
       width: 200px;
@@ -278,11 +267,11 @@
 <h1>Rational number math demonstration</h1>
 
 <table>
+<tr><td colspan=2></td></tr>
 <tr><td>Addition:      </td><td> <div id=mathadd></div> </td></tr>
 <tr><td>Subtraction:   </td><td> <div id=mathsub></div> </td></tr>
 <tr><td>Multiplication:</td><td> <div id=mathmul></div> </td></tr>
 <tr><td>Division:      </td><td> <div id=mathdiv></div> </td></tr>
-<tr><td>Inversions:    </td><td> <div id=mathinv></div> </td></tr>
 </table>
 
 </div>
