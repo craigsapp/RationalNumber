@@ -17,7 +17,7 @@ setting the value to 2/4 will automatically be reduced (simplified)
 to 1/2; However, functions for forcing non-reduced fractions are
 provided, particularly to avoid speed issues for intermediate
 calculations (although the current mathematical functions will reduce
-the fraction after every calculation to reduce the chance of overflow).
+the fraction after every calculation to minimize the chance of overflow).
 
 This implementation limits the numerator and denominator to the
 range from 0 to 2^53-1 plus a sign, and optional overflow
@@ -84,19 +84,10 @@ installation:
     $ npm test
 
 
-## Website
-
-The main website for the RationalNumber code is 
-https://github.io/craigsapp/RationalNumber .
-
-And the corresponding GitHub repository is
-https://github.com/craigsapp/RationalNumber .
-
-
 ## Function list
 
 Here is a brief description of the function prototypes provided in 
-the RationalNumber class (see the website for more details):
+the RationalNumber class (click on the function name for more details):
 
 * **setSign** &mdash; Set the sign to positive or negative.
 * **getSign** &mdash; returns +1 if positive, -1 if negative.
@@ -113,7 +104,7 @@ the RationalNumber class (see the website for more details):
 * **setValueNoReduce** &mdash; Set the numerator and denominator, but don't try to reduce.
 * **isSafe** &mdash; Numerator and denominator less than 2^53.
 * **isNan** &mdash; Returns true equal to 0/0.
-* **isInfinite** &mdash; Returns denominator is 0.
+* **isInfinite** &mdash; Returns true if denominator is 0 and numerator is not.
 * **isValid** &mdash; Returns true if safe, finite and not NaN.
 * **checkOverflow** &mdash; Same as isSafe(), but throws an error.
 * **checkOverflowOn** &mdash; Force validity check for overflows.
