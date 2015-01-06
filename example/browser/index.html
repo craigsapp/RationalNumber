@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RationalNumber example usage</title>
+
+<script src="../../lib/RationalNumber-base.js"></script>
+<script src="../../lib/RationalNumber-math.js"></script>
+<script>
+   function updateFractions() {
+      var state1 = createFraction('1');
+      var state2 = createFraction('2');
+      if (state1 && state2) {
+         updateMath();
+      } else  {
+         clearMath();
+      }
+   }
+
+   function createFraction(ext) {
+      var numerator   = document.getElementById('numerator'+ext).value;
+      var denominator = document.getElementById('denominator'+ext).value;
+      var rn = new RationalNumber();
+console.log("Numerator is", numerator, "Denominator is", denominator);
+      rn.setValueNoReduce(numerator, denominator);
+console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
+      var outputplain = document.getElementById('resultplain'+ext);
+      var outputmixed = document.getElementById('resultmixed'+ext);
+      var outputfloat = document.getElementById('resultfloat'+ext);
+      var outputerror = document.getElementById('errormsg'+ext);
+      if (!rn.isSafe()) {
+         outputerror.textContent = 'Error: number out of range';
+         outputplain.textContent = '';
+         outputmixed.textContent = '';
+         outputfloat.textContent = '';
+         return false;
+      } else {
+         rn.reduce();
+         outputerror.textContent = '';
+         outputplain.textContent = rn;
+         outputmixed.textContent = rn.toStringMixed();
+         outputfloat.textContent = Number(rn);
+         return true;
+      }
+   }
+
+   function updateMath() {
+      var n1 = document.getElementById('numerator1').value;
+      var d1 = document.getElementById('denominator1').value;
+      var n2 = document.getElementById('numerator2').value;
+      var d2 = document.getElementById('denominator2').value;
+      var rn1 = new RationalNumber(n1, d1);
+      var rn2 = new RationalNumber(n2, d2);
+      var mathadd = document.getElementById('mathadd');
+      var mathsub = document.getElementById('mathsub');
+      var mathmul = document.getElementById('mathmul');
+      var mathdiv = document.getElementById('mathdiv');
+      var mathinv = document.getElementById('mathinv');
+
+      var rnadd = new RationalNumber(n1, d1);
+      rnadd.addTo(rn2);
+      var addout = "";
+      addout += String(rn1) + "&nbsp;&nbsp;+&nbsp;&nbsp;";
+      addout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      addout += String(rnadd);
+      mathadd.innerHTML = addout;
+
+      var rnsub = new RationalNumber(n1, d1);
+      rnsub.subtractTo(rn2);
+      var subout = "";
+      subout += String(rn1) + "&nbsp;&nbsp;&ndash;&nbsp;&nbsp;";
+      subout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      subout += String(rnsub);
+      mathsub.innerHTML = subout;
+
+      var rnmul = new RationalNumber(n1, d1);
+      rnmul.multiplyTo(rn2);
+      var mulout = "";
+      mulout += String(rn1) + "&nbsp;&nbsp;*&nbsp;&nbsp;";
+      mulout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      mulout += String(rnmul);
+      mathmul.innerHTML = mulout;
+
+      var rndiv = new RationalNumber(n1, d1);
+      rndiv.divideTo(rn2);
+      var divout = "";
+      divout += String(rn1) + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
+      divout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      divout += String(rndiv);
+      mathdiv.innerHTML = divout;
+
+      var invout = "";
+      invout += 1 + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
+      invout += String(rn1) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      invout += String(rn1.getInversion()) + ",&nbsp;&nbsp;&nbsp;&nbsp;";
+      invout += 1 + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
+      invout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      invout += String(rn2.getInversion());
+      mathinv.innerHTML = invout;
+   }
+
+   function clearMath() {
+      document.getElementById('mathadd').textContent = '';
+      document.getElementById('mathsub').textContent = '';
+      document.getElementById('mathmul').textContent = '';
+      document.getElementById('mathdiv').textContent = '';
+      document.getElementById('mathinv').textContent = '';
+   }
+
+</script>
+
+<style type="text/css">
+   section {
+      margin-left: 100px;
+      margin-top: 50px;
+   }
+   section h1 {
+      font-size: 200%;
+      font-family: sans-serif;
+      color: #dc0;
+   }
+   td:first-child {
+      text-align: right;
+   }
+</style>
+
+</head>
+<body>
+
+<section>
+<h1>RationalNumber creation test</h1>
+
+<table>
+<tr style="vertical-align:top;"><td>
+<table>
+<tr>
+   <td style="text-align:right;">
+      Type a numerator:
+   </td>
+   <td>
+      <input type=text onkeyup="updateFractions();" id=numerator1><br>
+   </td>
+</tr>
+<tr>
+   <td>
+      Type a denominator:
+   </td>
+   <td>
+      <input type=text onkeyup="updateFractions()" id=denominator1><br>
+   </td>
+</tr>
+<tr>
+   <td colspan=2>
+      <div id=errormsg1></div>
+   </td>
+</tr>
+</table>
+</td><td>
+<table>
+<tr>
+   <td>
+      Rational number (after reducing):
+   </td>
+   <td>
+      <div id=resultplain1></div>
+   </td>
+</tr>
+<tr>
+   <td>
+      As a mixed fraction:
+   </td>
+   <td>
+      <div id=resultmixed1></div>
+   </td>
+</tr>
+<tr>
+   <td>
+   As a floating-point number:
+   </td>
+   <td>
+      <div id=resultfloat1></div>
+   </td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td colspan=2><hr noshade></td></tr>
+<tr style="vertical-align:top;"><td>
+<table>
+<tr>
+   <td style="text-align:right;">
+      Type another numerator:
+   </td>
+   <td>
+      <input type=text onkeyup="updateFractions();" id=numerator2><br>
+   </td>
+</tr>
+<tr>
+   <td>
+      Type another denominator:
+   </td>
+   <td>
+      <input type=text onkeyup="updateFractions();" id=denominator2><br>
+   </td>
+</tr>
+<tr>
+   <td colspan=2>
+      <div id=errormsg2></div>
+   </td>
+</tr>
+</table>
+</td><td>
+<table>
+<tr>
+   <td>
+      Rational number (after reducing):
+   </td>
+   <td>
+      <div id=resultplain2></div>
+   </td>
+</tr>
+<tr>
+   <td>
+      As a mixed fraction:
+   </td>
+   <td>
+      <div id=resultmixed2></div>
+   </td>
+</tr>
+<tr>
+   <td>
+   As a floating-point number:
+   </td>
+   <td>
+      <div id=resultfloat2></div>
+   </td>
+</tr>
+</table>
+</td></tr>
+</table>
+
+</section>
+
+<section>
+<h1> Rational number math test </h1>
+
+<table>
+<tr><td>Addition:      </td><td> <div id=mathadd></div> </td></tr>
+<tr><td>Subtraction:   </td><td> <div id=mathsub></div> </td></tr>
+<tr><td>Multiplication:</td><td> <div id=mathmul></div> </td></tr>
+<tr><td>Division:      </td><td> <div id=mathdiv></div> </td></tr>
+<tr><td>Inversions:    </td><td> <div id=mathinv></div> </td></tr>
+</table>
+
+</section>
+
+</body>
+</html>

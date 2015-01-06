@@ -1,0 +1,27 @@
+{
+  "name": "rational-number",
+  "version": "0.0.0",
+  "description": "Rational number object.",
+  "author": "Craig Stuart Sapp <craig@ccrma.stanford.edu>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:craigsapp/RationalNumber.git"
+  },
+  "keywords": [
+    "rational numbers",
+    "fractions"
+  ],
+  "bugs": {
+    "url": "https://github.com/craigsapp/RationalNumber/issues"
+  },
+  "homepage": "https://github.io/craigsapp/RationalNumber",
+  "license": "MIT",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
