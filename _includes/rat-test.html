@@ -1,5 +1,5 @@
-<script src="/javascripts/RationalNumber-base.js"></script>
-<script src="/javascripts/RationalNumber-math.js"></script>
+<script src="/javascripts/RationalNumber-base-0.0.0.min.js"></script>
+<script src="/javascripts/RationalNumber-math-0.0.0.min.js"></script>
 <script>
    function updateFractions() {
       var state1 = createFraction('1');
@@ -118,16 +118,20 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
    table.rat td:first-child {
       text-align: right;
    }
+   table.rat2 td {
+      bottom-border: none;
+   }
 </style>
 
 </head>
 <body>
 
 <div class=rat>
+<h1>Rational number creation demonstration</h1>
 
 <table class=rat>
 <tr style="vertical-align:top;"><td>
-<table class=rat>
+<table class=rat2>
 <tr>
    <td style="text-align:right;">
       Type a numerator:
@@ -151,7 +155,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 </tr>
 </table>
 </td><td>
-<table class=rat>
+<table class=rat2>
 <tr>
    <td>
       Rational number (after reducing):
@@ -237,7 +241,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 </div>
 
 <div class=rat>
-<h1> Rational number math demonstrations </h1>
+<h1>Rational number math demonstration</h1>
 
 <table>
 <tr><td>Addition:      </td><td> <div id=mathadd></div> </td></tr>
