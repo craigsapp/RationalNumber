@@ -88,10 +88,10 @@ path (with `npm install -g mocha`), you can also run one of these commands
 to run the code tests on the command line:
 
 ``` bash
-$ make test
-$ mocha test
-$ cd test; make
-$ cd test; mocha
+make test
+mocha test
+cd test; make
+cd test; mocha
 ```
 
 
