@@ -83,6 +83,16 @@ installation:
     $ npm install   # to download mocha dependency if necessary
     $ npm test
 
+If you have [mocha](http://mochajs.org) installed globally in your search
+path (with `npm install -g mocha`), you can also run one of these commands
+to run the code tests on the command line:
+```Shell
+$ make test
+$ mocha test
+$ cd test; make
+$ cd test; mocha
+```
+
 
 ## Function list
 
