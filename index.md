@@ -32,7 +32,7 @@ installing globally with the command:
 $ npm install -g rational-number
 ```
 
-If you want to install locally in a node.js project, then install as a package
+If you want to install locally in a node project, then install as a package
 dependency with the command:
 
 ``` bash
