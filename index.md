@@ -148,7 +148,7 @@ Additional methods provided in RationalNumber-math.js:
 * **getInversion** &mdash; Return new RationalNumber which is reciprocal of the called object.
 * **negate** &mdash; Make positive values negative and vice-versa.
 * **negation** &mdash; Alias of getNegation().
-* **getNegation** &mdash; Return a copy of the object, with sing reversed.
+* **getNegation** &mdash; Return a copy of the object, with sign reversed.
 * **addTo** &mdash; To this RationalNumber, add additional numbers.
 * **add** &mdash; Similar to addTo(), but returns sum rather than altering contents.
 * **subtractTo** &mdash; To this RationalNumber, subtract values.
