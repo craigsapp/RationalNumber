@@ -2,8 +2,6 @@
 layout: index
 ---
 
-rational-number
-===============
 
 RationalNumber is an implementation of rational numbers in JavaScript
 that manages fractions consisting of two integers.  Mathematical
