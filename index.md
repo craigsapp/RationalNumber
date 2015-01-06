@@ -39,7 +39,7 @@ dependency with the command:
 
 Here is an example of loading the module into a node script:
 
-```javascript
+``` javascript
 var RationalNumber = require('rational-number');
     
 var rn1 = new RationalNumber(4, 5);
@@ -63,7 +63,7 @@ The above code should output the following text to the console:
 The JavaScript files can also be used stand-alone within a
 webpage but including these two files:
 
-```HTML
+``` HTML
 <script src="RationalNumber-base.js"></script>
 <script src="RationalNumber-math.js"></script>
 ```
@@ -87,7 +87,7 @@ If you have [mocha](http://mochajs.org) installed globally in your search
 path (with `npm install -g mocha`), you can also run one of these commands
 to run the code tests on the command line:
 
-```Shell
+```bash
 $ make test
 $ mocha test
 $ cd test; make
