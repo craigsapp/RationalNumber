@@ -117,8 +117,11 @@
    table.rat td:first-child {
       text-align: right;
    }
-   table.rat2 td {
-      bottom-border: none;
+   table.rat2 > tbody > td {
+      border: none;
+   }
+   td.fixw {
+      width: 200px;
    }
 </style>
 
@@ -136,7 +139,7 @@
       numerator&nbsp;1:
    </td>
    <td>
-      <input size=10 type=text onkeyup="updateFractions();" id=numerator1><br>
+      <input size=15 type=text onkeyup="updateFractions();" id=numerator1><br>
    </td>
 </tr>
 <tr>
@@ -144,7 +147,7 @@
       denominator&nbsp;1:
    </td>
    <td>
-      <input size=10 type=text onkeyup="updateFractions()" id=denominator1><br>
+      <input size=15 type=text onkeyup="updateFractions()" id=denominator1><br>
    </td>
 </tr>
 <tr>
@@ -159,7 +162,7 @@
    <td>
       Rational&nbsp;number:
    </td>
-   <td>
+   <td class=fixw>
       <div id=resultplain1></div>
    </td>
 </tr>
@@ -167,7 +170,7 @@
    <td>
       Mixed&nbsp;fraction:
    </td>
-   <td>
+   <td class=fixw>
       <div id=resultmixed1></div>
    </td>
 </tr>
@@ -175,7 +178,7 @@
    <td>
    Floating-point:
    </td>
-   <td>
+   <td class=fixw>
       <div id=resultfloat1></div>
    </td>
 </tr>
@@ -187,18 +190,18 @@
 <table class=rat>
 <tr>
    <td style="text-align:right;">
-      Numerator&nbsp;2:
+      numerator&nbsp;2:
    </td>
    <td>
-      <input size=10 type=text onkeyup="updateFractions();" id=numerator2><br>
+      <input size=15 type=text onkeyup="updateFractions();" id=numerator2><br>
    </td>
 </tr>
 <tr>
    <td>
-      Denominator&nbsp;2:
+      denominator&nbsp;2:
    </td>
    <td>
-      <input size=10 type=text onkeyup="updateFractions();" id=denominator2><br>
+      <input size=15 type=text onkeyup="updateFractions();" id=denominator2><br>
    </td>
 </tr>
 <tr>
@@ -211,25 +214,25 @@
 <table>
 <tr>
    <td>
-      Rational&nbsp;number:
+      rational&nbsp;number:
    </td>
-   <td>
+   <td class=fixw>
       <div id=resultplain2></div>
    </td>
 </tr>
 <tr>
    <td>
-      Mixed&nbsp;fraction:
+      mixed&nbsp;fraction:
    </td>
-   <td>
+   <td class=fixw>
       <div id=resultmixed2></div>
    </td>
 </tr>
 <tr>
    <td>
-   Floating-point:
+   floating-point:
    </td>
-   <td>
+   <td class=fixw>
       <div id=resultfloat2></div>
    </td>
 </tr>
