@@ -15,15 +15,14 @@
       var numerator   = document.getElementById('numerator'+ext).value;
       var denominator = document.getElementById('denominator'+ext).value;
       var rn = new RationalNumber();
-console.log("Numerator is", numerator, "Denominator is", denominator);
       rn.setValueNoReduce(numerator, denominator);
-console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
       var outputplain = document.getElementById('resultplain'+ext);
       var outputmixed = document.getElementById('resultmixed'+ext);
       var outputfloat = document.getElementById('resultfloat'+ext);
       var outputerror = document.getElementById('errormsg'+ext);
       if (!rn.isSafe()) {
          outputerror.textContent = 'Error: number out of range';
+         outputerror.style.color = 'red';
          outputplain.textContent = '';
          outputmixed.textContent = '';
          outputfloat.textContent = '';
@@ -134,18 +133,18 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 <table class=rat2>
 <tr>
    <td style="text-align:right;">
-      Type a numerator:
+      numerator&nbsp;1:
    </td>
    <td>
-      <input type=text onkeyup="updateFractions();" id=numerator1><br>
+      <input size=10 type=text onkeyup="updateFractions();" id=numerator1><br>
    </td>
 </tr>
 <tr>
    <td>
-      Type a denominator:
+      denominator&nbsp;1:
    </td>
    <td>
-      <input type=text onkeyup="updateFractions()" id=denominator1><br>
+      <input size=10 type=text onkeyup="updateFractions()" id=denominator1><br>
    </td>
 </tr>
 <tr>
@@ -158,7 +157,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 <table class=rat2>
 <tr>
    <td>
-      Rational number (after reducing):
+      Rational&nbsp;number:
    </td>
    <td>
       <div id=resultplain1></div>
@@ -166,7 +165,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 </tr>
 <tr>
    <td>
-      As a mixed fraction:
+      Mixed&nbsp;fraction:
    </td>
    <td>
       <div id=resultmixed1></div>
@@ -174,7 +173,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 </tr>
 <tr>
    <td>
-   As a floating-point number:
+   Floating-point:
    </td>
    <td>
       <div id=resultfloat1></div>
@@ -188,18 +187,18 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 <table class=rat>
 <tr>
    <td style="text-align:right;">
-      Type another numerator:
+      Numerator&nbsp;2:
    </td>
    <td>
-      <input type=text onkeyup="updateFractions();" id=numerator2><br>
+      <input size=10 type=text onkeyup="updateFractions();" id=numerator2><br>
    </td>
 </tr>
 <tr>
    <td>
-      Type another denominator:
+      Denominator&nbsp;2:
    </td>
    <td>
-      <input type=text onkeyup="updateFractions();" id=denominator2><br>
+      <input size=10 type=text onkeyup="updateFractions();" id=denominator2><br>
    </td>
 </tr>
 <tr>
@@ -212,7 +211,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 <table>
 <tr>
    <td>
-      Rational number (after reducing):
+      Rational&nbsp;number:
    </td>
    <td>
       <div id=resultplain2></div>
@@ -220,7 +219,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 </tr>
 <tr>
    <td>
-      As a mixed fraction:
+      Mixed&nbsp;fraction:
    </td>
    <td>
       <div id=resultmixed2></div>
@@ -228,7 +227,7 @@ console.log("Out Numerator is", rn._n, "Denominator is", rn._d);
 </tr>
 <tr>
    <td>
-   As a floating-point number:
+   Floating-point:
    </td>
    <td>
       <div id=resultfloat2></div>

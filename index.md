@@ -24,8 +24,13 @@ and CheckOverflowOff() turning this feature on and off.
 
 ## RationalNumber demonstration
 
-The following code uses the RationalNumber Javascript code to dynamically
-process rational numbers.
+The following section uses the RationalNumber Javascript code to
+dynamically process rational numbers.  Try typing various values
+in the four boxes below to create rational numbers.  The reduced
+forms of the number will be shown to the right, and example
+mathematical calculations using the two rational numbers is given
+further below.  Try typing a very large number to see what happens
+when any number has an absolute value greater or equal to 2^53.
 
 {% include rat-test.html %}
 
