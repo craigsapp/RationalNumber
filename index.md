@@ -22,6 +22,13 @@ range from 0 to 2^53-1 plus a sign, and optional overflow
 detection is included with the methods checkOverflowOn()
 and CheckOverflowOff() turning this feature on and off.
 
+## RationalNumber demonstration
+
+The following code uses the RationalNumber Javascript code to dynamically
+process rational numbers.
+
+{% include rat-test.html %}
+
 
 ## Usage in Node.js applications
 
