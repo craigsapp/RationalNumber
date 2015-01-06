@@ -31,7 +31,7 @@
          rn.reduce();
          outputerror.textContent = '';
          outputplain.textContent = rn;
-         outputmixed.textContent = rn.toStringMixed();
+         outputmixed.textContent = rn.toStringMixed("&prime;");
          outputfloat.textContent = Number(rn);
          return true;
       }
@@ -138,7 +138,7 @@
    table.rat td:first-child {
       text-align: right;
    }
-   table.rat2 > tbody > td {
+   table.rat2 td {
       border-bottom: none !important;
    }
    td.fixw {
@@ -181,7 +181,7 @@
 <table class=rat2>
 <tr>
    <td>
-      Rational&nbsp;number:
+      rational&nbsp;number:
    </td>
    <td class=fixw>
       <div id=resultplain1></div>
@@ -189,7 +189,7 @@
 </tr>
 <tr>
    <td>
-      Mixed&nbsp;fraction:
+      mixed&nbsp;fraction:
    </td>
    <td class=fixw>
       <div id=resultmixed1></div>
@@ -197,7 +197,7 @@
 </tr>
 <tr>
    <td>
-   Floating-point:
+      floating-point:
    </td>
    <td class=fixw>
       <div id=resultfloat1></div>
