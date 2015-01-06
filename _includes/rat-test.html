@@ -56,6 +56,14 @@
       addout += String(rn1) + "&nbsp;&nbsp;+&nbsp;&nbsp;";
       addout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
       addout += String(rnadd);
+      addout += "<br>";
+      addout += rn1.toStringMixed(" ") + "&nbsp;&nbsp;+&nbsp;&nbsp;";
+      addout += rn2.toStringMixed(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      addout += rnadd.toStringMixed(" ");
+      addout += "<br>";
+      addout += rn1.toNumber(" ") + "&nbsp;&nbsp;+&nbsp;&nbsp;";
+      addout += rn2.toNumber(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      addout += rnadd.toNumber(" ");
       mathadd.innerHTML = addout;
 
       var rnsub = new RationalNumber(n1, d1);
@@ -64,14 +72,30 @@
       subout += String(rn1) + "&nbsp;&nbsp;&ndash;&nbsp;&nbsp;";
       subout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
       subout += String(rnsub);
+      subout += "<br>";
+      subout += rn1.toStringMixed(" ") + "&nbsp;&nbsp;&ndash;&nbsp;&nbsp;";
+      subout += rn2.toStringMixed(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      subout += rnsub.toStringMixed(" ");
+      subout += "<br>";
+      subout += rn1.toNumber(" ") + "&nbsp;&nbsp;&ndash;&nbsp;&nbsp;";
+      subout += rn2.toNumber(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      subout += rnsub.toNumber(" ");
       mathsub.innerHTML = subout;
 
       var rnmul = new RationalNumber(n1, d1);
       rnmul.multiplyTo(rn2);
       var mulout = "";
-      mulout += String(rn1) + "&nbsp;&nbsp;*&nbsp;&nbsp;";
+      mulout += String(rn1) + "&nbsp;&nbsp;&times;&nbsp;&nbsp;";
       mulout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
       mulout += String(rnmul);
+      mulout += "<br>";
+      mulout += rn1.toStringMixed(" ") + "&nbsp;&nbsp;&times;&nbsp;&nbsp;";
+      mulout += rn2.toStringMixed(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      mulout += rnmul.toStringMixed(" ");
+      mulout += "<br>";
+      mulout += rn1.toNumber(" ") + "&nbsp;&nbsp;&times;&nbsp;&nbsp;";
+      mulout += rn2.toNumber(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      mulout += rnmul.toNumber(" ");
       mathmul.innerHTML = mulout;
 
       var rndiv = new RationalNumber(n1, d1);
@@ -80,6 +104,14 @@
       divout += String(rn1) + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
       divout += String(rn2) + "&nbsp;&nbsp;=&nbsp;&nbsp;";
       divout += String(rndiv);
+      divout += "<br>";
+      divout += rn1.toStringMixed(" ") + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
+      divout += rn2.toStringMixed(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      divout += rndiv.toStringMixed(" ");
+      divout += "<br>";
+      divout += rn1.toNumber(" ") + "&nbsp;&nbsp;&divide;&nbsp;&nbsp;";
+      divout += rn2.toNumber(" ") + "&nbsp;&nbsp;=&nbsp;&nbsp;";
+      divout += rndiv.toNumber(" ");
       mathdiv.innerHTML = divout;
 
       var invout = "";
@@ -118,7 +150,7 @@
       text-align: right;
    }
    table.rat2 > tbody > td {
-      border: none;
+      border-bottom: 1px solid #aaa !important;
    }
    td.fixw {
       width: 200px;
