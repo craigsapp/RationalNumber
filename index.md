@@ -30,14 +30,14 @@ and CheckOverflowOff() turning this feature on and off.
 This code can be installed for use in [node](http://nodejs.org) by 
 installing globally with the command:
 
-``` Shell
+``` bash
 $ npm install -g rational-number
 ```
 
 If you want to install locally in a node.js project, then install as a package
 dependency with the command:
 
-``` Shell
+``` bash
     $ npm install --save rational-number
 ```
 
@@ -84,7 +84,7 @@ Input and output from the code can be tested using [mocha](http://mochajs.org)
 and the JavaScript files in the `test` directory.  To test from a node 
 installation:
 
-``` Shell
+``` bash
     $ npm install   # to download mocha dependency if necessary
     $ npm test
 ```
@@ -93,7 +93,7 @@ If you have [mocha](http://mochajs.org) installed globally in your search
 path (with `npm install -g mocha`), you can also run one of these commands
 to run the code tests on the command line:
 
-``` Shell
+``` bash
 $ make test
 $ mocha test
 $ cd test; make
