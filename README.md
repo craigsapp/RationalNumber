@@ -1,7 +1,7 @@
 rational-number
 ===============
 
-RationalNumber is an implementation of rational numbers in JavaScript
+RationalNumber is an implementation for rational numbers in JavaScript
 that manages fractions consisting of two integers.  Mathematical
 operations such as addition, subtraction, multiplication and division
 are provided.  Division by zero is allowed and should produce correct
@@ -13,29 +13,34 @@ setting the value to 2/4 will automatically be reduced (simplified)
 to 1/2; However, functions for forcing non-reduced fractions are
 provided, particularly to avoid speed issues for intermediate
 calculations (although the current mathematical functions will reduce
-the fraction after every calculation to reduce the chance of overflow).
+the fraction after every calculation to minimize the chance of overflow).
 
 This implementation limits the numerator and denominator to the
-range from 0 to 2^53-1 plus a sign, and optional overflow
-detection is included with the methods checkOverflowOn()
+range from 0 to 2^53&ndash;1 plus a sign.  Optional overflow
+detection is included, with the methods checkOverflowOn()
 and CheckOverflowOff() turning this feature on and off.
 
 
-## Usage in Node.js applications
+## Usage in Node applications
 
 This code can be installed for use in [node](http://nodejs.org) by 
 installing globally with the command:
 
-    $ npm install -g rational-number
+``` bash
+$ npm install -g rational-number
+```
 
-If you want to install locally in a node.js project, then install as a package
+If you want to install locally in a node project, then install as a package
 dependency with the command:
 
-    $ npm install --save rational-number
+``` bash
+$ npm install --save rational-number
+```
 
-Here is an example of loading the module into a node script:
+Here is an example of loading the module into a node script and adding two
+rational numbers together:
 
-```javascript
+``` javascript
 var RationalNumber = require('rational-number');
     
 var rn1 = new RationalNumber(4, 5);
@@ -49,44 +54,51 @@ console.log(rn1.valueOf()+" + "+rn2.valueOf()+" = "+rn3.valueOf());
 
 The above code should output the following text to the console:
 
-    4/5 + 13/2 = 73/10
-    4/5 + 6_1/2 = 7_3/10
-    0.8 + 6.5 = 7.3
+``` text
+4/5 + 13/2 = 73/10
+4/5 + 6_1/2 = 7_3/10
+0.8 + 6.5 = 7.3
+```
 
 
 ## Browser
 
-The JavaScript files can also be used stand-alone within a
-webpage but including these two files:
+The JavaScript files for RationalNumber can also be used within
+a webpage by including these two files:
 
-```HTML
+``` HTML
 <script src="RationalNumber-base.js"></script>
 <script src="RationalNumber-math.js"></script>
 ```
 
-The first file (RationalNumber-base.js) is required, while the second
-one containing mathematical functions (add, subtract, etc.) is optional.
-The lib directory contains a make file with example commands to generate
-minified versions of the JavaScript programs.
+The first file (RationalNumber-base.js) is required, while the
+second one containing mathematical functions (add, subtract, etc.)
+is optional.  The lib directory contains a makefile with example
+commands to generate minified versions of the programs files.
+Visit the [RationalNumber homepage](http://rationalnumber.sapp.org)
+to try an online demo of rational number calculations running within
+a webpage.
 
 
 ## Testing
 
-Input and output from the code can be tested using [mocha](http://mochajs.org) 
-and the JavaScript files in the `test` directory.  To test from a node 
-installation:
+Input and output from the code can be tested using
+[mocha](http://mochajs.org) and the JavaScript files in the `test`
+directory.  To test from a node installation:
 
-    $ npm install   # to download mocha dependency if necessary
-    $ npm test
+``` bash
+$ npm install   # to download mocha dependency if necessary
+$ npm test
+```
 
 
 ## Website
 
-The main website for the RationalNumber code is 
-https://github.io/craigsapp/RationalNumber .
+The website for RationalNumber documentation is 
+[http://rationalnumber.sapp.org](http://rationalnumber.sapp.org).
 
 And the corresponding GitHub repository is
-https://github.com/craigsapp/RationalNumber .
+[https://github.com/craigsapp/RationalNumber](https://github.com/craigsapp/RationalNumber).
 
 
 ## Function list
@@ -95,7 +107,7 @@ Here is a brief description of the function prototypes provided in
 the RationalNumber class (see the website for more details):
 
 * **setSign** &mdash; Set the sign to positive or negative.
-* **getSign** &mdash; returns +1 if positive, -1 if negative.
+* **getSign** &mdash; Returns +1 if positive, &ndash;1 if negative.
 * **getNumerator** &mdash; Return the numerator, including sign.
 * **getNumeratorAbsoluteValue** &mdash; Return the numerator, excluding sign.
 * **getDenominator** &mdash; Return the denominator (always positive).
@@ -104,28 +116,28 @@ the RationalNumber class (see the website for more details):
 * **setNumeratorAbsoluteValueNoReduce** &mdash; Sets the numerator, but does not try to reduce or change the sign of the current value.
 * **setDenominatorAbsoluteValue** &mdash; Set the denominator (sign ignored).
 * **setDenominatorAbsoluveValueNoReduce** &mdash; Set denominator, not trying to reduce.
-* **reduce** &mdash; Reduce the fraction if needed.
+* **reduce** &mdash; Reduce the fraction to its simplest form if needed.
 * **setValue** &mdash; Set the numerator and denominator (sign can be on either or both).
 * **setValueNoReduce** &mdash; Set the numerator and denominator, but don't try to reduce.
-* **isSafe** &mdash; Numerator and denominator less than 2^53.
-* **isNan** &mdash; Returns true equal to 0/0.
-* **isInfinite** &mdash; Returns denominator is 0.
+* **isSafe** &mdash; Check that numerator and denominator are less than 2^53.
+* **isNan** &mdash; Returns true if equal to 0/0.
+* **isInfinite** &mdash; Returns true denominator is 0 and numerator is not.
 * **isValid** &mdash; Returns true if safe, finite and not NaN.
 * **checkOverflow** &mdash; Same as isSafe(), but throws an error.
-* **checkOverflowOn** &mdash; Force validity check for overflows.
+* **checkOverflowOn** &mdash; Force automatic validity checks for overflows.
 * **checkOverflowOff** &mdash; Turn off overflow validity checks.
 * **toFloat** &mdash; Alias for valueOf().
 * **toNumber** &mdash; Alias for valueOf().
 * **valueOf** &mdash; Return the floating-point version of fraction.
 * **toString** &mdash; Convert to a string in the form "n/d".
-* **toStringMixed** &mdash; Return a string as a mixed fraction.
+* **toStringMixed** &mdash; Return a mixed fraction string.
 * **toJSON** &mdash; Create a JSON string.
 * **fromString** &mdash; Read number from string.
 * **fromStringNoReduce** &mdash; Read number from string without reducing.
-* **parseString** &mdash; same as fromString(), but returns a new RationalNumber rather than changing current object.
+* **parseString** &mdash; Same as fromString(), but returns a new RationalNumber rather than changing current object.
 * **clone** &mdash; Make a new copy of the RationalNumber.
 * **copy** &mdash; Copy internal contents from another RationalNumber.
-* **isEqual** &mdash; returns true if the sign, numerator and denominator are the same as another rational number.
+* **isEqual** &mdash; Returns true if the sign, numerator and denominator are the same as another rational number.
 * **isPositive** &mdash; Returns true if larger than 0.
 * **isNegative** &mdash; Returns true if smaller than 0.
 * **isInteger** &mdash; Returns true if denominator is 1.
@@ -138,7 +150,7 @@ Additional methods provided in RationalNumber-math.js:
 * **getInversion** &mdash; Return new RationalNumber which is reciprocal of the called object.
 * **negate** &mdash; Make positive values negative and vice-versa.
 * **negation** &mdash; Alias of getNegation().
-* **getNegation** &mdash; Return a copy of the object, with sing reversed.
+* **getNegation** &mdash; Return a copy of the object, with sign reversed.
 * **addTo** &mdash; To this RationalNumber, add additional numbers.
 * **add** &mdash; Similar to addTo(), but returns sum rather than altering contents.
 * **subtractTo** &mdash; To this RationalNumber, subtract values.

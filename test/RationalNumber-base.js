@@ -1508,6 +1508,90 @@ it('Create JSON string with different property names',
 
 
 });
+describe('#toFloatJSON', function () {
+
+
+it('Create JSON string with fractional remainder',
+	function () {
+		var rn = new RationalNumber(7, 2);
+		assert.deepEqual(rn.toFloatJSON(),
+			'{"f":3.5, "n":1, "d":2}');
+	}
+);
+
+it('Create JSON string with fractional remainder for negative value',
+	function () {
+		var rn = new RationalNumber(-11, 5);
+		assert.deepEqual(rn.toFloatJSON(),
+			'{"f":-2.2, "n":1, "d":5}');
+	}
+);
+
+it('Create JSON string with fractional remainder being 0',
+	function () {
+		var rn = new RationalNumber(100);
+		assert.deepEqual(rn.toFloatJSON(),
+			'{"f":100}');
+	}
+);
+
+it('Set property names',
+	function () {
+		var rn = new RationalNumber(9, 4);
+		assert.deepEqual(rn.toFloatJSON('float', 'numerator', 'denominator'),
+			'{"float":2.25, "numerator":1, "denominator":4}');
+	}
+);
+
+
+});
+describe('#toFloatArray', function () {
+
+
+it('Create Float array fractional remainders',
+	function () {
+		var rn = new RationalNumber(7, 2);
+		var array = rn.toFloatArray();
+		assert.deepEqual(array[0], 3.5);
+		assert.deepEqual(array[1], 1);
+		assert.deepEqual(array[2], 2);
+		assert.deepEqual(array.length, 3);
+	}
+);
+
+it('Create Float array for negative number',
+	function () {
+		var rn = new RationalNumber(-11, 5);
+		var array = rn.toFloatArray();
+		assert.deepEqual(array[0], -2.2);
+		assert.deepEqual(array[1], 1);
+		assert.deepEqual(array[2], 5);
+		assert.deepEqual(array.length, 3);
+	}
+);
+
+it('Create Float array for integer, brief form',
+	function () {
+		var rn = new RationalNumber(100);
+		var array = rn.toFloatArray();
+		assert.deepEqual(array[0], 100);
+		assert.deepEqual(array.length, 1);
+	}
+);
+
+it('Create Float array for integer, long form',
+	function () {
+		var rn = new RationalNumber(100);
+		var array = rn.toFloatArray(true);
+		assert.deepEqual(array[0], 100);
+		assert.deepEqual(array[1], 0);
+		assert.deepEqual(array[2], 1);
+		assert.deepEqual(array.length, 3);
+	}
+);
+
+
+});
 });
 
 

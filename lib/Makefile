@@ -1,7 +1,7 @@
 #
 # Programmer:	 Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Sat Jan  3 08:37:40 PST 2015
-# Last Modified: Sat Jan  3 10:21:16 PST 2015
+# Last Modified: Wed Jan  7 00:16:04 PST 2015
 # Filename:      .../lib/Makefile
 # Syntax:        GNU Makefile
 #
@@ -25,7 +25,7 @@ VERSION  = $(shell grep version ../package.json | grep -Eo '[0-9]+\.[0-9]+\.[0-9
 
 # Try locally installed minify first
 MINIFY = ../node_modules/.bin/minify
-ifeq (,$(wildcard $(MOCHA)))
+ifeq (,$(wildcard $(MINIFY)))
 	# Globally installed minify
 	MINIFY = minify
 endif
@@ -33,10 +33,12 @@ endif
 min: RationalNumber-base RationalNumber-math
 
 RationalNumber-base:
-	$(MINIFY) RationalNumber-base.js --no-comments -o RationalNumber-base-$(VERSION).min.js
+	$(MINIFY) RationalNumber-base.js --no-comments \
+		-o RationalNumber-base-$(VERSION).min.js
 
 RationalNumber-math:
-	$(MINIFY) RationalNumber-math.js --no-comments -o RationalNumber-math-$(VERSION).min.js
+	$(MINIFY) RationalNumber-math.js --no-comments \
+		-o RationalNumber-math-$(VERSION).min.js
 
 clean:
 	rm *.min.js

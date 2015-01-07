@@ -1,6 +1,6 @@
 {
   "name": "rational-number",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Rational number object.",
   "author": "Craig Stuart Sapp <craig@ccrma.stanford.edu>",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/craigsapp/RationalNumber/issues"
   },
-  "homepage": "https://github.io/craigsapp/RationalNumber",
+  "homepage": "http://rationalnumber.sapp.org",
   "license": "MIT",
   "scripts": {
     "test": "node_modules/.bin/mocha"
