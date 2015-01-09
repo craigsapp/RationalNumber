@@ -299,6 +299,19 @@ it('Change sign of rational number with setSign(string)',
 	}
 );
 
+it('Change sign of rational number with another rational number',
+	function () {
+		var rn = new RationalNumber(1);
+		var rnpos = new RationalNumber(17, 12);
+		var rnneg = new RationalNumber(-4, 51);
+		assert.deepEqual(rn.getSign(), 1);
+		rn.setSign(rnneg);
+		assert.deepEqual(rn.getSign(), -1);
+		rn.setSign(rnpos);
+		assert.deepEqual(rn.getSign(), 1);
+	}
+);
+
 it('Check sign value of 0',
 	function () {
 		var rn = new RationalNumber(0);
@@ -306,10 +319,14 @@ it('Check sign value of 0',
 	}
 );
 
-it('Check sign of -Infinity',
+it('Check sign of infinities and NaN',
 	function () {
 		var rn = new RationalNumber(-1, 0);
 		assert.deepEqual(rn.getSign(), -1);
+		rn.setValue(1, 0);
+		assert.deepEqual(rn.getSign(), 1);
+		rn.setValue(0, 0);
+		assert.deepEqual(rn.getSign(), 1);
 	}
 );
 
