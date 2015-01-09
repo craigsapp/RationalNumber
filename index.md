@@ -87,7 +87,7 @@ within a webpage by including these two files:
 <script src="RationalNumber-math.js"></script>
 ```
 
-The first file (RationalNumber-base.js) is required, while the
+The first file (`RationalNumber-base.js`) is required, while the
 second one containing mathematical functions (add, subtract, etc.)
 is optional.  The RationalNumber repository's lib directory contains
 a makefile with example commands to generate minified versions of
@@ -164,7 +164,7 @@ the RationalNumber class:
 ### Additional functions
 
 The following RationalNumber methods provided additional arithmetic
-processing from the optional RationalNumber-math.js file:
+processing from the optional `RationalNumber-math.js` file:
 
 * **abs** &mdash; Return a copy of the RationalNumber which is non-negative.
 * **invert** &mdash; Switch the numerator and denominator.
