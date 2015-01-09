@@ -1,5 +1,5 @@
 
-@BEGIN:	FUNCTION_DOCUMENTATION
+@@BEGIN:	FUNCTION_DOCUMENTATION
 @OBJECT:	RationalNumber
 @METHOD:	setSign
 @PARAMETERS:	Number
@@ -19,7 +19,7 @@ the sign to positive.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@BEGIN: EXAMPLE
+@@BEGIN: EXAMPLE
 @DESCRIPTION:
 Make value negative by giving any negative number as the argument.
 
@@ -41,11 +41,11 @@ console.log('Value of number after .setSign():', rn.toString());
 Value of number before .setSign(): 1/2
 Value of number after .setSign(): -1/2
 
-@END:	EXAMPLE
+@@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@BEGIN:	EXAMPLE
+@@BEGIN:	EXAMPLE
 @DESCRIPTION: The sign can be set by another RationalNumber.
 @BRIEFCODE:
 rn.setValue(1, 2);
@@ -66,11 +66,11 @@ console.log('Value of number after .setSign():', rn.toString());
 Value of number before .setSign(): 1/2
 Value of number after .setSign(): -1/2
 
-@END:	EXAMPLE
+@@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@BEGIN:	EXAMPLE
+@@BEGIN:	EXAMPLE
 @DESCRIPTION:
 Make value positive by giving any non-negative number as the argument.
 
@@ -92,11 +92,11 @@ console.log('Value of number after .setSign():', rn.toString());
 Value of number before .setSign(): -1/2
 Value of number after .setSign(): 1/2
 
-@END:	EXAMPLE
+@@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@BEGIN:	EXAMPLE
+@@BEGIN:	EXAMPLE
 @DESCRIPTION: Use a text string to set the sign.
 @BRIEFCODE:
 rn.setValue(1, 2);
@@ -147,10 +147,10 @@ Value of number before .setSign(): 1/2
 Value of number after .setSign('-'): -1/2
 Value of number after .setSign('+'): 1/2
 
-@END:	EXAMPLE
+@@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@END:	FUNCTION_DOCUMENTATION
+@@END:	FUNCTION_DOCUMENTATION
 
 
