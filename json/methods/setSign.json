@@ -8,7 +8,7 @@
 "
 Set the sign to positive or negative.  Usually the sign is taken from the numerator value when 
 creating the number, but it can be set independently using this method.
-"
+",
 "example":
 [
 
