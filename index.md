@@ -12,15 +12,16 @@ JavaScript.
 
 Fractions are maintained by default in reduced form.  For example,
 setting the value to 2/4 will automatically be reduced (simplified)
-to 1/2; However, functions for forcing non-reduced fractions are
-provided, particularly to avoid speed issues for intermediate
-calculations (although the current mathematical functions will reduce
-the fraction after every calculation to minimize the chance of overflow).
+to 1/2. However functions for forcing non-reduced fractions are
+provided, particularly for avoiding speed issues in intermediate
+calculations (although the current mathematical functions will
+reduce the fraction after every calculation to minimize the chance
+of overflow).
 
 This implementation limits the numerator and denominator to the
-range from 0 to 2^53-1 plus a sign, and optional overflow
-detection is included with the methods checkOverflowOn()
-and CheckOverflowOff() turning this feature on and off.
+range from 0 to 2^53-1 plus a sign, and optional automatic overflow
+detection is included by running checkOverflowOn(), and CheckOverflowOff()
+turning this feature off.
 
 ## RationalNumber demonstration
 
@@ -35,23 +36,25 @@ when any number has an absolute value greater or equal to 2^53.
 {% include rat-test.html %}
 
 
-## Usage in Node.js applications
+## Usage in node applications
 
-This code can be installed for use in [node](http://nodejs.org) by 
-installing globally with the command:
+This code can be installed globally for use in [node](http://nodejs.org) 
+with the command:
 
 ``` bash
 $ npm install -g rational-number
 ```
 
-If you want to install locally in a node project, then install as a package
-dependency with the command:
+If you want to install locally within anode project, then install
+as a package dependency with the command:
 
 ``` bash
 $ npm install --save rational-number
 ```
 
-Here is an example of loading the module into a node script:
+Here is an code example which loads the module into a node script,
+creates two RationalNumbers (4/5 and 13/2), adds them, and then
+prints the result to the console:
 
 ``` javascript
 var RationalNumber = require('rational-number');
@@ -67,41 +70,45 @@ console.log(rn1.valueOf()+" + "+rn2.valueOf()+" = "+rn3.valueOf());
 
 The above code should output the following text to the console:
 
-    4/5 + 13/2 = 73/10
-    4/5 + 6_1/2 = 7_3/10
-    0.8 + 6.5 = 7.3
+```
+4/5 + 13/2 = 73/10
+4/5 + 6_1/2 = 7_3/10
+0.8 + 6.5 = 7.3
+```
 
 
-## Browser
+## Using in a web browser
 
-The JavaScript files can also be used stand-alone within a
-webpage but including these two files:
+The JavaScript code for rational numbers can also be used stand-alone
+within a webpage by including these two files:
 
 ``` HTML
 <script src="RationalNumber-base.js"></script>
 <script src="RationalNumber-math.js"></script>
 ```
 
-The first file (RationalNumber-base.js) is required, while the second
-one containing mathematical functions (add, subtract, etc.) is optional.
-The lib directory contains a make file with example commands to generate
-minified versions of the JavaScript programs.
+The first file (RationalNumber-base.js) is required, while the
+second one containing mathematical functions (add, subtract, etc.)
+is optional.  The RationalNumber repository's lib directory contains
+a makefile with example commands to generate minified versions of
+the JavaScript programs.
 
 
 ## Testing
 
-Input and output from the code can be tested using [mocha](http://mochajs.org) 
-and the JavaScript files in the `test` directory.  To test from a node 
-installation:
+Input and output from the RationalNumber code can be tested using
+[mocha](http://mochajs.org) and the JavaScript files in the `test`
+directory of the repository.  To test from a node installation:
 
 ``` bash
 $ npm install   # to download mocha dependency if necessary
 $ npm test
 ```
 
-If you have [mocha](http://mochajs.org) installed globally in your search
-path (with `npm install -g mocha`), you can also run one of these commands
-to run the code tests on the command line:
+If you have [mocha](http://mochajs.org) installed globally in your
+search path (such as with "`npm install -g mocha`"), you can also
+type one of the following equivalent shell commands to run the code
+tests:
 
 ``` bash
 $ make test
@@ -113,8 +120,8 @@ $ cd test; mocha
 
 ## Function list
 
-Here is a brief description of the function prototypes provided in 
-the RationalNumber class (click on the function name for more details):
+Here is a brief description of the function prototypes provided in
+the RationalNumber class:
 
 * **setSign** &mdash; Set the sign to positive or negative.
 * **getSign** &mdash; returns +1 if positive, -1 if negative.
@@ -142,6 +149,8 @@ the RationalNumber class (click on the function name for more details):
 * **toString** &mdash; Convert to a string in the form "n/d".
 * **toStringMixed** &mdash; Return a string as a mixed fraction.
 * **toJSON** &mdash; Create a JSON string.
+* **toFloatJSON** &mdash; Create a float/fractional remainder JSON string.
+* **toFloatArray** &mdash; Create a float/fractional remainder Array.
 * **fromString** &mdash; Read number from string.
 * **fromStringNoReduce** &mdash; Read number from string without reducing.
 * **parseString** &mdash; same as fromString(), but returns a new RationalNumber rather than changing current object.
@@ -152,7 +161,10 @@ the RationalNumber class (click on the function name for more details):
 * **isNegative** &mdash; Returns true if smaller than 0.
 * **isInteger** &mdash; Returns true if denominator is 1.
 
-Additional methods provided in RationalNumber-math.js:
+### Additional functions
+
+The following RationalNumber methods provided additional arithmetic
+processing from the optional RationalNumber-math.js file:
 
 * **abs** &mdash; Return a copy of the RationalNumber which is non-negative.
 * **invert** &mdash; Switch the numerator and denominator.
