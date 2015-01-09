@@ -1,7 +1,7 @@
 {
 "object":	"RationalNumber",
 "method":	"setSign", 
-"prototype:	"true",
+"prototype":	"true",
 "seealso":	["getSign", "negate"],
 "shortdesc":	"Set the sign to positive or negative.",
 "longdesc":
