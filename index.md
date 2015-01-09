@@ -20,8 +20,8 @@ of overflow).
 
 This implementation limits the numerator and denominator to the
 range from 0 to 2^53-1 plus a sign, and optional automatic overflow
-detection is included by running checkOverflowOn(), and CheckOverflowOff()
-turning this feature off.
+detection is included by running `checkOverflowOn()`, and
+`CheckOverflowOff()` turning this feature off.
 
 ## RationalNumber demonstration
 
