@@ -1,0 +1,157 @@
+{
+"object":	"RationalNumber",
+"method":	"setSign", 
+"prototype:	"true",
+"seealso":	["getSign", "negate"],
+"shortdesc":	"Set the sign to positive or negative.",
+"longdesc":
+"
+Set the sign to positive or negative.  Usually the sign is taken from the numerator value when 
+creating the number, but it can be set independently using this method.
+"
+"example":
+[
+
+{
+"description":	"Make value negative by giving any negative number as the argument.",
+"briefcode":
+"
+rn.setValue(1, 2);
+rn.setSign(-1);
+",
+"longcode":
+"
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = RationalNumber();
+rn.setValue(1, 2);
+console.log('Value of number before .setSign():', rn.toString());
+rn.setSign(-1);
+console.log('Value of number after .setSign():', rn.toString());
+",
+"longoutput":
+"
+Value of number before .setSign(): 1/2
+Value of number after .setSign(): -1/2
+"
+}
+
+{
+"description":	"The sign can be set by another RationalNumber.",
+"briefcode":
+"
+rn.setValue(1, 2);
+rn2.setValue(-1, 2);
+rn.setSign(rn2);
+",
+"longcode":
+"
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = RationalNumber();
+rn.setValue(1, 2);
+console.log('Value of number before .setSign():', rn.toString());
+rn.setSign(-1);
+console.log('Value of number after .setSign():', rn.toString());
+",
+"longoutput":
+"
+Value of number before .setSign(): 1/2
+Value of number after .setSign(): -1/2
+"
+}
+
+{
+"description":	"Make value positive by giving any non-negative number as the argument.",
+"briefcode":
+"
+rn.setValue(-1, 2);
+rn.setSign(1);
+",
+"longcode":
+"
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = RationalNumber();
+rn.setValue(1, 2);
+console.log('Value of number before .setSign():', rn.toString());
+rn.setSign(-1);
+console.log('Value of number after .setSign():', rn.toString());
+",
+"longoutput":
+"
+Value of number before .setSign(): -1/2
+Value of number after .setSign(): 1/2
+"
+}
+
+{
+"description":	"Use a text string to set the sign.",
+"briefcode":
+"
+rn.setValue(1, 2);
+rn.setSign('negative');
+rn.setSign('positive');
+",
+"longcode":
+"
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = RationalNumber();
+rn.setValue(1, 2);
+console.log('Value of number before .setSign():', rn.toString());
+rn.setSign('negative');
+console.log('Value of number after .setSign():', rn.toString());
+rn.setSign('positive');
+console.log('Value of number after .setSign():', rn.toString());
+",
+"longoutput":
+"
+Value of number before .setSign(): 1/2
+Value of number after .setSign('negative'): -1/2
+Value of number after .setSign('positive'): 1/2
+"
+}
+
+{
+"description":	
+"
+If a string starts with '-' the value will be set to negative.  If the string is '+', or anything, 
+other than 'negative', the value will be set to positive.
+",
+"briefcode":
+"
+rn.setValue(1, 2);
+rn.setSign('-');
+rn.setSign('+');
+",
+"longcode":
+"
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = RationalNumber();
+rn.setValue(1, 2);
+console.log('Value of number before .setSign():', rn.toString());
+rn.setSign('-');
+console.log('Value of number after .setSign():', rn.toString());
+rn.setSign('+');
+console.log('Value of number after .setSign():', rn.toString());
+",
+"longoutput":
+"
+Value of number before .setSign(): 1/2
+Value of number after .setSign('-'): -1/2
+Value of number after .setSign('+'): 1/2
+"
+}
+
+]
+}
+
+
+
