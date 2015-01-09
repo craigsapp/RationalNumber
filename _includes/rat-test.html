@@ -1,6 +1,11 @@
 <script src="/javascripts/RationalNumber-base-0.0.0.min.js"></script>
 <script src="/javascripts/RationalNumber-math-0.0.0.min.js"></script>
 <script>
+   document.addEventListener("DOMContentLoaded", function (event) {
+      updateFractions();
+   }
+
+
    function updateFractions() {
       var state1 = createFraction('1');
       var state2 = createFraction('2');
@@ -10,6 +15,7 @@
          clearMath();
       }
    }
+
 
    function createFraction(ext) {
       var numerator   = document.getElementById('numerator'+ext).value;
@@ -36,6 +42,7 @@
          return true;
       }
    }
+
 
    function updateMath() {
       var n1 = document.getElementById('numerator1').value;
@@ -114,6 +121,7 @@
       mathdiv.innerHTML = divout;
    }
 
+
    function clearMath() {
       document.getElementById('mathadd').textContent = '';
       document.getElementById('mathsub').textContent = '';
@@ -137,11 +145,9 @@
    }
    table.rat td:first-child {
       text-align: right;
-      margin-bottom: 0;
    }
    table.rat2 td {
       border-bottom: none !important;
-      margin-bottom: 0;
    }
    td.fixw {
       width: 200px;
@@ -161,7 +167,7 @@
       numerator&nbsp;1:
    </td>
    <td>
-      <input maxlength=20  size=25 type=text onkeyup="updateFractions();" id=numerator1><br>
+      <input maxlength=20  value=8 size=25 type=text onkeyup="updateFractions();" id=numerator1><br>
    </td>
 </tr>
 <tr>
@@ -169,7 +175,7 @@
       denominator&nbsp;1:
    </td>
    <td>
-      <input maxlength=20  size=25 type=text onkeyup="updateFractions()" id=denominator1><br>
+      <input maxlength=20  value=25 size=25 type=text onkeyup="updateFractions()" id=denominator1><br>
    </td>
 </tr>
 <tr>
@@ -215,7 +221,7 @@
       numerator&nbsp;2:
    </td>
    <td>
-      <input maxlength=20  size=25 type=text onkeyup="updateFractions();" id=numerator2><br>
+      <input maxlength=20  value=9 size=25 type=text onkeyup="updateFractions();" id=numerator2><br>
    </td>
 </tr>
 <tr>
@@ -223,7 +229,7 @@
       denominator&nbsp;2:
    </td>
    <td>
-      <input maxlength=20  size=25 type=text onkeyup="updateFractions();" id=denominator2><br>
+      <input maxlength=20  value=8 size=25 type=text onkeyup="updateFractions();" id=denominator2><br>
    </td>
 </tr>
 <tr>
@@ -262,8 +268,10 @@
 </td></tr>
 </table>
 
+<span style="margin-top:-10px;">
 The two numbers you enter above are used in the following calculations. 
 Each calculation is shown in plain, mixed and floating-point versions.
+</span>
 
 <table style="margin-top: 10px;">
 <tr><td colspan=2></td></tr>
