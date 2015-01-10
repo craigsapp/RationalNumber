@@ -3,6 +3,9 @@ layout: index
 ---
 
 
+
+
+
 RationalNumber is an implementation of rational numbers in JavaScript
 that manages fractions consisting of two integers.  Mathematical
 operations such as addition, subtraction, multiplication and division
@@ -23,6 +26,8 @@ range from 0 to 2^53-1 plus a sign, and optional automatic overflow
 detection is included by running `checkOverflowOn()`, and
 `CheckOverflowOff()` turning this feature off.
 
+
+
 ## RationalNumber demonstration
 
 The following section uses the RationalNumber Javascript code to
@@ -36,7 +41,8 @@ when any number has an absolute value greater or equal to 2^53.
 {% include rat-test.html %}
 
 
-## Usage in node applications
+
+## Using in node applications
 
 This code can be installed globally for use in [node](http://nodejs.org) 
 with the command:
@@ -77,6 +83,7 @@ The above code should output the following text to the console:
 ```
 
 
+
 ## Using in a web browser
 
 The JavaScript code for rational numbers can also be used stand-alone
@@ -92,6 +99,7 @@ second one containing mathematical functions (add, subtract, etc.)
 is optional.  The RationalNumber repository's lib directory contains
 a makefile with example commands to generate minified versions of
 the JavaScript programs.
+
 
 
 ## Testing
@@ -116,6 +124,7 @@ $ mocha test
 $ cd test; make
 $ cd test; mocha
 ```
+
 
 
 ## Function list
