@@ -36,6 +36,10 @@ header, section, footer {
   display: block;
 }
 
+header ul {
+	padding-top: 20px;
+}
+
 a {
   color: #069;
   text-decoration: none;
@@ -181,6 +185,9 @@ header ul a strong {
 body section:first-child {
   padding-top: 40px;
 }
+section p:first-child {
+  padding-top: 30px;
+}
 
 section {
   padding: 15px 20px;
@@ -220,7 +227,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 40px !important;
+  margin-top: 50px !important;
   color: #393939;
 }
 
