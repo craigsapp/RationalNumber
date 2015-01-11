@@ -65,8 +65,8 @@ header {
   background: -ms-linear-gradient(#ddfbfc, #c6eafa);
   background: linear-gradient(#ddfbfc, #c6eafa);
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
   border-bottom: 1px solid #B2D2E1;
@@ -220,6 +220,7 @@ h1 {
 }
 
 h2 {
+  margin-top: 15px;
   color: #393939;
 }
 
