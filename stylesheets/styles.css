@@ -37,8 +37,8 @@ header, section, footer {
 }
 
 header ul {
-	margin-top: 25px;
-	margin-right: 5px;
+	margin-top: 25px !important;
+	margin-right: 10px;
 }
 
 a {
