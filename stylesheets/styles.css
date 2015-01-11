@@ -220,7 +220,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 15px;
+  margin-top: 40px !important;
   color: #393939;
 }
 
@@ -352,6 +352,7 @@ footer p + p {
 
   header p.view {
     display: block;
+    padding-top: 20px;
   }
 
   header p {
