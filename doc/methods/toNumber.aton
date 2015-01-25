@@ -1,0 +1,25 @@
+
+@@BEGIN:	FunctionDocumentation
+@OBJECT:	RationalNumber
+@METHOD:	toNumber
+@PARAMETERS:	
+@PROTOTYPE:	
+@SEEALSO:	
+@SHORTDESC:	Alias for valueOf().
+@LONGDESC:
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+@DESCRIPTION:
+@BRIEFCODE:
+@LONGCODE:
+@LONGOUTPUT:
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
+
+
+

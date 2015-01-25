@@ -1,0 +1,25 @@
+
+@@BEGIN:	FunctionDocumentation
+@OBJECT:	RationalNumber
+@METHOD:	isNan
+@PARAMETERS:	
+@PROTOTYPE:	
+@SEEALSO:	
+@SHORTDESC:	Returns true equal to 0/0.
+@LONGDESC:
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+@DESCRIPTION:
+@BRIEFCODE:
+@LONGCODE:
+@LONGOUTPUT:
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
+
+
+

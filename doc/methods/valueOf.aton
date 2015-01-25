@@ -1,0 +1,25 @@
+
+@@BEGIN:	FunctionDocumentation
+@OBJECT:	RationalNumber
+@METHOD:	valueOf
+@PARAMETERS:	
+@PROTOTYPE:	
+@SEEALSO:	
+@SHORTDESC:	Return the floating-point version of fraction.
+@LONGDESC:
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+@DESCRIPTION:
+@BRIEFCODE:
+@LONGCODE:
+@LONGOUTPUT:
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
+
+
+

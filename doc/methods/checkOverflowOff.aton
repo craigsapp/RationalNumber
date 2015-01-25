@@ -1,0 +1,25 @@
+
+@@BEGIN:	FunctionDocumentation
+@OBJECT:	RationalNumber
+@METHOD:	checkOverflowOff
+@PARAMETERS:	
+@PROTOTYPE:	
+@SEEALSO:	
+@SHORTDESC:	Turn off overflow validity checks.
+@LONGDESC:
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+@DESCRIPTION:
+@BRIEFCODE:
+@LONGCODE:
+@LONGOUTPUT:
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
+
+
+

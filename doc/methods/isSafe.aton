@@ -1,0 +1,25 @@
+
+@@BEGIN:	FunctionDocumentation
+@OBJECT:	RationalNumber
+@METHOD:	isSafe
+@PARAMETERS:	
+@PROTOTYPE:	
+@SEEALSO:	
+@SHORTDESC:	Numerator and denominator less than 2^53.
+@LONGDESC:
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+@DESCRIPTION:
+@BRIEFCODE:
+@LONGCODE:
+@LONGOUTPUT:
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
+
+
+
