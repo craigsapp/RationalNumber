@@ -1,0 +1,74 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Sun Jan 25 05:33:38 PST 2015
+# Last Modified: Sun Jan 25 05:53:24 PST 2015
+# Filename:      doc/insertDescriptions
+# Syntax:        perl 5
+# vim:           ts=3 expandtab
+#
+# Description:   Add an initial list of functions to the index.  These
+#                will automatically be replaced with complete documentation
+#                for functions, but the pre-filling will make the page
+#                seem complete while the content is loading.
+# 
+#                The content will be filled into <div>s like this:
+#                   <div class="docslot" id="abs"></div>
+#
+
+use strict;
+
+die "Usage $0 index-file method-dir" if (@ARGV != 2);
+
+my $indexfile = $ARGV[0];
+my $srcdir    = $ARGV[1];
+
+open(INDEX, $indexfile) or die "Cannot read $indexfile\n";
+my @contents = <INDEX>;
+close INDEX;
+
+# <div class="docslot" id="abs"></div>
+foreach my $line (@contents) {
+   if ($line !~ /<div.*class.*docslot.*id=["']([^'"]+)['"].*>(.*)<\/div>\s*$/) {
+      print $line;
+      next;
+   }
+   my $id = $1;
+   my $newdesc = getDescription($id, $srcdir);
+   if ($line =~ /^\s*(<div.*class.*docslot.*id[^>]*>)(.*)<\/div>\s*$/) {
+      my $div = $1;
+      print "$div$newdesc</div>\n";
+   } else {
+      print $line;
+   }
+
+}
+
+exit(0);
+
+
+
+##############################
+##
+## getDescription --
+##   @SHORTDESC:	Return a copy of the RationalNumber which is non-negative.
+##
+
+sub getDescription {
+   my ($id, $srcdir) = @_;
+   die "Cannot find description for $id\n" if !-r "$srcdir/$id.aton";
+   my $shortdesc = `grep '^\@SHORTDESC:' $srcdir/$id.aton`;
+   $shortdesc =~ /^\@SHORTDESC:\s*(.*)\s*$/;
+   my $description = $1;
+   if ($description =~ /^\s*$/) {
+      die "Description for $id is empty.\n";
+   }
+   my $output;
+   $output = "<span style=\"padding-left:20px; font-weight:900\">$id</span>";
+   $output .= " &mdash; ";
+   $output .= $description;
+   return $output;
+}
+
+
+

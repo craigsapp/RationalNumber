@@ -5,7 +5,7 @@
 @PARAMETERS:	
 @PROTOTYPE:	
 @SEEALSO:	
-@SHORTDESC:	Returns true equal to 0/0.
+@SHORTDESC:	Returns true if equal to 0/0.
 @LONGDESC:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
