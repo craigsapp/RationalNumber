@@ -126,7 +126,7 @@ Value of number after .setSign('positive'): 1/2
 @@BEGIN:	EXAMPLE
 
 @DESCRIPTION:
-If a string starts with '-' the value will be set to negative.  If
+If a string starts with '&ndash;' the value will be set to negative.  If
 the string is '+', or anything, other than 'negative', the value
 will be set to positive.
 
