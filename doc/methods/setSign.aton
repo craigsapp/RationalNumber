@@ -1,5 +1,5 @@
 
-@@BEGIN:	FUNCTION_DOCUMENTATION
+@@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	setSign
 @PARAMETERS:	Number
@@ -9,13 +9,12 @@
 @SEEALSO:	getSign, negate
 @SHORTDESC:	Set the sign to positive or negative.
 @LONGDESC:
-Set the sign to positive or negative.  Usually the sign is taken
-from the numerator value when creating or changing a RationalNumber,
-but it can be set independently using this method.  If the input
-parameter is a Number, then use the sign of the value.  If the
-input is a string, use 'negative' or 'positive', or '-' and '+' to
-set the sign; otherwise, any other string or object type will set
-the sign to positive.
+Usually the sign is taken from the numerator value when creating
+or changing a RationalNumber, but it can be set independently using
+this method.  If the input parameter is a Number, then use the sign
+of the value.  If the input is a string, use 'negative' or 'positive',
+or '&ndash;' and '+' to set the sign; otherwise, any other string or
+object type will set the sign to positive.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -120,6 +119,12 @@ Value of number before .setSign(): 1/2
 Value of number after .setSign('negative'): -1/2
 Value of number after .setSign('positive'): 1/2
 
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN:	EXAMPLE
+
 @DESCRIPTION:
 If a string starts with '-' the value will be set to negative.  If
 the string is '+', or anything, other than 'negative', the value
@@ -151,6 +156,7 @@ Value of number after .setSign('+'): 1/2
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@@END:	FUNCTION_DOCUMENTATION
+@@END:	FunctionDocumentation
+
 
 

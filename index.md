@@ -172,7 +172,7 @@ the RationalNumber class:
 
 ### Additional functions
 
-The following RationalNumber methods provided additional arithmetic
+The following RationalNumber methods provide additional arithmetic
 processing from the optional [RationalNumber-math.js](https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-math.js) file:
 
 * **abs** &mdash; Return a copy of the RationalNumber which is non-negative.
