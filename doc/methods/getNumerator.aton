@@ -2,19 +2,37 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	getNumerator
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@SEEALSO:	getNumeratorAbsoluteValue
 @SHORTDESC:	Return the numerator, including sign.
-@LONGDESC:
+@LONGDESC:	Returns the top number in the rational number fraction.
+		If the rational number is negative, then the returned
+		numerator value will also be negative.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION:	Get the numerator of a negative rational number.
+
 @BRIEFCODE:
+var rn = new RationalNumber('-4/5');
+var numerator = rn.getNumerator();
+
 @LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber('-4/5');
+var numerator = rn.getNumerator();
+console.log('Value of number:', rn.toString());
+console.log('Numerator of rational number:', numerator);
+
 @LONGOUTPUT:
+Value of number: -4/5
+Numerator of rational number: -4
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

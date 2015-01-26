@@ -2,19 +2,38 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	getSign
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
-@SHORTDESC:	returns +1 if positive, -1 if negative.
-@LONGDESC:
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@SEEALSO:	setSign
+@SEEALSO:	isPositive
+@SEEALSO:	isNegative
+@SHORTDESC:	Returns -1 if negative, +1 otherwise.
+@LONGDESC:	If the rational number is negative, return &ndash;1.  If the
+		rational number is any other type of number (including 0,
+		+Infinity, and NaN), then +1 will be returned.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+@DESCRIPTION: Get the sign of a negative number.
+
 @BRIEFCODE:
+var rn = new RationalNumber(-23);
+var sign = rn.getSign();
+
 @LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber(-23);
+var sign = rn.getSign();
+console.log('Value of number:', rn.toString());
+console.log('Sign of rational number:', sign);
+
 @LONGOUTPUT:
+Value of number: -23
+Sign of rational number: -1
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

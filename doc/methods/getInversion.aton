@@ -2,19 +2,38 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	getInversion
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
-@SHORTDESC:	Return new RationalNumber which is reciprocal of the called object.
-@LONGDESC:
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@SEEALSO:	invert
+@ALIAS:		inversion
+@SHORTDESC:	Return a reciprocal copy of called object.
+@LONGDESC:	Returns a reciprocal copy of a RationalNumber.  The
+		original number is not altered.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+@DESCRIPTION: Get the reciprocal of a number.
+
 @BRIEFCODE:
+var rn = new RationalNumber('3/7');
+var rn2 = rn.getInversion();
+
 @LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber('3/7');
+console.log('Value of original number before .getInversion():', rn.toString());
+var rn2 = rn.getInversion();
+console.log('Value of second number:', rn2.toString());
+console.log('Value of original number after .getInversion():', rn.toString());
+
 @LONGOUTPUT:
+Value of original number before .getInversion(): 3/7
+Value of second number: 7/3
+Value of original number after .getInversion(): 3/7
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

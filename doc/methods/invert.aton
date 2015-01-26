@@ -2,19 +2,38 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	invert
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@SEEALSO:	getInversion
 @SHORTDESC:	Switch the numerator and denominator.
-@LONGDESC:
+@LONGDESC:	The numerator and denominator of the Rational number
+		switch places.  The sign of the number remains the same.
+		This function alters the content of the calling object.
+		See getInversion to get an inverted copy of the number.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Invert a number.
+
 @BRIEFCODE:
+var rn = new RationalNumber('2/3');
+rn.invert();
+
 @LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber('2/3');
+console.log('Value of number before .invert():', rn.toString());
+rn.invert();
+console.log('Value of number after .invert():', rn.toString());
+
 @LONGOUTPUT:
+Value of number before .invert(): 2/3
+Value of number after .invert(): 3/2
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

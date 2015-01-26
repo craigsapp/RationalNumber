@@ -2,24 +2,9 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	inversion
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
-@SHORTDESC:	Alias for getInversion().
-@LONGDESC:
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@BEGIN: EXAMPLE
-@DESCRIPTION:
-@BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
-@@END:	EXAMPLE
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@END:	FunctionDocumentation
+@ALIASOF:	getInversion
+@SHORTDESC:	Alias for getInversion method.
+@@END:		FunctionDocumentation
 
 
 
