@@ -64,7 +64,7 @@ sub getDescription {
       die "Description for $id is empty.\n";
    }
    my $output;
-   $output = "<span style=\"padding-left:20px; font-weight:900\">$id</span>";
+   $output = "<span style=\"padding-left:19px; font-weight:900\">$id</span>";
    $output .= " &mdash; ";
    $output .= $description;
    return $output;
