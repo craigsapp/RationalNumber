@@ -1,7 +1,7 @@
 #
 # Programmer:	 Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Sat Jan  3 08:37:40 PST 2015
-# Last Modified: Wed Jan  7 00:16:04 PST 2015
+# Last Modified: Sun Jan 25 20:03:01 PST 2015
 # Filename:      .../lib/Makefile
 # Syntax:        GNU Makefile
 #
@@ -30,15 +30,18 @@ ifeq (,$(wildcard $(MINIFY)))
 	MINIFY = minify
 endif
 
-min: RationalNumber-base RationalNumber-math
+min: RationalNumber-base RationalNumber-math combine
 
 RationalNumber-base:
-	$(MINIFY) RationalNumber-base.js --no-comments \
-		-o RationalNumber-base-$(VERSION).min.js
+	$(MINIFY) RationalNumber-base.js > RationalNumber-base-$(VERSION).min.js
 
 RationalNumber-math:
-	$(MINIFY) RationalNumber-math.js --no-comments \
-		-o RationalNumber-math-$(VERSION).min.js
+	$(MINIFY) RationalNumber-math.js > RationalNumber-math-$(VERSION).min.js
+
+combine:
+	cat RationalNumber-base-$(VERSION).min.js \
+		RationalNumber-math-$(VERSION).min.js \
+		> RationalNumber-$(VERSION).min.js
 
 clean:
 	rm *.min.js
