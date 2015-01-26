@@ -4,6 +4,7 @@
 @METHOD:	fromString
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Read number from string.
 @LONGDESC:

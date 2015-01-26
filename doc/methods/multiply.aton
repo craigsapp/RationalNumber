@@ -4,6 +4,7 @@
 @METHOD:	multiply
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Similar to multiplyTo(), but returns result rather than altering calling object.
 @LONGDESC:

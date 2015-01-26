@@ -4,6 +4,7 @@
 @METHOD:	isNan
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Returns true if equal to 0/0.
 @LONGDESC:

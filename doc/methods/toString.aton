@@ -4,6 +4,7 @@
 @METHOD:	toString
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
 @SEEALSO:	toStringMixed
 @SHORTDESC:	Convert to a string in the form "n/d".
 @LONGDESC:	Returns a string in the form of "numerator/denominator".

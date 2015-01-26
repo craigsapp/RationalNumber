@@ -2,7 +2,22 @@
 layout: index
 ---
 
+{% include method-doc.html %}
 
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+	var docslots = document.querySelectorAll(".docslot");
+	var source   = document.getElementById("method-doc").textContent;
+	var template = Handlebars.compile(source);
+	for (var i=0; i<docslots.length; i++) {
+		insertDocumentation(docslots[i], template);
+	}
+});
+
+</script>
+
+<!-- BEGINNING OF TEXT --------------------------------------- -->
 
 
 
@@ -126,70 +141,23 @@ $ cd test; mocha
 ```
 
 
+<a name=doc> </a>
+## RationalNumber methods
 
-## Function list
+Click on the function names to view documentation and examples for each
+method.  Example code can be run in the JavaScript console for this
+page since this page has loaded a copy of the RationalNumber code.
 
-Here is a brief description of the function prototypes provided in
-the RationalNumber class:
+{% include method-list-1.html %}
 
-* **setSign** &mdash; Set the sign to positive or negative.
-* **getSign** &mdash; returns +1 if positive, -1 if negative.
-* **getNumerator** &mdash; Return the numerator, including sign.
-* **getNumeratorAbsoluteValue** &mdash; Return the numerator, excluding sign.
-* **getDenominator** &mdash; Return the denominator (always positive).
-* **setNumeratorNoReduce** &mdash; Set the numerator but don't reduce fraction.
-* **setNumerator** &mdash; Set the numerator, reducing if necessary.
-* **setNumeratorAbsoluteValueNoReduce** &mdash; Sets the numerator, but does not try to reduce or change the sign of the current value.
-* **setDenominatorAbsoluteValue** &mdash; Set the denominator (sign ignored).
-* **setDenominatorAbsoluveValueNoReduce** &mdash; Set denominator, not trying to reduce.
-* **reduce** &mdash; Reduce the fraction if needed.
-* **setValue** &mdash; Set the numerator and denominator (sign can be on either or both).
-* **setValueNoReduce** &mdash; Set the numerator and denominator, but don't try to reduce.
-* **isSafe** &mdash; Numerator and denominator less than 2^53.
-* **isNan** &mdash; Returns true equal to 0/0.
-* **isInfinite** &mdash; Returns true if denominator is 0 and numerator is not.
-* **isValid** &mdash; Returns true if safe, finite and not NaN.
-* **checkOverflow** &mdash; Same as isSafe(), but throws an error.
-* **checkOverflowOn** &mdash; Force validity check for overflows.
-* **checkOverflowOff** &mdash; Turn off overflow validity checks.
-* **toFloat** &mdash; Alias for valueOf().
-* **toNumber** &mdash; Alias for valueOf().
-* **valueOf** &mdash; Return the floating-point version of fraction.
-* **toString** &mdash; Convert to a string in the form "n/d".
-* **toStringMixed** &mdash; Return a string as a mixed fraction.
-* **toJSON** &mdash; Create a JSON string.
-* **toFloatJSON** &mdash; Create a float/fractional remainder JSON string.
-* **toFloatArray** &mdash; Create a float/fractional remainder Array.
-* **fromString** &mdash; Read number from string.
-* **fromStringNoReduce** &mdash; Read number from string without reducing.
-* **parseString** &mdash; same as fromString(), but returns a new RationalNumber rather than changing current object.
-* **clone** &mdash; Make a new copy of the RationalNumber.
-* **copy** &mdash; Copy internal contents from another RationalNumber.
-* **isEqual** &mdash; returns true if the sign, numerator and denominator are the same as another rational number.
-* **isPositive** &mdash; Returns true if larger than 0.
-* **isNegative** &mdash; Returns true if smaller than 0.
-* **isInteger** &mdash; Returns true if denominator is 1.
+<span style="height:30px;">&nbsp;</span>
 
 ### Additional functions
 
 The following RationalNumber methods provide additional arithmetic
 processing from the optional [RationalNumber-math.js](https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-math.js) file:
 
-* **abs** &mdash; Return a copy of the RationalNumber which is non-negative.
-* **invert** &mdash; Switch the numerator and denominator.
-* **inversion** &mdash; Alias for getInversion().
-* **getInversion** &mdash; Return new RationalNumber which is reciprocal of the called object.
-* **negate** &mdash; Make positive values negative and vice-versa.
-* **negation** &mdash; Alias of getNegation().
-* **getNegation** &mdash; Return a copy of the object, with sign reversed.
-* **addTo** &mdash; To this RationalNumber, add additional numbers.
-* **add** &mdash; Similar to addTo(), but returns sum rather than altering contents.
-* **subtractTo** &mdash; To this RationalNumber, subtract values.
-* **subtract** &mdash; Similar to subtractTo(), but returns result rather than altering calling object.
-* **multiplyTo** &mdash; To this RationalNumber, multiply values.
-* **multiply** &mdash; Similar to multiplyTo(), but returns result rather than altering calling object.
-* **divideTo** &mdash; To this RationalNumber, divide values.
-* **divide** &mdash; Similar to divideTo(), but returns result rather than altering calling object.
+{% include method-list-2.html %}
 
 
 

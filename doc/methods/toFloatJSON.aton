@@ -2,19 +2,55 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	toFloatJSON
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	float_key?: string, numerator_key?: string, 
+		denominator_key?: string
+@PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
+@SEEALSO:	toJSON
+@SEEALSO:	toFloatArray
 @SHORTDESC:	Create a float/fractional remainder JSON string.
-@LONGDESC:
+@LONGDESC:	Return a JSON string in the form:
+		<tt>{ "f":#, "n":#, "d":#}</tt> where "f" is the
+		floating-point version of the RationalNumber (or
+		+/&ndash;Infinity or NaN, "n" is the numerator of the
+		mixed fraction numerator, and "d" is the denominator
+		of the mixed fraction denominator.  In other words,
+		the "n" and "d" values are the RationalNumber
+		equivalent to the fractional part of "f".  If the
+		floating-point value is an integer, which means
+		that the mixed fraction numerator is 0 (and denominator
+		is 1), then they are not included.  The "f", "n",
+		and "d" property names can be changed with the
+		optional parameters.
+			
+		<p style="margin-bottom:0;"> Examples:
+		<ul style="margin-top:0; margin-bottom:0;">
+		<li><tt>7/2 =>   {"f":3.5, "n":1, "d":2}</tt>
+		<li><tt>4/3 =>   {"f":1.33333333333, "n":1, "d":3}</tt>
+		<li><tt>-11/5 =>   {"f":-2.2, "n":1, "d":5}</tt>
+		<li><tt>100 =>   {"f":100}</tt>
+		</ul>
+
+		<p> When JavaScript 1.6 is ubiquitous, input parameters
+		will be allowed in any order.
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Create a JSON string with both floating-point value and rational
+		numerator and denominator.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+rn = new RationalNumber('7/2');
+rn.toFloatJSON();
+rn.toFloatJSON('float', 'numerator', 'denominator');
+
+@BRIEFOUTPUT:
+'{"f":3.5, "n":1, "d":2}'
+'{"float":3.5, "numerator":1, "denominator":2}'
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

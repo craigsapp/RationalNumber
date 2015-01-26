@@ -2,19 +2,35 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	toJSON
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	numerator_key?: string, denominator_key?: string
+@PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
+@SEEALSO:	toFloatJSON
 @SHORTDESC:	Create a JSON string.
-@LONGDESC:
+@LONGDESC: 	Return a JSON string in the form:
+		<tt>{"n":#,"d":#}</tt>
+		where "n" is the numerator property name and "d"
+		is the denominator property name.  If the denominator
+		is 1, then it is not included.  The "n" and "d"
+		property names can be changed with the optional
+		parameters.
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Create a JSON string with different numerator and denominator property names.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('-3/56');
+rn.toJSON();
+rn.toJSON('numerator', 'denominator');
+
+@BRIEFOUTPUT:
+"{"n":-3, "d":56}"
+"{"numerator":-3, "denominator":56}"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

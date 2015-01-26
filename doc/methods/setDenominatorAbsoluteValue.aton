@@ -4,6 +4,7 @@
 @METHOD:	setDenominatorAbsoluteValue
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Set the denominator (sign ignored).
 @LONGDESC:

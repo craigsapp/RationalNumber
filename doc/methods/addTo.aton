@@ -4,6 +4,7 @@
 @METHOD:	addTo
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	To this RationalNumber, add additional numbers.
 @LONGDESC:

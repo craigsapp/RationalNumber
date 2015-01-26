@@ -4,6 +4,7 @@
 @METHOD:	setNumeratorAbsoluteValueNoReduce
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Sets the numerator, but does not try to reduce or change the sign of the current value.
 @LONGDESC:

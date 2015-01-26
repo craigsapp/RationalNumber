@@ -4,6 +4,7 @@
 @METHOD:	negate
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Make positive values negative and vice-versa.
 @LONGDESC:

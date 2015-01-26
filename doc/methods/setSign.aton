@@ -6,6 +6,7 @@
 @PARAMETERS:	RationalNumber
 @PARAMETERS:	String
 @PROTOTYPE:	true
+@FILE:		RationalNumber-base.js
 @SEEALSO:	getSign, negate
 @SHORTDESC:	Set the sign to positive or negative.
 @LONGDESC:

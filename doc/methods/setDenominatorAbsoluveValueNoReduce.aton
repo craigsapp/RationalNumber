@@ -4,6 +4,7 @@
 @METHOD:	setDenominatorAbsoluveValueNoReduce
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Set denominator, not trying to reduce.
 @LONGDESC:

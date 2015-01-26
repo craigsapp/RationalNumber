@@ -4,9 +4,10 @@
 @METHOD:	getNumerator
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
 @SEEALSO:	getNumeratorAbsoluteValue
 @SHORTDESC:	Return the numerator, including sign.
-@LONGDESC:	Returns the top number in the rational number fraction.
+@LONGDESC:	Returns the top number in a rational number fraction.
 		If the rational number is negative, then the returned
 		numerator value will also be negative.
 

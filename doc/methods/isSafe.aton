@@ -4,6 +4,7 @@
 @METHOD:	isSafe
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Numerator and denominator less than 2^53.
 @LONGDESC:

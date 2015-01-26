@@ -4,6 +4,7 @@
 @METHOD:	toStringMixed
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Return a string as a mixed fraction.
 @LONGDESC:

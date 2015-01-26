@@ -4,6 +4,7 @@
 @METHOD:	reduce
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Reduce the fraction if needed.
 @LONGDESC:

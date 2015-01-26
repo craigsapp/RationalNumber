@@ -4,6 +4,7 @@
 @METHOD:	invert
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-math.js
 @SEEALSO:	getInversion
 @SHORTDESC:	Switch the numerator and denominator.
 @LONGDESC:	The numerator and denominator of the Rational number

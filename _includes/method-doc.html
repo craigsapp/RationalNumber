@@ -42,6 +42,7 @@ summary {
 			</summary>
 			<div style="margin-left:40px;">
 				{{{LONGDESC}}}
+				{{{codeLink METHOD FILE}}}
 				{{{showExamples EXAMPLE}}}
 			</div>
 		</details>
@@ -98,6 +99,30 @@ summary {
 // Handlebars helper functions
 //
 
+
+Handlebars.registerHelper('codeLink', function (method, file) {
+	if (typeof method === 'undefined') { return '' }
+	if (typeof file   === 'undefined') { return '' }
+
+   var output = '<details><summary>';
+	output += "<a href=https://sourcegraph.com/github.com/craigsapp/";
+	output += 'RationalNumber@master/.CommonJSPackage/rational-number/';
+
+   if (file === 'RationalNumber-base.js') {
+		output += '.def/commonjs/lib/RationalNumber-base.js/-/prototype/';
+	} else if (file === 'RationalNumber-math.js') {
+		output += '/.def/commonjs/index.js/-/prototype/';
+	} else {
+		return '';
+	}
+	output += method;
+	output += ">View code on Sourcegraph</a>";
+   output += "</summary></details>\n";
+   return output;
+});
+
+
+
 Handlebars.registerHelper('showExamples', function (entry) {
 	if (typeof entry === 'undefined') {
 		return 'empty';
@@ -111,7 +136,7 @@ Handlebars.registerHelper('showExamples', function (entry) {
 
 	var output = '';
 	if (entry instanceof Array) {
-		output += '<br><span style="font-weight:700">Examples</span>';
+		output += '<span style="font-weight:700">Examples</span>';
 		output += '<span';
 		output += ' class="example-button"';
 		output += ' onclick="expandAllExamples(this);">'
@@ -138,6 +163,9 @@ Handlebars.registerHelper('showExamples', function (entry) {
 
 	return output;
 });
+
+
+
 
 </script>
 

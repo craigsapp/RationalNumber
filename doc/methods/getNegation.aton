@@ -4,6 +4,7 @@
 @METHOD:	getNegation
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Return a copy of the object, with sign reversed.
 @LONGDESC:

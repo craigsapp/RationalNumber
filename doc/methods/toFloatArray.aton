@@ -4,6 +4,7 @@
 @METHOD:	toFloatArray
 @PARAMETERS:	boolean
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
 @SEEALSO:	valueOf
 @SHORTDESC:	Create a float/fractional remainder Array.
 @LONGDESC:	This method generates a floating-point value for the
@@ -59,7 +60,7 @@
 		two integers representing ".0" are not included.
 
 		<p> In the future, the output from toFloatArray will inherit
-		from RationalNumber to that rationalNumber arithmetic can be
+		from RationalNumber so that RationalNumber arithmetic can be
 		performed on the arrays.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

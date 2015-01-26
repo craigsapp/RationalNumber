@@ -4,6 +4,7 @@
 @METHOD:	abs
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-math.js
 @SEEALSO:	setSign
 @SHORTDESC:	Return non-negative copy of the rational number.
 @LONGDESC:	Return a new RationalNumber which is a non-negative 

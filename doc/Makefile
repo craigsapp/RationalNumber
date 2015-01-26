@@ -9,7 +9,15 @@
 #
 
 
-all:
-	./insertDescriptions index.md methods > temp.md
-	mv temp.md index.md
+all: list1 list2
+
+list1:
+	../_includes/insertDescriptions ../_includes/method-list-1.html \
+		methods > temp.html && mv temp.html \
+		../_includes/method-list-1.html
+
+list2:
+	../_includes/insertDescriptions ../_includes/method-list-2.html \
+		methods > temp.html && mv temp.html \
+		../_includes/method-list-2.html
 

@@ -4,6 +4,7 @@
 @METHOD:	setNumeratorNoReduce
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Set the numerator but don't reduce fraction.
 @LONGDESC:

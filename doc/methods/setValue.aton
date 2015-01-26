@@ -4,6 +4,7 @@
 @METHOD:	setValue
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Set the numerator and denominator (sign can be on either or both).
 @LONGDESC:

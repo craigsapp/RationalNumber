@@ -4,6 +4,7 @@
 @METHOD:	subtract
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Similar to subtractTo(), but returns result rather than altering calling object.
 @LONGDESC:

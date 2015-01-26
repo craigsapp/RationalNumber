@@ -4,6 +4,7 @@
 @METHOD:	getNumeratorAbsoluteValue
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	getNumerator
 @SHORTDESC:	Return the numerator, excluding sign.
 @LONGDESC:	Similar to getNumerator method, but always returns

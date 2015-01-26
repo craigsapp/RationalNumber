@@ -4,11 +4,12 @@
 @METHOD:	clone
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
 @SEEALSO:	copy
 @SHORTDESC:	Make a new copy of the RationalNumber.
 @LONGDESC:	Creates a new copy of the called RationalNumber.  This
 		method is useful if you need to keep the original value
-		and be able to modify the copy.
+		and be able to modify a copy of it.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

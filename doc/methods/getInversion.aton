@@ -4,6 +4,7 @@
 @METHOD:	getInversion
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-math.js
 @SEEALSO:	invert
 @ALIAS:		inversion
 @SHORTDESC:	Return a reciprocal copy of called object.

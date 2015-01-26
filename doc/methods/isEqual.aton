@@ -4,6 +4,7 @@
 @METHOD:	isEqual
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	returns true if the sign, numerator and denominator are the same as another rational number.
 @LONGDESC:

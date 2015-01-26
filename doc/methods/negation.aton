@@ -4,6 +4,7 @@
 @METHOD:	negation
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Alias of getNegation method.
 @LONGDESC:

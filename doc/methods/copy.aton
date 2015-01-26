@@ -4,6 +4,7 @@
 @METHOD:	copy
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Copy internal contents from another RationalNumber.
 @LONGDESC:

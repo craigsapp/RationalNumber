@@ -2,19 +2,46 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	setValueNoReduce
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	numerator: Integer, denominator?: Integer
+@PARAMETERS:	RationalNumber
+@PARAMETERS:	String
+@PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
+@SEEALSO:	setValue
 @SHORTDESC:	Set the numerator and denominator, but don't try to reduce.
-@LONGDESC:
+@LONGDESC:      Set the numerator and denominator at the same time,
+		but do not try to reduce the fraction.  Either or both
+		of the numerator and denominator can be negative.
+		If both are negative, then the final number will
+		be positive.  Also, another RationalNumber can be
+		used to set the value of the object as well as a 
+		string representation of a rational number (either
+		in plain or mixed form).
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Create an unreduced fraction with various input types.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber();
+var rn2 = new RationalNumber();
+rn.setValueNoReduce(2, 4).toString();
+rn.setValueNoReduce('2/4').toString();
+rn2.setValueNoReduce(rn).toString();
+rn2.setValue(rn).toString();
+rn3 = new RationalNumber();
+rn3.setValue(rn).toString();
+
+
+@BRIEFOUTPUT:
+"2/4"
+"2/4"
+"2/4"
+"1/2"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

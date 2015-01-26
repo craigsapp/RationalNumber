@@ -4,6 +4,7 @@
 @METHOD:	checkOverflow
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Same as isSafe(), but throws an error.
 @LONGDESC:

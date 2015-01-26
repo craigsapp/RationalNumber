@@ -4,6 +4,7 @@
 @METHOD:	isPositive
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Returns true if larger than 0.
 @LONGDESC:

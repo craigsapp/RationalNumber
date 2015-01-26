@@ -4,6 +4,7 @@
 @METHOD:	isValid
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Returns true if safe, finite and not NaN.
 @LONGDESC:

@@ -4,6 +4,7 @@
 @METHOD:	fromStringNoReduce
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Read number from string without reducing.
 @LONGDESC:

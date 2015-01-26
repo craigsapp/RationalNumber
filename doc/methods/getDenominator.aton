@@ -2,19 +2,45 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	getDenominator
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
+@SEEALSO:	getNumerator
 @SHORTDESC:	Return the denominator (always positive).
-@LONGDESC:
+@LONGDESC:	Returns the bottom number in a rational number fraction.
+		If the rational number is negative, then the returned
+		denominator value will be positive, as sign will be
+		associated with numerator in the getNumerator method.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Get the denominator of a rational number.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('44/31');
+rn.getDenominator();
+
+@BRIEFOUTPUT:
+31
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Get the denominator of a negative rational number.
+
+@BRIEFCODE:
+var rn = new RationalNumber('-44/31');
+rn.getDenominator();
+
+@BRIEFOUTPUT:
+31
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

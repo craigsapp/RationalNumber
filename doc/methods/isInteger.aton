@@ -4,6 +4,7 @@
 @METHOD:	isInteger
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Returns true if denominator is 1.
 @LONGDESC:

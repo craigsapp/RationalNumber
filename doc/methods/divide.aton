@@ -4,6 +4,7 @@
 @METHOD:	divide
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Similar to divideTo(), but returns result rather than altering calling object.
 @LONGDESC:

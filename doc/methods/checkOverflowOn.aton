@@ -4,6 +4,7 @@
 @METHOD:	checkOverflowOn
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Force validity check for overflows.
 @LONGDESC:

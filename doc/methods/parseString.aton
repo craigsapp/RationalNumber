@@ -4,6 +4,7 @@
 @METHOD:	parseString
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	same as fromString(), but returns a new RationalNumber rather than changing current object.
 @LONGDESC:

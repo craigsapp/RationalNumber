@@ -4,6 +4,7 @@
 @METHOD:	isInfinite
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Returns true if denominator is 0 and numerator is not.
 @LONGDESC:

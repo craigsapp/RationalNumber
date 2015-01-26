@@ -4,6 +4,7 @@
 @METHOD:	valueOf
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
 @SEEALSO:	toString
 @SHORTDESC:	Return a floating-point copy of the rational number.
 @LONGDESC:      Converts the rational number into a floating-point

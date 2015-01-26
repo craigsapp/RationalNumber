@@ -4,10 +4,11 @@
 @METHOD:	getSign
 @PARAMETERS:	none
 @PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
 @SEEALSO:	setSign
 @SEEALSO:	isPositive
 @SEEALSO:	isNegative
-@SHORTDESC:	Returns -1 if negative, +1 otherwise.
+@SHORTDESC:	Returns &ndash;1 if negative, +1 otherwise.
 @LONGDESC:	If the rational number is negative, return &ndash;1.  If the
 		rational number is any other type of number (including 0,
 		+Infinity, and NaN), then +1 will be returned.

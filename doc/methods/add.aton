@@ -4,6 +4,7 @@
 @METHOD:	add
 @PARAMETERS:	
 @PROTOTYPE:	
+@FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Similar to addTo(), but returns sum rather than altering contents.
 @LONGDESC:
