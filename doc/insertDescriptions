@@ -2,7 +2,7 @@
 #
 # Programmer:    Craig Stuart Sapp <craig.stanford.edu>
 # Creation Date: Sun Jan 25 05:33:38 PST 2015
-# Last Modified: Sun Jan 25 05:53:24 PST 2015
+# Last Modified: Sun Jan 25 23:02:23 PST 2015
 # Filename:      doc/insertDescriptions
 # Syntax:        perl 5
 # vim:           ts=3 expandtab
@@ -35,7 +35,7 @@ foreach my $line (@contents) {
    }
    my $id = $1;
    my $newdesc = getDescription($id, $srcdir);
-   if ($line =~ /^\s*(<div.*class.*docslot.*id[^>]*>)(.*)<\/div>\s*$/) {
+   if ($line =~ /^\s*(<div[^>]*class[^>]*docslot[^>]*id[^>]*>)(.*)<\/div>\s*$/) {
       my $div = $1;
       print "$div$newdesc</div>\n";
    } else {

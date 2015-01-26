@@ -48,7 +48,7 @@ this page and try out the examples found in the documentation.
 <div class="docslot" id="isSafe"><span style="padding-left:20px; font-weight:900">isSafe</span> &mdash; Numerator and denominator less than 2^53.</div>
 <div class="docslot" id="isNan"><span style="padding-left:20px; font-weight:900">isNan</span> &mdash; Returns true if equal to 0/0.</div>
 <div class="docslot" id="isInfinite"><span style="padding-left:20px; font-weight:900">isInfinite</span> &mdash; Returns true if denominator is 0 and numerator is not.</div>
-<div class="docslot" id="isValid"><span style="padding-left:20px; font-weight:900">isValid</span><span style="padding-left:20px; font-weight:900">isValid</span><span style="padding-left:20px; font-weight:900">isValid</span><span style="padding-left:20px; font-weight:900">isValid</span><span style="padding-left:20px; font-weight:900">isValid</span> &mdash; Returns true if safe, finite and not NaN.</div>
+<div class="docslot" id="isValid"><span style="padding-left:20px; font-weight:900">isValid</span> &mdash; Returns true if safe, finite and not NaN.</div>
 <div class="docslot" id="checkOverflow"><span style="padding-left:20px; font-weight:900">checkOverflow</span> &mdash; Same as isSafe(), but throws an error.</div>
 <div class="docslot" id="checkOverflowOn"><span style="padding-left:20px; font-weight:900">checkOverflowOn</span> &mdash; Force validity check for overflows.</div>
 <div class="docslot" id="checkOverflowOff"><span style="padding-left:20px; font-weight:900">checkOverflowOff</span> &mdash; Turn off overflow validity checks.</div>
@@ -90,8 +90,8 @@ processing from the optional <a href=https://github.com/craigsapp/RationalNumber
 <div class="docslot" id="subtract"><span style="padding-left:20px; font-weight:900">subtract</span> &mdash; Similar to subtractTo(), but returns result rather than altering calling object.</div>
 <div class="docslot" id="multiplyTo"><span style="padding-left:20px; font-weight:900">multiplyTo</span> &mdash; To this RationalNumber, multiply values.</div>
 <div class="docslot" id="multiply"><span style="padding-left:20px; font-weight:900">multiply</span> &mdash; Similar to multiplyTo(), but returns result rather than altering calling object.</div>
-<div class="docslot" id="divideTo"><span style="padding-left:20px; font-weight:900">divideTo</span><span style="padding-left:20px; font-weight:900">divideTo</span><span style="padding-left:20px; font-weight:900">divideTo</span><span style="padding-left:20px; font-weight:900">divideTo</span><span style="padding-left:20px; font-weight:900">divideTo</span> &mdash; To this RationalNumber, divide values.</div>
-<div class="docslot" id="divide"><span style="padding-left:20px; font-weight:900">divide</span><span style="padding-left:20px; font-weight:900">divide</span><span style="padding-left:20px; font-weight:900">divide</span><span style="padding-left:20px; font-weight:900">divide</span><span style="padding-left:20px; font-weight:900">divide</span> &mdash; Similar to divideTo(), but returns result rather than altering calling object.</div>
+<div class="docslot" id="divideTo"><span style="padding-left:20px; font-weight:900">divideTo</span> &mdash; To this RationalNumber, divide values.</div>
+<div class="docslot" id="divide"><span style="padding-left:20px; font-weight:900">divide</span> &mdash; Similar to divideTo(), but returns result rather than altering calling object.</div>
 
 
 
