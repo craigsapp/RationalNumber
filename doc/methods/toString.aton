@@ -2,24 +2,132 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	toString
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@SEEALSO:	toStringMixed
 @SHORTDESC:	Convert to a string in the form "n/d".
-@LONGDESC:
+@LONGDESC:	Returns a string in the form of "numerator/denominator".
+		If the denominator is 1, then it will not be placed in the
+		output string, nor the slash normally placed between the
+		numerator and denominator.  For Infinity or -Infinity, 
+		toString method will print 1/0 and -1/0, which is the internal
+		representation for these numbers.  NaN will be printed
+		as 0/0.  The toStringMixed method will instead output
+		"Infinity", "-Infinity", and "NaN" for these values.  The
+		output from the toString method can be used as an input
+		to create another RationalNumber via the constructor function,
+		or as input to the setValue method.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Convert a RationalNumber into a String.
+
 @BRIEFCODE:
+var rn = new RationalNumber(4, 11);
+rn.toString();
+
+@BRIEFOUTPUT:
+"4/11"
+
 @LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber(4, 11);
+console.log("RationalNumber(4, 11) == ", rn.toString());
+
 @LONGOUTPUT:
+RationalNumber(4, 11) ==  4/11
+
 @@END:	EXAMPLE
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Convert a RationalNumber to a String and use it to set another RationalNumber value.
+
+@BRIEFCODE:
+var rn = new RationalNumber(4, 11);
+var rn2 = new RationalNumber(rn.toString());
+rn2.toString();
+
+@BRIEFOUTPUT:
+"4/11"
+
+@LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber(4, 11);
+var rn2 = new RationalNumber(rn.toString());
+console.log("rn =", rn.toString(), " rn2 =", rn2.toString());
+
+@LONGOUTPUT:
+rn = 4/11  rn2 = 4/11
+
+@@END:	EXAMPLE
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Print toString versions of Infinity, -Infinity and NaN.
+
+@BRIEFCODE:
+new RationalNumber(1,0).toString();
+new RationalNumber(-1,0).toString();
+new RationalNumber(0,0).toString();
+
+@BRIEFOUTPUT:
+"1/0"
+"-1/0"
+"0/0"
+
+@LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var infinity = new RationalNumber(1,0);
+var ninfinity = new RationalNumber(-1,0);
+var nan = new RationalNumber(0,0);
+console.log("Infinity =", infinity.toString());
+console.log("-Infinity =", ninfinity.toString());
+console.log("NaN =", nan.toString());
+
+@LONGOUTPUT:
+Infinity = 1/0
+-Infinity = -1/0
+NaN = 0/0
+
+@@END:	EXAMPLE
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Loading from "Infinity", "-Infinity" and "NaN" strings.
+
+@BRIEFCODE:
+new RationalNumber("Infinity").toString();
+new RationalNumber("-Infinity").toString();
+new RationalNumber("NaN").toString();
+
+@BRIEFOUTPUT:
+"1/0"
+"-1/0"
+"0/0"
+
+@@END:	EXAMPLE
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@END:	FunctionDocumentation
-
 
 

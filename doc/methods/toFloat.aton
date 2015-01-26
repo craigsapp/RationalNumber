@@ -2,24 +2,7 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	toFloat
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
-@SHORTDESC:	Alias for valueOf().
-@LONGDESC:
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@BEGIN: EXAMPLE
-@DESCRIPTION:
-@BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
-@@END:	EXAMPLE
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@END:	FunctionDocumentation
-
-
+@ALIASOF:	valueOf
+@SHORTDESC:	Alias for valueOf method.
+@@END:		FunctionDocumentation
 

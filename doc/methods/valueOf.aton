@@ -2,19 +2,74 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	valueOf
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
-@SHORTDESC:	Return the floating-point version of fraction.
-@LONGDESC:
+@PARAMETERS:	none
+@PROTOTYPE:	yes
+@SEEALSO:	toString
+@SHORTDESC:	Return a floating-point copy of the rational number.
+@LONGDESC:      Converts the rational number into a floating-point
+		number.  The calling object is not changed, and a
+		new Number object is created.  valueOf() is a
+		standard JavaScript Object prototype which is used
+		to convert objects into the Number type.  For example
+		this is used to automatically coerce objects into
+		numbers when adding to other numbers.
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION:	Print the rational and floating-point forms of a fraction.
+
 @BRIEFCODE:
+var rn = new RationalNumber('15/16');
+console.log(rn.toString(), '=', rn.valueOf());
+
+@BRIEFOUTPUT:
+15/16 = 0.9375
+
 @LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber('15/16');
+console.log(rn.toString(), '=', rn.valueOf());
+
 @LONGOUTPUT:
+15/16 = 0.9375
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION:	Add a RationalNumber object to a Number, using an implicit
+		call to valueOf().
+
+@BRIEFCODE:
+var rn = new RationalNumber('1/2');
+5 + rn
+rn + 3
+
+@BRIEFOUTPUT:
+5.5
+3.5
+
+@LONGCODE:
+<<node>>
+var RationalNumber = require('rational-number');
+<</node>>
+var rn = new RationalNumber('1/2');
+var result1 = 5 + rn;
+var result2 = rn + 3;
+console.log("5 + rn =", result1);
+console.log("rn + 3 =", result2);
+
+@LONGOUTPUT:
+5 + rn = 5.5
+rn + 3 = 3.5
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -2,19 +2,78 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	toFloatArray
-@PARAMETERS:	
-@PROTOTYPE:	
-@SEEALSO:	
+@PARAMETERS:	boolean
+@PROTOTYPE:	yes
+@SEEALSO:	valueOf
 @SHORTDESC:	Create a float/fractional remainder Array.
-@LONGDESC:
+@LONGDESC:	This method generates a floating-point value for the
+		rational number, but also preserves the fractional
+		part of the number as the option second and third values
+		in the returned array.  The toFloatArray method
+		accepts one boolean parameter (<i>expand</i>) which
+		is used to either suppress the second and third
+		numbers when the RationalNumber is an integer, or
+		always include these number if the input is true.
+
+		<p> Here are some examples with the input is true
+		or false (the default):
+
+		<p>
+		<table>
+
+		<tr>
+		<td> Rational number </td>
+		<td> <i>expand</i> argument is truthy </td>
+		<td> <i>expand</i> argument is falsy </td>
+		</tr>
+
+		<tr>
+		<td> 7/2 </td>
+		<td> [3.5, 1, 2] </td>
+		<td> [3.5, 1, 2] </td>
+		</tr>
+
+		<tr>
+		<td> 4/3 </td>
+		<td> [1.33333333333, 1, 3] </td>
+		<td> [1.33333333333, 1, 3] </td>
+		</tr>
+
+		<tr>
+		<td> -11/5 </td>
+		<td> [-2.2, 1, 5] </td>
+		<td> [-2.2, 1, 5] </td>
+		</tr>
+
+		<tr>
+		<td> 100 </td>
+		<td> [100] </td>
+		<td> [100, 0, 1] </td>
+		</tr>
+
+		</table>
+
+		<p>
+		Notice for the last example when converting 100/1, the
+		fractional part is 0, so when <i>expand</i> is true, the
+		two integers representing ".0" are not included.
+
+		<p> In the future, the output from toFloatArray will inherit
+		from RationalNumber to that rationalNumber arithmetic can be
+		performed on the arrays.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Create a float array number from "13/11".
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+new RationalNumber(13,11).toFloatArray();
+
+@BRIEFOUTPUT:
+[1.1818181818181819, 2, 11]
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
