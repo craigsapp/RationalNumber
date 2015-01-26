@@ -18,22 +18,22 @@
 @DESCRIPTION:	Get the absolute value of a RationalNumber.
 
 @BRIEFCODE:
-rn.setValue(-1,2);
+var rn = new RationalNumber('-1/2')
 var rn2 = rn.abs();
 
 @LONGCODE:
 <<node>>
 var RationalNumber = require('rational-number');
 <</node>>
-var rn = RationalNumber('-1/2');
+var rn = new RationalNumber('-1/2');
 console.log('Value of number before .abs():', rn.toString());
 var rn2 = rn.abs();
 console.log('Value of second number:', rn2.toString());
 console.log('Value of original number after .abs():', rn.toString());
 
 @LONGOUTPUT:
-Value of original number before .abs(): -1/2
-Value of absoulte value number: 1/2
+Value of number before .abs(): -1/2
+Value of second number: 1/2
 Value of original number after .abs(): -1/2
 
 
