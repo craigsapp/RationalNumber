@@ -68,21 +68,6 @@ rn.setValue('-6/-12').toString();
 
 @@BEGIN: EXAMPLE
 
-@DESCRIPTION: Set the number with a string argument.
-
-@BRIEFCODE:
-var rn = new RationalNumber();
-rn.setValue('-6/-12').toString();
-
-@BRIEFOUTPUT:
-"1/2"
-
-@@END:	EXAMPLE
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@BEGIN: EXAMPLE
-
 @DESCRIPTION: Set the number with another rational number.
 
 @BRIEFCODE:
