@@ -10,6 +10,19 @@ summary {
 	outline:none;
 }
 
+.example-output {
+	padding-left:5px; 
+	margin-right:-20px !important;
+	background: #888888; /* Old browsers */
+	background: -moz-linear-gradient(left,  #888888 0%, #888888 3%, #3a3c42 91%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#888888), color-stop(3%,#888888), color-stop(91%,#3a3c42)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* IE10+ */
+	background: linear-gradient(to right,  #888888 0%,#888888 3%,#3a3c42 91%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
+}
+
 .example-button {
 	/* the button used to expand/collapse example code sections */
 	background: #bb2200;
@@ -37,8 +50,10 @@ summary {
 		<a name="{{METHOD}}"> </a>
 		<details>
 			<summary>
-			<span style="font-weight:900">{{METHOD}}</span> &mdash;
+			<span style="font-weight:900">{{METHOD}}</span> 
+			<span class='short-desc'> &mdash; 
 			{{{SHORTDESC}}}
+			</span>
 			</summary>
 			<div style="margin-left:40px;">
 				{{{LONGDESC}}}
@@ -64,7 +79,7 @@ summary {
 	</pre>
 	</div>
 {{#if BRIEFOUTPUT}}
-	<div style="background:#888; padding-left:5px; margin-right:-20px !important;">output:</div>
+	<div class="example-output">output:</div>
 	<div class="highlight">
 	<pre style="margin-left:20px; padding:0; padding-top:12px; padding-left:10px;">
 {{BRIEFOUTPUT}}
@@ -83,7 +98,7 @@ summary {
 	</pre>
 	</div>
 {{#if BRIEFOUTPUT}}
-	<div style="background:#888; padding-left:5px; margin-right:-20px !important;">output:</div>
+	<div class="example-output">output:</div>
 	<div class="highlight">
 	<pre style="margin-left:20px; padding:0; padding-top:12px; padding-left:10px;">
 {{BRIEFOUTPUT}}
@@ -171,6 +186,59 @@ Handlebars.registerHelper('showExamples', function (entry) {
 </script>
 
 <script>
+
+document.body.addEventListener("click", function (event) {
+	// needs some fixing so that clicking in documentation section
+	// does not show the short description.
+	var target = event.target;
+	if (target && target.className.match(/example-button/)) {
+		return;
+	}
+
+	while (target) {
+		var parent = target.parentNode;
+   	if (target.nodeName === "DETAILS") {
+			if (parent && parent.nodeName === 'DIV' &&
+					parent.className.match(/docslot/)) {
+				showOrHideShortDescription(target);
+			} else {
+				return;
+			}
+		}
+		target = parent;
+	}
+});
+
+
+
+function showOrHideShortDescription(target) {
+   // check the first child which should be <details>.
+   // if it is open, then set a hidden style on <details>/<summary>
+	// first child with "short-desc" as the class.  If <details>
+	// is not open, then unhide the same sub-element.
+	if (target.nodeName !== "DETAILS") {
+		return;
+	}
+
+	// go to the first subelement which has a class of "short-desc":
+	var shortdesc = target.querySelector('.short-desc');
+	if (!shortdesc) {
+		return;
+	}
+	if (shortdesc.nodeName !== 'SPAN') {
+		return;
+	}
+	var openstate = target.getAttribute('open');
+	if (typeof openstate !== 'string') {
+		// hide the short-desc text with visibility:hidden
+		shortdesc.style.visibility = 'hidden';
+	} else {
+		// show the short-desc text with visibility:visible
+		shortdesc.style.visibility = 'visible';
+	}
+}
+
+
 
 function insertDocumentation(target, template) {
 	var name    = target.id;

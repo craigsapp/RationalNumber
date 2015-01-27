@@ -65,8 +65,10 @@ sub getDescription {
    }
    my $output;
    $output = "<span style=\"padding-left:19px; font-weight:900\">$id</span>";
+   $output .= "<span class='short-desc'>";
    $output .= " &mdash; ";
    $output .= $description;
+   $output .= "</span>";
    return $output;
 }
 
