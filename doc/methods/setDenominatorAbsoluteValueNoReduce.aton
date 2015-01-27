@@ -1,0 +1,38 @@
+
+@@BEGIN:	FunctionDocumentation
+@OBJECT:	RationalNumber
+@METHOD:	setDenominatorAbsoluveValueNoReduce
+@PARAMETERS:	Integer
+@PROTOTYPE:	yes
+@FILE:		RationalNumber-base.js
+@SEEALSO:	setDenominatorAbsoluteValue
+@SEEALSO:	setValueNoReduce
+@SHORTDESC:	Set denominator, not trying to reduce the fraction.
+@LONGDESC:	Set the denominator, but do not try to reduce the fraction.  
+		If the value is an invalid string or falsy, then
+		set the denominator to 1 rather than 0 or NaN.  The
+		denominator cannot be used to set a negative value;
+		so the absolute value of negative numbers will be
+		used instead.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Set teh denominator but do not try to reduece the fraction.
+
+@BRIEFCODE:
+var rn = new RationalNumber('6/3');
+rn.setDenominatorAbsoluteValueNoReduce(4).toString();
+
+@BRIEFOUTPUT:
+"2/4"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
+
+
+

@@ -2,25 +2,102 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	setValue
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	Integer, Integer?
+@PARAMETERS:	String
+@PARAMETERS:	RationalNumber
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	setValueNoReduce
 @SHORTDESC:	Set the numerator and denominator (sign can be on either or both).
-@LONGDESC:
+@LONGDESC:	Set the numerator and denominator at the same time, 
+		including reducing the fraction after both have been set.
+		This method is typically better than using setNumerator
+		and setDenominatorAbsoluteValue separately since
+		they will try to reduce the fraction independently.
+		Either or both of the numerator and denominator can
+		be negative.  If both are negative, then the final
+		rational number will be positive.
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Set the number with a numerator and denominator as arguments.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber();
+rn.setValue(6, 12).toString();
+
+@BRIEFOUTPUT:
+"1/2"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@@END:	FunctionDocumentation
+@@BEGIN: EXAMPLE
 
+@DESCRIPTION: Set the number with only a numerator.
+
+@BRIEFCODE:
+var rn = new RationalNumber();
+rn.setValue(6).toString();
+
+@BRIEFOUTPUT:
+"6"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Set the number with a string argument.
+
+@BRIEFCODE:
+var rn = new RationalNumber();
+rn.setValue('-6/-12').toString();
+
+@BRIEFOUTPUT:
+"1/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Set the number with a string argument.
+
+@BRIEFCODE:
+var rn = new RationalNumber();
+rn.setValue('-6/-12').toString();
+
+@BRIEFOUTPUT:
+"1/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Set the number with another rational number.
+
+@BRIEFCODE:
+var rn = new RationalNumber();
+var rn2 = new RationalNumber('5/7');
+rn.setValue(rn2).toString();
+
+@BRIEFOUTPUT:
+"5/7"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+@@END:	FunctionDocumentation
 
 

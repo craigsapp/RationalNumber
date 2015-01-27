@@ -58,15 +58,15 @@ summary {
 <script id="method-example" type="text/x-handlebars-template">
    <summary>{{{DESCRIPTION}}}</summary>
 	<div class="highlight">
-	<pre style="margin-left:50px; padding:0; padding-left:10px;">
+	<pre style="margin-left:20px; margin-bottom:0; padding:0; padding-left:10px;">
 		<code class="language-javascript" data-lang="javascript">
 {{BRIEFCODE}}</code>
 	</pre>
 	</div>
 {{#if BRIEFOUTPUT}}
-	Example output:
+	<div style="background:#888; padding-left:5px; margin-right:-20px !important;">output:</div>
 	<div class="highlight">
-	<pre style="margin-left:50px; padding:0; padding-top:12px; padding-left:10px;">
+	<pre style="margin-left:20px; padding:0; padding-top:12px; padding-left:10px;">
 {{BRIEFOUTPUT}}
 	</pre>
 	</div>
@@ -77,15 +77,15 @@ summary {
 
 <script id="method-example-single" type="text/x-handlebars-template">
 	<div class="highlight">
-	<pre style="margin-left:50px; padding:0; padding-left:10px;">
+	<pre style="margin-left:20px; margin-bottom:0; padding:0; padding-left:10px;">
 		<code class="language-javascript" data-lang="javascript">
 {{BRIEFCODE}}</code>
 	</pre>
 	</div>
 {{#if BRIEFOUTPUT}}
-	Example output:
+	<div style="background:#888; padding-left:5px; margin-right:-20px !important;">output:</div>
 	<div class="highlight">
-	<pre style="margin-left:50px; padding:0; padding-top:12px; padding-left:10px;">
+	<pre style="margin-left:20px; padding:0; padding-top:12px; padding-left:10px;">
 {{BRIEFOUTPUT}}
 	</pre>
 	</div>
@@ -159,6 +159,7 @@ Handlebars.registerHelper('showExamples', function (entry) {
 		output += '</summary>';
 		output += templatesingle(entry);
 	   output += '</details>';
+		output += '<br>';
 	}
 
 	return output;

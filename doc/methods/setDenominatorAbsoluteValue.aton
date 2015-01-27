@@ -2,20 +2,30 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	setDenominatorAbsoluteValue
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	Integer
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	setDenominator
+@SEEALSO:	setValue
 @SHORTDESC:	Set the denominator (sign ignored).
-@LONGDESC:
+@LONGDESC:	Set the denominator of the fraction, and reduce the 
+		fraction if needed.  Absolute values of negative values 			will be used.  There is no setDenominator() function,
+		use setValue() if you really need to set a negative 
+		denominator.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Set the denominator, forcing a check for reducing the fraction.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('3/7');
+rn.setDenominatorAbsoluteValue(6).toString();
+
+@BRIEFOUTPUT:
+"1/2"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -2,20 +2,28 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	setNumeratorAbsoluteValueNoReduce
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	Integer
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
-@SHORTDESC:	Sets the numerator, but does not try to reduce or change the sign of the current value.
-@LONGDESC:
+@SEEALSO:	setNumeratorNoReduce
+@SEEALSO:	setNumerator
+@SHORTDESC:	Sets numerator without changing sign or reducing.
+@LONGDESC:	When setting the numerator with this value, neither
+		the original sign or denominator will be affected.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Set the numerator, ignoring the sign and not reducing.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('1/2');
+rn.setNumeratorAbsoluteValueNoReduce(-4).toString();
+
+@BRIEFOUTPUT:
+"4/2"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

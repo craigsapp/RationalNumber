@@ -2,20 +2,32 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	reduce
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Reduce the fraction if needed.
-@LONGDESC:
+@LONGDESC:	If the numerator and denominator share a common divisor,
+		the divisor will be removed from both.  When the numerator
+		is set to 0, the denominator will be reduced to 1.  When
+		the denominator is set to 0, the numerator will be
+		reduced to 1.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Reduce a fraction.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber();
+rn.setValueNoReduce(4*63, 7*63).toString();
+rn.reduce.toString();
+
+@BRIEFOUTPUT:
+"252/411"
+"4/7"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
