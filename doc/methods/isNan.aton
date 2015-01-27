@@ -2,25 +2,60 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	isNan
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	isValid
 @SHORTDESC:	Returns true if equal to 0/0.
-@LONGDESC:
+@LONGDESC:	Returns true if both the numerator and denominator are zero.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION:   Check if 0/0 is NaN.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber(0,0);
+rn.isNan();
+
+@BRIEFOUTPUT:
+true
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION:   Check if finite number is a NaN.
+
+@BRIEFCODE:
+var rn = new RationalNumber(1,2);
+rn.isNan();
+
+@BRIEFOUTPUT:
+false
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION:   Check if an infinite number is a NaN.
+
+@BRIEFCODE:
+var rn = new RationalNumber(1,0);
+rn.isNan();
+
+@BRIEFOUTPUT:
+false
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
 @@END:	FunctionDocumentation
-
-
 

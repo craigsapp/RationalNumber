@@ -2,20 +2,32 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	isInfinite
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	isNan
+@SEEALSO:	isValid
 @SHORTDESC:	Returns true if denominator is 0 and numerator is not.
-@LONGDESC:
+@LONGDESC:	Returns true if the denominator is zero while the numerator
+		is any integer other than zero.  This function will return
+		true for Infinity and &ndash;Infinity, but false for NaN
+		or any other finite number.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Check if &ndash;Infinity is infinite.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber("-Infinity");
+rn.toString();
+rn.isInfinite();
+
+@BRIEFOUTPUT:
+"-1/0"
+true
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

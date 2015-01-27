@@ -2,25 +2,67 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	isValid
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	isSafe
+@SEEALSO:	isInfinite
+@SEEALSO:	isNaN
 @SHORTDESC:	Returns true if safe, finite and not NaN.
-@LONGDESC:
+@LONGDESC:	Returns true if safe, finite, and not a NaN.  "Safe"
+		means that neither the numerator nor denominator are
+		larger than 2<sup>53</sup>&ndash;1, which is the largest
+		integer that is representable in JavaScript.  Finite means
+		that the denominator is not zer, and not being NaN means
+		that the numerator and denominator are not both 0.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Check if a finite number is valid.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('174/123521');
+rn.isValid();
+
+@BRIEFOUTPUT:
+true
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Check if infinity is valid.
+
+@BRIEFCODE:
+var rn = new RationalNumber('Infinity');
+rn.isValid();
+
+@BRIEFOUTPUT:
+false
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Check if an unsafe number is valid.
+
+@BRIEFCODE:
+var rn = new RationalNumber(Math.pow(2, 53));
+rn.isValid();
+
+@BRIEFOUTPUT:
+false
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@END:	FunctionDocumentation
-
 
 

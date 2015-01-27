@@ -2,20 +2,39 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	checkOverflowOn
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	checkOverflow
+@SEEALSO:	checkOverflowOff
 @SHORTDESC:	Force validity check for overflows.
-@LONGDESC:
+@LONGDESC:      Force automatic validity checks for every operation
+		which may cause the numerator or denominator to
+		overflow the maximum representable integer
+		(2<sup>53</sup>&ndash;1).  After a rational number
+		becomes unsafe, its value is no longer reliable.
+		All RationalNumbers will be checked if this method
+		is called from any RationalNumber object. Unsafe
+		numbers will be reported by throwing an error.  Turn
+		off automatic overflow checking by using the
+		checkOverflowOff method.
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Automatically check of rational number goes out of bounds.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+RationalNumber.prototype.checkOverflowOn();
+var rn1 = new RationalNumber(Math.pow(2, 53)-2);
+var rn2 = new RationalNumber(7);
+rn1.addTo(rn2);
+
+@BRIEFOUTPUT:
+Uncaught Error: RationalNumber is not safe: 9007199254740996
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

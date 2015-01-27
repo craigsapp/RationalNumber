@@ -2,20 +2,38 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	checkOverflowOff
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	checkOverflowOn
+@SEEALSO:	checkOverflow
 @SHORTDESC:	Turn off overflow validity checks.
-@LONGDESC:
+@LONGDESC:	Suppress validity check for every operation which
+		may cause the numerator or denominator to overflow
+		the maximum representable integer (2<sup>53</sup>&nbsp;1).
+		All RationalNumbers will no longer be automatically
+		checked if this method is called from any RationalNumber
+		object.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION:	Generate an unsafe number, but don't check while creating it.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+RationalNumber.prototype.checkOverflowOn();
+var rn1 = new RationalNumber(Math.pow(2, 53)-2);
+var rn2 = new RationalNumber(7);
+RationalNumber.prototype.checkOverflowOff();
+rn1.addTo(rn2).toString();
+rn1.isSafe();
+
+@BRIEFOUTPUT:
+"9007199254740996"
+false
+
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

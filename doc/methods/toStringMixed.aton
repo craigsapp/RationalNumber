@@ -2,20 +2,170 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	toStringMixed
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	plustag?: String, minustag?: String, prefix?: String, postfix?: String
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	toString
 @SHORTDESC:	Return a string as a mixed fraction.
-@LONGDESC:
+@LONGDESC:	Return a string representation of the rational number as a mixed
+		fraction in the for %d+%d/%d or -%d-%d/d.  There are four optional
+		parameters:
+		<table>
+
+		<tr>
+		<td></td>
+		<td>name</td>
+		<td>meaning</td>
+		</tr>
+
+		<tr>
+		<td>1.</td>
+		<td>positive separator</td>
+		<td>A string separating the integer and fractional parts of a
+			postive mixed fraction number</td>
+		</tr>
+
+		<tr>
+		<td>2.</td>
+		<td>negative separator</td>
+		<td>A string separating the integer and fractional parts of a
+			negative mixed fraction number</td>
+		</tr>
+
+		<tr>
+		<td>3.</td>
+		<td>prefix</td>
+		<td>A string placed before the start of the mixed number fraction.</td>
+		</tr>
+
+		<tr>
+		<td>4.</td>
+		<td>postfix</td>
+		<td>A string placed after the end of the mixed number fraction.</td>
+		</tr>
+
+		</table>
+
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@
+@ 21/2 =  10+1/2
+@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+@DESCRIPTION: Default mixed fraction style for positive numbers.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber(21, 2);
+rn.toString();
+rn.toStringMixed();
+
+@BRIEFOUTPUT:
+"21/2"
+"10+1/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@
+@ -21/2 = -10-1/2
+@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Print default mixed fraction style for negative numbers.
+
+@BRIEFCODE:
+var rn = new RationalNumber(21, -2);
+rn.toString();
+rn.toStringMixed();
+
+@BRIEFOUTPUT:
+"-21/2"
+"-10-1/2"
+
+@@END:	EXAMPLE
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@
+@ 21/2 =  10 1/2
+@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Print positive mixed fraction with space in middle.
+
+@BRIEFCODE:
+var rn = new RationalNumber(21, 2);
+rn.toString();
+rn.toStringMixed(' ');
+
+@BRIEFOUTPUT:
+"21/2"
+"10 1/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@
+@ -21/2 = -10 1/2
+@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Print negative mixed fraction with space in middle.
+
+@BRIEFCODE:
+var rn = new RationalNumber(21, -2);
+rn.toString();
+rn.toStringMixed(' ');
+
+@BRIEFOUTPUT:
+"-21/2"
+"-10 1/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@
+@ Using toStringMixed(', ', ', -', '(', ')'):
+@ 21/2 = (10, 1/2)
+@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Print mixed fraction as list of integer and fractional parts.
+
+@BRIEFCODE:
+var rn = new RationalNumber(21, 2);
+rn.toString();
+rn.toStringMixed(', ', ', -', '(', ')');
+
+@BRIEFOUTPUT:
+"21/2"
+"(10, 1/2)"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@
+@ -21/2 = (-10, -1/2)
+@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Print negative mixed fraction as list of integer and fractional parts.
+
+@BRIEFCODE:
+var rn = new RationalNumber(21, 2);
+rn.toString();
+rn.toStringMixed(', ', ', -', '(', ')');
+
+@BRIEFOUTPUT:
+"-21/2"
+"(-10, -1/2)"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

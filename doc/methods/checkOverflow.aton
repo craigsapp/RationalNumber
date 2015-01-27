@@ -2,20 +2,28 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	checkOverflow
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	isSafe
 @SHORTDESC:	Same as isSafe(), but throws an error.
-@LONGDESC:
+@LONGDESC:	Same as isSafe method, but throws an error rather than
+		a boolean.  See the discussion in the isSafe entry on what
+		a "safe" number is.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Identify an unsafe number by throwing an error.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber(Math.pow(2,53));
+rn.checkOverflow();
+
+@BRIEFOUTPUT:
+Uncaught Error: RationalNumber is not safe: 9007199254740992
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
