@@ -486,28 +486,28 @@ describe('#isNaN()', function () {
 it('Check if NaN is identified as a NaN',
 	function () {
 		var rn = new RationalNumber(0, 0);
-		assert.deepEqual(rn.isNan(), true);
+		assert.deepEqual(rn.isNaN(), true);
 	}
 );
 
 it('Check if Infinity is not identified as a NaN',
 	function () {
 		var rn = new RationalNumber(1, 0);
-		assert.deepEqual(rn.isNan(), false);
+		assert.deepEqual(rn.isNaN(), false);
 	}
 );
 
 it('Check if valid positive number not identified as a NaN',
 	function () {
 		var rn = new RationalNumber(1, 13);
-		assert.deepEqual(rn.isNan(), false);
+		assert.deepEqual(rn.isNaN(), false);
 	}
 );
 
 it('Check if valid negative number not identified as a NaN',
 	function () {
 		var rn = new RationalNumber(-2, 26);
-		assert.deepEqual(rn.isNan(), false);
+		assert.deepEqual(rn.isNaN(), false);
 	}
 );
 
