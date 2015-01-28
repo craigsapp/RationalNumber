@@ -27,10 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
 ## RationalNumber methods
 
 Here is a list of function prototypes provided by the RationalNumber
-class in the file <a href=https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-base.js>RationalNumber-base.js</a>.
-Click on the function name to view more details. This page includes
-a copy of the RationalNumber code, so you can open a console for
-this page and try out the examples found in the documentation.
+class in the file 
+[RationalNumber-base.js](https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-base.js) and
+[RationalNumber-math.js](https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-math.js) source files.  Click on the function names 
+to view documentation and examples for
+each RationalNumber method.  Example code can be run in the JavaScript
+console for this page since this page has loaded a copy of the
+RationalNumber code.  Press <span class="keyboard-char">ctrl</span>+<span
+class="keyboard-char">+/=</span> to open all documentation,
+<span class="keyboard-char">ctrl</span>+<span
+class="keyboard-char">&ndash;</span> to close all docmentation, and
+<span class="keyboard-char">ctrl</span>+<span
+class="keyboard-char">e</span> to toggle display of all examples.
 
 {% include method-list-1.html %}
 

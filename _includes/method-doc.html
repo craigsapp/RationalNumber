@@ -1,17 +1,112 @@
+<script>
+//
+// Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+// Creation Date: Wed Jan 28 01:45:01 PST 2015
+// Last Modified: Wed Jan 28 01:45:03 PST 2015
+// Filename:      RationalNumber/_includes/method-doc.html
+// Syntax:        JavaScript 1.5 (EMCAScript 5)
+// vim:           ts=3 hlsearch
+//
+// Description:   This file generats documentation for the RationalNumber
+//                methods documention. To display the documentation for
+//                a specific function, place this div element where you
+//                want the documentation on the page:
+//                   <div class="docslot" id="setSign"></div>
+//                The code in this file will automatically insert the
+//                documentaiton for the given function inside of the div.
+//                In this case the documentation for
+//                RationalNumber.prototype.abs will be inserted.
+//
+</script>
 
 <script src="/javascripts/handlebars-v2.0.0.js"></script>
 <script src="/javascripts/aton.min.js"></script>
 
+<script>
+//
+// Event listeners that manage events related to the documentation.
+//
+
+// This variable is used to keep track of wether or not all
+// examples are currently being shown.  If they are hidden then
+// the examples can be viewed individual by click on the triangle
+// icon to the left of the example's title.  Used with control-E
+// keyboard command.
+var ExampleView = false;
+
+
+
+//////////////////////////////
+//
+// DOMContentLoaded event listener -- Download the documentation
+//    and insert it into the docslots after the page has loaded.
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+	var docslots = document.querySelectorAll(".docslot");
+	var source   = document.getElementById("method-doc").textContent;
+	var template = Handlebars.compile(source);
+	for (var i=0; i<docslots.length; i++) {
+		insertDocumentation(docslots[i], template);
+	}
+});
+
+
+
+//////////////////////////////
+//
+// keydown event listener -- This event listener handles keyboard
+//    commands related to the document display.  The keyboard commands are:
+//
+// control-plus  == show full details for all functions on the page.
+// control-minus == hide full details for all functions on the page.
+// control-E     == hide/show all examples in the documentation.
+//
+
+document.addEventListener('keydown', function(event) {
+	if (!event.ctrlKey) {
+		return event;
+	}
+	const EqualsKey = 187;
+	const MinusKey  = 189;
+	const EKey      =  69;
+	switch (event.keyCode) {
+		case EqualsKey:
+			if (typeof openAllDocumentation !== 'undefined') {
+				openAllDocumentation();
+			}
+			break;
+		case MinusKey:
+			if (typeof closeAllDocumentation !== 'undefined') {
+				closeAllDocumentation();
+			}
+			break;
+		case EKey:
+				if (ExampleView && (typeof hideAllExamples !== 'undefined')) {
+					hideAllExamples();
+					ExampleView = !ExampleView;
+				} else if (!ExampleView &&
+						(typeof showAllExamples !== 'undefined')) {
+					showAllExamples();
+					ExampleView = !ExampleView;
+				}
+			break;
+	}
+});
+
+
+</script>
+
+
 <style>
-/* vim: set ts=3 ft=javascript: */
+/* CSS controling style of the documentation */
 
 summary {
-	/* prevent a box from showing around summary text */
-	outline:none;
+	outline:none; /* prevent a box from showing around summary text */
 }
 
 .example-output {
-	padding-left:5px; 
+	padding-left:5px;
 	margin-right:-20px !important;
 	background: #888888; /* Old browsers */
 	background: -moz-linear-gradient(left,  #888888 0%, #888888 3%, #3a3c42 91%); /* FF3.6+ */
@@ -23,6 +118,7 @@ summary {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
 }
 
+/* For displaying keyboard short-cut keys. */
 .keyboard-char {
 	background: #999999;
 	box-shadow: 2px 2px 3px #777777;
@@ -57,7 +153,11 @@ summary {
 
 {% raw %}
 
-<!-- Handlebars templates and helper functions ------------------- -->
+<script>
+//
+// Handlebars templates for generating function documentation:
+//
+</script>
 
 <script id="method-doc" type="text/x-handlebars-template">
 	{{#if LONGDESC}}
@@ -66,8 +166,8 @@ summary {
 			<summary>
 			<span style="font-weight:900">
 				{{METHOD}}
-			</span> 
-			<span class='short-desc'> &mdash; 
+			</span>
+			<span class='short-desc'> &mdash;
 			{{{SHORTDESC}}}
 			</span>
 			</summary>
@@ -135,18 +235,15 @@ summary {
 // Handlebars helper functions
 //
 
-
 Handlebars.registerHelper('codeLink', function (method, file) {
 	if (typeof method === 'undefined') { return '' }
 	if (typeof file   === 'undefined') { return '' }
-
 	var output = '<details ontoggle="displaySourceBox(';
 	output += '\'' + method + '\', \'' + file + '\');"';
 	output += '><summary>';
 	output += 'View method source code ';
 	output += '(<a href=https://sourcegraph.com/github.com/craigsapp/';
 	output += 'RationalNumber@master/.CommonJSPackage/rational-number/.def/';
-
 	if (file === 'RationalNumber-base.js') {
 		output += 'commonjs/lib/RationalNumber-base.js/-/prototype/';
 	} else if (file === 'RationalNumber-math.js') {
@@ -157,22 +254,18 @@ Handlebars.registerHelper('codeLink', function (method, file) {
 	output += method;
 	output += '>on Sourcegraph</a>)';
 	output += '</summary>';
-
 	output += '<div id="' + method + '_sourcebox">';
 	output += '</div>';
-
 	output += '</details>\n';
 	return output;
 });
 
 
 function displaySourceBox (method, file) {
-
 	var target = document.querySelector("div#" + method + '_sourcebox');
 	if (!target) {
 		return;
 	}
-
 	var sourcebox = '';
 	sourcebox += 'https://sourcegraph.com/github.com/craigsapp';
 	sourcebox += '/RationalNumber/.CommonJSPackage/rational-number/.def/commonjs/';
@@ -185,11 +278,9 @@ function displaySourceBox (method, file) {
 	}
 	sourcebox += method;
 	sourcebox += '/.sourcebox.js';
-
 	var testing = '<script src=' + sourcebox + '>';
-   testing += "</scr'; testing += 'ipt> xxx";
+	testing += "</scr'; testing += 'ipt> xxx";
 	target.innerHTML = testing;
-
 }
 
 
@@ -229,7 +320,7 @@ Handlebars.registerHelper('showExamples', function (entry) {
 		output += entry.DESCRIPTION;
 		output += '</summary>';
 		output += templatesingle(entry);
-	   output += '</details>';
+		output += '</details>';
 		output += '<br>';
 	}
 
@@ -242,6 +333,9 @@ Handlebars.registerHelper('showExamples', function (entry) {
 </script>
 
 <script>
+// 
+// Various JavaScript functions for processing/displaying documentation.
+//
 
 document.body.addEventListener('click', function (event) {
 	// needs some fixing so that clicking in documentation section
@@ -253,7 +347,7 @@ document.body.addEventListener('click', function (event) {
 
 	while (target) {
 		var parent = target.parentNode;
-   	if (target.nodeName === 'DETAILS') {
+		if (target.nodeName === 'DETAILS') {
 			if (parent && parent.nodeName === 'DIV' &&
 					parent.className.match(/docslot/)) {
 				showOrHideShortDescription(target);
@@ -268,8 +362,8 @@ document.body.addEventListener('click', function (event) {
 
 
 function showOrHideShortDescription(target) {
-   // check the first child which should be <details>.
-   // if it is open, then set a hidden style on <details>/<summary>
+	// check the first child which should be <details>.
+	// if it is open, then set a hidden style on <details>/<summary>
 	// first child with "short-desc" as the class.  If <details>
 	// is not open, then unhide the same sub-element.
 	if (target.nodeName !== 'DETAILS') {
@@ -297,8 +391,8 @@ function showOrHideShortDescription(target) {
 
 
 function hideShortDescription(target) {
-   // check the first child which should be <details>.
-   // if it is open, then set a hidden style on <details>/<summary>
+	// check the first child which should be <details>.
+	// if it is open, then set a hidden style on <details>/<summary>
 	// first child with "short-desc" as the class.  If <details>
 	// is not open, then unhide the same sub-element.
 	if (target.nodeName !== 'DETAILS') {
@@ -316,9 +410,11 @@ function hideShortDescription(target) {
 	shortdesc.style.visibility = 'hidden';
 }
 
+
+
 function showShortDescription(target) {
-   // check the first child which should be <details>.
-   // if it is open, then set a hidden style on <details>/<summary>
+	// check the first child which should be <details>.
+	// if it is open, then set a hidden style on <details>/<summary>
 	// first child with "short-desc" as the class.  If <details>
 	// is not open, then unhide the same sub-element.
 	if (target.nodeName !== 'DETAILS') {
@@ -421,5 +517,9 @@ function showAllExamples() {
 }
 
 </script>
+
+
 {% endraw %}
+
+
 

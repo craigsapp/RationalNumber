@@ -5,55 +5,6 @@ vim:	  ts=3
 
 {% include method-doc.html %}
 
-<script>
-
-var ExampleView = false;
-
-document.addEventListener("DOMContentLoaded", function () {
-	var docslots = document.querySelectorAll(".docslot");
-	var source   = document.getElementById("method-doc").textContent;
-	var template = Handlebars.compile(source);
-	for (var i=0; i<docslots.length; i++) {
-		insertDocumentation(docslots[i], template);
-	}
-});
-
-
-document.addEventListener('keydown', function(event) {
-	if (!event.ctrlKey) {
-		return event;
-	}
-	const EqualsKey = 187;
-	const MinusKey  = 189;
-	const EKey      =  69;
-	switch (event.keyCode) {
-		case EqualsKey:
-			if (typeof openAllDocumentation !== 'undefined') {
-				openAllDocumentation();
-			}
-			break;
-		case MinusKey:
-			if (typeof closeAllDocumentation !== 'undefined') {
-				closeAllDocumentation();
-			}
-			break;
-		case EKey:
-				if (ExampleView && (typeof hideAllExamples !== 'undefined')) {
-					hideAllExamples();
-					ExampleView = !ExampleView;
-				} else if (!ExampleView && 
-						(typeof showAllExamples !== 'undefined')) {
-					showAllExamples();
-					ExampleView = !ExampleView;
-				}
-			break;
-	}
-});
-
-
-
-</script>
-
 <!-- BEGINNING OF TEXT --------------------------------------- -->
 
 
