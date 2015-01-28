@@ -13,7 +13,7 @@
 
 @@BEGIN: EXAMPLE
 
-@DESCRIPTION: Test if postive value is positive.
+@DESCRIPTION: Test if positive value is positive.
 
 @CODE:
 var rn = new RationalNumber('3/5');

@@ -5,7 +5,7 @@
 @PARAMETERS:	none
 @PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	isNan
+@SEEALSO:	isNaN
 @SEEALSO:	isValid
 @SHORTDESC:	Returns true if denominator is 0 and numerator is not.
 @LONGDESC:	Returns true if the denominator is zero while the numerator

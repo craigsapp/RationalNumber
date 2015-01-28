@@ -13,7 +13,7 @@
 		means that neither the numerator nor denominator are
 		larger than 2<sup>53</sup>&ndash;1, which is the largest
 		integer that is representable in JavaScript.  Finite means
-		that the denominator is not zer, and not being NaN means
+		that the denominator is not zero, and not being NaN means
 		that the numerator and denominator are not both 0.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

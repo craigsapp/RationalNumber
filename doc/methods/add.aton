@@ -2,19 +2,35 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	add
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	RationalNumber+
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-math.js
-@SEEALSO:	
+@SEEALSO:	addTo
 @SHORTDESC:	Similar to addTo(), but returns sum rather than altering contents.
-@LONGDESC:
+@LONGDESC:	Add the rational number as well as a list of 
+		input RationalNumbers together, and return the final sum.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Add three rational numbers together.
+
 @CODE:
+var rn1 = new RationalNumber('4/5');
+var rn2 = new RationalNumber('3/8');
+var rn3 = new RationalNumber('1/9');
+rn1.add(rn2, rn3).toString();
+rn1.toString();
+rn2.toString();
+rn3.toString();
+
 @OUTPUT:
+"463/360"
+"4/5"
+"3/8"
+"1/9"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener('keydown', function(event) {
-	if (!(event.ctrlKey || event.metaKey || event.altKey)) {
-		return;
+	if (!event.ctrlKey) {
+		return event;
 	}
 	const EqualsKey = 187;
 	const MinusKey  = 189;
@@ -74,9 +74,9 @@ reduce the fraction after every calculation to minimize the chance
 of overflow).
 
 This implementation limits the numerator and denominator to the
-range from 0 to 2^53&ndash;1 plus a sign, and optional automatic overflow
-detection is included by running `checkOverflowOn()`, and
-`CheckOverflowOff()` turning this feature off.
+range from 0 to 2<sup>53</sup>&ndash;1 plus a sign, and optional
+automatic overflow detection is included by running `checkOverflowOn()`,
+and `CheckOverflowOff()` turning this feature off.
 
 
 
@@ -88,7 +88,7 @@ in the four boxes below to create rational numbers.  The reduced
 forms of the number will be shown to the right, and example
 mathematical calculations using the two rational numbers is given
 further below.  Try typing a very large number to see what happens
-when any number has an absolute value greater or equal to 2^53.
+when any number has an absolute value greater or equal to 2<sup>53</sup>.
 
 {% include rat-test.html %}
 
@@ -181,14 +181,15 @@ $ cd test; mocha
 <a name=doc> </a>
 ## RationalNumber methods
 
-Click on the function names to view documentation and examples for each
-method.  Example code can be run in the JavaScript console for this
-page since this page has loaded a copy of the RationalNumber code.
-Press <span class="keyboard-char">ctrl</span>+<span class="keyboard-char">+/=</span>
-keys to open all documentation, 
-<span class="keyboard-char">ctrl</span>+<span class="keyboard-char">&ndash;</span>
-to close all docmentation, and 
-<span class="keyboard-char">ctrl</span>+<span class="keyboard-char">e</span> to toggle display of all examples.
+Click on the function names to view documentation and examples for
+each RationalNumber method.  Example code can be run in the JavaScript
+console for this page since this page has loaded a copy of the
+RationalNumber code.  Press <span class="keyboard-char">ctrl</span>+<span
+class="keyboard-char">+/=</span> to open all documentation,
+<span class="keyboard-char">ctrl</span>+<span
+class="keyboard-char">&ndash;</span> to close all docmentation, and
+<span class="keyboard-char">ctrl</span>+<span
+class="keyboard-char">e</span> to toggle display of all examples.
 
 {% include method-list-1.html %}
 

@@ -16,7 +16,7 @@
 
 @@BEGIN: EXAMPLE
 
-@DESCRIPTION: Set the numerator, forcing the denominator to change due to simpilfying the fract.
+@DESCRIPTION: Set the numerator, forcing the denominator to change due to simplifying the tract.
 
 @CODE:
 var rn = new RationalNumber('5/6');

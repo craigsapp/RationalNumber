@@ -2,19 +2,35 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	subtract
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	RationalNumber+
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-math.js
-@SEEALSO:	
+@SEEALSO:	subtractTo
 @SHORTDESC:	Similar to subtractTo(), but returns result rather than altering calling object.
-@LONGDESC:
+@LONGDESC:	Subtract from the rational number a list of 
+		input RationalNumbers, and return the final subtraction result.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Add three rational numbers together.
+
 @CODE:
+var rn1 = new RationalNumber('4/5');
+var rn2 = new RationalNumber('3/8');
+var rn3 = new RationalNumber('1/9');
+rn1.subtract(rn2, rn3).toString();
+rn1.toString();
+rn2.toString();
+rn3.toString();
+
 @OUTPUT:
+"113/360"
+"4/5"
+"3/8"
+"1/9"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

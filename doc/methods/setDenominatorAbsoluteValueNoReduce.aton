@@ -19,7 +19,7 @@
 
 @@BEGIN: EXAMPLE
 
-@DESCRIPTION: Set teh denominator but do not try to reduece the fraction.
+@DESCRIPTION: Set the denominator but do not try to reduce the fraction.
 
 @CODE:
 var rn = new RationalNumber('6/3');

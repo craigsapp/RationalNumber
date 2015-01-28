@@ -92,7 +92,7 @@ summary {
 
 
 <script id="method-example" type="text/x-handlebars-template">
-   <summary>{{{DESCRIPTION}}}</summary>
+	<summary>{{{DESCRIPTION}}}</summary>
 	<div class="highlight">
 	<pre style="margin-left:20px; margin-bottom:0; padding:0; padding-left:10px;">
 		<code class="language-javascript" data-lang="javascript">
@@ -140,22 +140,57 @@ Handlebars.registerHelper('codeLink', function (method, file) {
 	if (typeof method === 'undefined') { return '' }
 	if (typeof file   === 'undefined') { return '' }
 
-   var output = '<details><summary>';
-	output += "<a href=https://sourcegraph.com/github.com/craigsapp/";
-	output += 'RationalNumber@master/.CommonJSPackage/rational-number/';
+	var output = '<details ontoggle="displaySourceBox(';
+	output += '\'' + method + '\', \'' + file + '\');"';
+	output += '><summary>';
+	output += 'View method source code ';
+	output += '(<a href=https://sourcegraph.com/github.com/craigsapp/';
+	output += 'RationalNumber@master/.CommonJSPackage/rational-number/.def/';
 
-   if (file === 'RationalNumber-base.js') {
-		output += '.def/commonjs/lib/RationalNumber-base.js/-/prototype/';
+	if (file === 'RationalNumber-base.js') {
+		output += 'commonjs/lib/RationalNumber-base.js/-/prototype/';
 	} else if (file === 'RationalNumber-math.js') {
-		output += '/.def/commonjs/index.js/-/prototype/';
+		output += 'commonjs/index.js/-/prototype/';
 	} else {
 		return '';
 	}
 	output += method;
-	output += ">View code on Sourcegraph</a>";
-   output += "</summary></details>\n";
-   return output;
+	output += '>on Sourcegraph</a>)';
+	output += '</summary>';
+
+	output += '<div id="' + method + '_sourcebox">';
+	output += '</div>';
+
+	output += '</details>\n';
+	return output;
 });
+
+
+function displaySourceBox (method, file) {
+
+	var target = document.querySelector("div#" + method + '_sourcebox');
+	if (!target) {
+		return;
+	}
+
+	var sourcebox = '';
+	sourcebox += 'https://sourcegraph.com/github.com/craigsapp';
+	sourcebox += '/RationalNumber/.CommonJSPackage/rational-number/.def/commonjs/';
+	if (file === 'RationalNumber-base.js') {
+		sourcebox += 'lib/RationalNumber-base.js/-/prototype/';
+	} else if (file === 'RationalNumber-math.js') {
+		sourcebox += 'index.js/-/prototype/';
+	} else {
+		return '';
+	}
+	sourcebox += method;
+	sourcebox += '/.sourcebox.js';
+
+	var testing = '<script src=' + sourcebox + '>';
+   testing += "</scr'; testing += 'ipt> xxx";
+	target.innerHTML = testing;
+
+}
 
 
 
@@ -164,9 +199,9 @@ Handlebars.registerHelper('showExamples', function (entry) {
 		return 'empty';
 	}
 
-	var source = document.getElementById("method-example").textContent;
+	var source = document.getElementById('method-example').textContent;
 	var template = Handlebars.compile(source);
-	var sourcesingle = document.getElementById("method-example-single")
+	var sourcesingle = document.getElementById('method-example-single')
 								.textContent;
 	var templatesingle = Handlebars.compile(sourcesingle);
 

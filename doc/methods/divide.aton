@@ -2,24 +2,42 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	divide
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	RationalNumber+
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-math.js
-@SEEALSO:	
+@SEEALSO:	divideTo
 @SHORTDESC:	Similar to divideTo(), but returns result rather than altering calling object.
-@LONGDESC:
+@LONGDESC:	Divide the rational number with a list of 
+		input RationalNumbers and return the final result.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Divide two rational numbers from another.
+
 @CODE:
+var rn1 = new RationalNumber('4/5');
+var rn2 = new RationalNumber('3/8');
+var rn3 = new RationalNumber('1/9');
+rn1.divide(rn2, rn3).toString();
+rn1.toString();
+rn2.toString();
+rn3.toString();
+
 @OUTPUT:
+"95/5"
+"4/5"
+"3/8"
+"1/9"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@END:	FunctionDocumentation
+
+
 
 
 

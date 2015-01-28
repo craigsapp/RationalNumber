@@ -20,7 +20,7 @@
 @DESCRIPTION: See if two rational numbers are equal.
 
 @CODE:
-var rn = new RationalNumbeR('4/5');
+var rn = new RationalNumber('4/5');
 var rn2 = new RationalNumber();
 rn2.setValueNoReduce('8/10');
 rn.isEqual(rn2);
