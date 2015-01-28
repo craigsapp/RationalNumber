@@ -96,6 +96,38 @@ document.addEventListener('keydown', function(event) {
 });
 
 
+
+//////////////////////////////
+//
+// delegated click event listener -- shift-click on a function heading
+//    will close all other documentation entries and fully open the targeted
+//    one.
+//
+
+document.addEventListener('click', function (event) {
+	if (!event.shiftKey) {
+		return;
+	}
+	if (typeof event.path === 'undefined') {
+		return;
+	}
+	for (var i=0; i<event.path.length; i++) {
+		if (event.path[i].nodeName !== 'DIV') {
+			continue;
+		}
+		if (!event.path[i].className.match(/docslot/)) {
+			continue;
+		}
+		var id = event.path[i].id
+		if (!id) {
+			continue;
+		}
+		showSlotDocumentation(id);
+		event.preventDefault();
+		return false;
+	}
+});
+
 </script>
 
 
@@ -163,7 +195,7 @@ summary {
 <script id="method-doc" type="text/x-handlebars-template">
 	{{#if LONGDESC}}
 		<a name="{{METHOD}}"> </a>
-		<details>
+		<details ontoggle='showOrHideShortDescriptionReverse(this);'>
 			<summary>
 			<span style="font-weight:900">
 				{{METHOD}}
@@ -338,31 +370,7 @@ Handlebars.registerHelper('showExamples', function (entry) {
 // Various JavaScript functions for processing/displaying documentation.
 //
 
-document.body.addEventListener('click', function (event) {
-	// needs some fixing so that clicking in documentation section
-	// does not show the short description.
-	var target = event.target;
-	if (target && target.className.match(/example-button/)) {
-		return;
-	}
-
-	while (target) {
-		var parent = target.parentNode;
-		if (target.nodeName === 'DETAILS') {
-			if (parent && parent.nodeName === 'DIV' &&
-					parent.className.match(/docslot/)) {
-				showOrHideShortDescription(target);
-			} else {
-				return;
-			}
-		}
-		target = parent;
-	}
-});
-
-
-
-function showOrHideShortDescription(target) {
+function showOrHideShortDescriptionReverse(target) {
 	// check the first child which should be <details>.
 	// if it is open, then set a hidden style on <details>/<summary>
 	// first child with "short-desc" as the class.  If <details>
@@ -380,7 +388,7 @@ function showOrHideShortDescription(target) {
 		return;
 	}
 	var openstate = target.getAttribute('open');
-	if (typeof openstate !== 'string') {
+	if (typeof openstate === 'string') {
 		// hide the short-desc text with visibility:hidden
 		shortdesc.style.visibility = 'hidden';
 	} else {
@@ -391,49 +399,11 @@ function showOrHideShortDescription(target) {
 
 
 
-function hideShortDescription(target) {
-	// check the first child which should be <details>.
-	// if it is open, then set a hidden style on <details>/<summary>
-	// first child with "short-desc" as the class.  If <details>
-	// is not open, then unhide the same sub-element.
-	if (target.nodeName !== 'DETAILS') {
-		return;
-	}
-	// go to the first subelement which has a class of "short-desc":
-	var shortdesc = target.querySelector('.short-desc');
-	if (!shortdesc) {
-		return;
-	}
-	if (shortdesc.nodeName !== 'SPAN') {
-		return;
-	}
-	var openstate = target.getAttribute('open');
-	shortdesc.style.visibility = 'hidden';
-}
-
-
-
-function showShortDescription(target) {
-	// check the first child which should be <details>.
-	// if it is open, then set a hidden style on <details>/<summary>
-	// first child with "short-desc" as the class.  If <details>
-	// is not open, then unhide the same sub-element.
-	if (target.nodeName !== 'DETAILS') {
-		return;
-	}
-	// go to the first subelement which has a class of "short-desc":
-	var shortdesc = target.querySelector('.short-desc');
-	if (!shortdesc) {
-		return;
-	}
-	if (shortdesc.nodeName !== 'SPAN') {
-		return;
-	}
-	var openstate = target.getAttribute('open');
-	shortdesc.style.visibility = 'visible';
-}
-
-
+//////////////////////////////
+//
+// insertDocumentation -- Download the documentation for a function
+//    and convert it to HTML code on the page.
+//
 
 function insertDocumentation(target, template) {
 	var name    = target.id;
@@ -459,6 +429,12 @@ function insertDocumentation(target, template) {
 };
 
 
+
+//////////////////////////////
+//
+// expandAllExamples --
+//
+
 function expandAllExamples(element) {
 	text = element.innerHTML;
 	var detailslist = element.parentNode.querySelectorAll('li > details');
@@ -478,18 +454,31 @@ function expandAllExamples(element) {
 }
 
 
+
+//////////////////////////////
+//
+// openAllDocumentation -- For every div.docslot on the page, open
+//      the docmentation for it (the fist <details> element).
+//
+
 function openAllDocumentation() {
-	var methodslots = document.querySelectorAll('.docslot');
+	var methodslots = document.querySelectorAll('div.docslot');
 	var i;
 	for (i=0; i<methodslots.length; i++) {
 		var details = methodslots[i].querySelector('details');
 		if (details) {
 			details.setAttribute('open', true);
-			hideShortDescription(details);
 		}
 	}
 }
 
+
+
+//////////////////////////////
+//
+// closeAllDocumentation -- For every div.docslot on the page, close
+//      the docmentation for it (the fist <details> element).
+//
 
 function closeAllDocumentation() {
 	var methodslots = document.querySelectorAll('.docslot');
@@ -498,12 +487,16 @@ function closeAllDocumentation() {
 		var details = methodslots[i].querySelector('details');
 		if (details) {
 			details.removeAttribute('open');
-			showShortDescription(details);
 		}
 	}
 }
 
 
+
+//////////////////////////////
+//
+// hideAllExamples -- Close every documentation example code box on the page.
+//
 
 function hideAllExamples() {
 	var examples = document.querySelectorAll("details.example-details");
@@ -514,6 +507,11 @@ function hideAllExamples() {
 
 
 
+//////////////////////////////
+//
+// showAllExamples -- Open every documentation example code box on the page.
+//
+
 function showAllExamples() {
 	var examples = document.querySelectorAll("details.example-details");
 	for (var i=0; i<examples.length; i++) {
@@ -521,6 +519,13 @@ function showAllExamples() {
 	}
 }
 
+
+
+//////////////////////////////
+//
+// showSlotDocumentation -- Open a single documentation entry, closing all
+//     others.
+//
 
 function showSlotDocumentation(id) {
 	var target = document.getElementById(id);
