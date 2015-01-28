@@ -5,7 +5,7 @@
 // Last Modified: Wed Jan 28 01:45:03 PST 2015
 // Filename:      RationalNumber/_includes/method-doc.html
 // Syntax:        JavaScript 1.5 (EMCAScript 5)
-// vim:           ts=3 hlsearch
+// vim:           ts=3 ft=javascript hlsearch
 //
 // Description:   This file generats documentation for the RationalNumber
 //                methods documention. To display the documentation for
@@ -38,8 +38,9 @@ var ExampleView = false;
 
 //////////////////////////////
 //
-// DOMContentLoaded event listener -- Download the documentation
-//    and insert it into the docslots after the page has loaded.
+// DOMContentLoaded event listener -- After the page has loaded,
+//    download the documentation and insert it into the docslots 
+//    after the page has loaded.
 //
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -446,6 +447,10 @@ function insertDocumentation(target, template) {
 		var docobj = aton.parse(atondata);
 		var dochtml = template(docobj);
 		target.innerHTML = dochtml;
+		var matches = window.location.href.match(/#([^\/]+)$/);
+		if (matches && (matches[1] === name)) {
+			showSlotDocumentation(name);
+		}
 	});
 	request.addEventListener('error', function () {
 		console.error(this.statusText);
@@ -513,6 +518,19 @@ function showAllExamples() {
 	var examples = document.querySelectorAll("details.example-details");
 	for (var i=0; i<examples.length; i++) {
 		examples[i].setAttribute('open', true);
+	}
+}
+
+
+function showSlotDocumentation(id) {
+	var target = document.getElementById(id);
+	if (!target) {
+		return;
+	}
+	closeAllDocumentation();
+	var details = target.querySelectorAll('details');
+	for (var i=0; i<details.length; i++) {
+		details[i].setAttribute('open', true);
 	}
 }
 
