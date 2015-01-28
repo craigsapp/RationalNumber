@@ -19,20 +19,10 @@
 
 @BRIEFCODE:
 var rn = new RationalNumber('-4/5');
-var numerator = rn.getNumerator();
+rn.getNumerator();
 
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('-4/5');
-var numerator = rn.getNumerator();
-console.log('Value of number:', rn.toString());
-console.log('Numerator of rational number:', numerator);
-
-@LONGOUTPUT:
-Value of number: -4/5
-Numerator of rational number: -4
+@BRIEFOUTPUT:
+-4
 
 @@END:	EXAMPLE
 

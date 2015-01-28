@@ -20,20 +20,10 @@
 
 @BRIEFCODE:
 var rn = new RationalNumber(-23);
-var sign = rn.getSign();
+rn.getSign();
 
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber(-23);
-var sign = rn.getSign();
-console.log('Value of number:', rn.toString());
-console.log('Sign of rational number:', sign);
-
-@LONGOUTPUT:
-Value of number: -23
-Sign of rational number: -1
+@BRIEFOUTPUT:
+-1
 
 @@END:	EXAMPLE
 

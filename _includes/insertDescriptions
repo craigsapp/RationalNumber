@@ -37,7 +37,11 @@ foreach my $line (@contents) {
    my $newdesc = getDescription($id, $srcdir);
    if ($line =~ /^\s*(<div[^>]*class[^>]*docslot[^>]*id[^>]*>)(.*)<\/div>\s*$/) {
       my $div = $1;
-      print "$div$newdesc</div>\n";
+      if ($newdesc =~ /Alias for/) {
+         print "$div&nbsp;&nbsp;&nbsp;$newdesc</div>\n";
+      } else {
+         print "$div$newdesc</div>\n";
+      }
    } else {
       print $line;
    }

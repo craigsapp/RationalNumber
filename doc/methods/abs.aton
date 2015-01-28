@@ -20,23 +20,10 @@
 
 @BRIEFCODE:
 var rn = new RationalNumber('-1/2')
-var rn2 = rn.abs();
+rn.abs().toString();
 
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('-1/2');
-console.log('Value of number before .abs():', rn.toString());
-var rn2 = rn.abs();
-console.log('Value of second number:', rn2.toString());
-console.log('Value of original number after .abs():', rn.toString());
-
-@LONGOUTPUT:
-Value of number before .abs(): -1/2
-Value of second number: 1/2
-Value of original number after .abs(): -1/2
-
+@BRIEFOUTPUT:
+"1/2"
 
 @@END:	EXAMPLE
 

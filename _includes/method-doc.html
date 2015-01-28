@@ -1,9 +1,9 @@
 
-<!-- vim: set ts=3 ft=javascript: -->
 <script src="/javascripts/handlebars-v2.0.0.js"></script>
 <script src="/javascripts/aton.min.js"></script>
 
 <style>
+/* vim: set ts=3 ft=javascript: */
 
 summary {
 	/* prevent a box from showing around summary text */
@@ -21,6 +21,20 @@ summary {
 	background: -ms-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* IE10+ */
 	background: linear-gradient(to right,  #888888 0%,#888888 3%,#3a3c42 91%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
+}
+
+.keyboard-char {
+	background: #999999;
+	box-shadow: 2px 2px 3px #777777;
+	cursor: pointer;
+	cursor: hand;
+	font-size: 80%;
+	color: white;
+	border-radius: 2px;
+	padding-right: 3px;
+	margin-right: 3px;
+	padding-left: 3px;
+	margin-top: 0;
 }
 
 .example-button {
@@ -164,17 +178,17 @@ Handlebars.registerHelper('showExamples', function (entry) {
 		output += ' onclick="expandAllExamples(this);">'
 		output += 'Expand all';
 		output += '</span>\n';
-		output += "<ol>\n";
+		output += '<ol style="padding-left:0; margin-left:0;">\n';
 		for (var i=0; i<entry.length; i++) {
-			output += "<li>\n";
-			output += "<details>\n";
+			output += '<li>\n';
+			output += '<details class="example-details">\n';
 			output += template(entry[i]);
-			output += "</details>\n";
-			output += "</li>\n";
+			output += '</details>\n';
+			output += '</li>\n';
 		}
-		output += "</ol>\n";
+		output += '</ol>\n';
 	} else {
-	   output = '<details>';
+	   output = '<details class="example-details">';
 		output += '<summary>';
 		output += '<span style="font-weight:700">Example:</span> ';
 		output += entry.DESCRIPTION;
@@ -194,7 +208,7 @@ Handlebars.registerHelper('showExamples', function (entry) {
 
 <script>
 
-document.body.addEventListener("click", function (event) {
+document.body.addEventListener('click', function (event) {
 	// needs some fixing so that clicking in documentation section
 	// does not show the short description.
 	var target = event.target;
@@ -204,7 +218,7 @@ document.body.addEventListener("click", function (event) {
 
 	while (target) {
 		var parent = target.parentNode;
-   	if (target.nodeName === "DETAILS") {
+   	if (target.nodeName === 'DETAILS') {
 			if (parent && parent.nodeName === 'DIV' &&
 					parent.className.match(/docslot/)) {
 				showOrHideShortDescription(target);
@@ -223,7 +237,7 @@ function showOrHideShortDescription(target) {
    // if it is open, then set a hidden style on <details>/<summary>
 	// first child with "short-desc" as the class.  If <details>
 	// is not open, then unhide the same sub-element.
-	if (target.nodeName !== "DETAILS") {
+	if (target.nodeName !== 'DETAILS') {
 		return;
 	}
 
@@ -243,6 +257,48 @@ function showOrHideShortDescription(target) {
 		// show the short-desc text with visibility:visible
 		shortdesc.style.visibility = 'visible';
 	}
+}
+
+
+
+function hideShortDescription(target) {
+   // check the first child which should be <details>.
+   // if it is open, then set a hidden style on <details>/<summary>
+	// first child with "short-desc" as the class.  If <details>
+	// is not open, then unhide the same sub-element.
+	if (target.nodeName !== 'DETAILS') {
+		return;
+	}
+	// go to the first subelement which has a class of "short-desc":
+	var shortdesc = target.querySelector('.short-desc');
+	if (!shortdesc) {
+		return;
+	}
+	if (shortdesc.nodeName !== 'SPAN') {
+		return;
+	}
+	var openstate = target.getAttribute('open');
+	shortdesc.style.visibility = 'hidden';
+}
+
+function showShortDescription(target) {
+   // check the first child which should be <details>.
+   // if it is open, then set a hidden style on <details>/<summary>
+	// first child with "short-desc" as the class.  If <details>
+	// is not open, then unhide the same sub-element.
+	if (target.nodeName !== 'DETAILS') {
+		return;
+	}
+	// go to the first subelement which has a class of "short-desc":
+	var shortdesc = target.querySelector('.short-desc');
+	if (!shortdesc) {
+		return;
+	}
+	if (shortdesc.nodeName !== 'SPAN') {
+		return;
+	}
+	var openstate = target.getAttribute('open');
+	shortdesc.style.visibility = 'visible';
 }
 
 
@@ -275,13 +331,57 @@ function expandAllExamples(element) {
 		for(i=0; i<detailslist.length; i++) {
 			detailslist[i].removeAttribute('open');
 		}
-		element.textContent = "Expand all";
+		element.textContent = 'Expand all';
 	} else {
 		// expand all examples
 		for(i=0; i<detailslist.length; i++) {
 			detailslist[i].setAttribute('open', true);
 		}
-		element.textContent = "Collapse all";
+		element.textContent = 'Collapse all';
+	}
+}
+
+
+function openAllDocumentation() {
+	var methodslots = document.querySelectorAll('.docslot');
+	var i;
+	for (i=0; i<methodslots.length; i++) {
+		var details = methodslots[i].querySelector('details');
+		if (details) {
+			details.setAttribute('open', true);
+			hideShortDescription(details);
+		}
+	}
+}
+
+
+function closeAllDocumentation() {
+	var methodslots = document.querySelectorAll('.docslot');
+	var i;
+	for (i=0; i<methodslots.length; i++) {
+		var details = methodslots[i].querySelector('details');
+		if (details) {
+			details.removeAttribute('open');
+			showShortDescription(details);
+		}
+	}
+}
+
+
+
+function hideAllExamples() {
+	var examples = document.querySelectorAll("details.example-details");
+	for (var i=0; i<examples.length; i++) {
+		examples[i].removeAttribute('open');
+	}
+}
+
+
+
+function showAllExamples() {
+	var examples = document.querySelectorAll("details.example-details");
+	for (var i=0; i<examples.length; i++) {
+		examples[i].setAttribute('open', true);
 	}
 }
 

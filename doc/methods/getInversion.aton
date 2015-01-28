@@ -19,21 +19,12 @@
 @BRIEFCODE:
 var rn = new RationalNumber('3/7');
 var rn2 = rn.getInversion();
+rn.toString();
+rn2.toString();
 
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('3/7');
-console.log('Value of original number before .getInversion():', rn.toString());
-var rn2 = rn.getInversion();
-console.log('Value of second number:', rn2.toString());
-console.log('Value of original number after .getInversion():', rn.toString());
-
-@LONGOUTPUT:
-Value of original number before .getInversion(): 3/7
-Value of second number: 7/3
-Value of original number after .getInversion(): 3/7
+@BRIEFOUTPUT:
+"3/7"
+"7/3"
 
 @@END:	EXAMPLE
 

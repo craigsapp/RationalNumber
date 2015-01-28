@@ -1,10 +1,13 @@
 ---
 layout: index
+vim:	  ts=3
 ---
 
 {% include method-doc.html %}
 
 <script>
+
+var ExampleView = false;
 
 document.addEventListener("DOMContentLoaded", function () {
 	var docslots = document.querySelectorAll(".docslot");
@@ -14,6 +17,40 @@ document.addEventListener("DOMContentLoaded", function () {
 		insertDocumentation(docslots[i], template);
 	}
 });
+
+
+document.addEventListener('keydown', function(event) {
+	if (!(event.ctrlKey || event.metaKey || event.altKey)) {
+		return;
+	}
+	const EqualsKey = 187;
+	const MinusKey  = 189;
+	const EKey      =  69;
+	switch (event.keyCode) {
+		case EqualsKey:
+			if (typeof openAllDocumentation !== 'undefined') {
+				openAllDocumentation();
+			}
+			break;
+		case MinusKey:
+			if (typeof closeAllDocumentation !== 'undefined') {
+				closeAllDocumentation();
+			}
+			break;
+		case EKey:
+				if (ExampleView && (typeof hideAllExamples !== 'undefined')) {
+					hideAllExamples();
+					ExampleView = !ExampleView;
+				} else if (!ExampleView && 
+						(typeof showAllExamples !== 'undefined')) {
+					showAllExamples();
+					ExampleView = !ExampleView;
+				}
+			break;
+	}
+});
+
+
 
 </script>
 
@@ -147,6 +184,11 @@ $ cd test; mocha
 Click on the function names to view documentation and examples for each
 method.  Example code can be run in the JavaScript console for this
 page since this page has loaded a copy of the RationalNumber code.
+Press <span class="keyboard-char">ctrl</span>+<span class="keyboard-char">+/=</span>
+keys to open all documentation, 
+<span class="keyboard-char">ctrl</span>+<span class="keyboard-char">&ndash;</span>
+to close all docmentation, and 
+<span class="keyboard-char">ctrl</span>+<span class="keyboard-char">e</span> to toggle display of all examples.
 
 {% include method-list-1.html %}
 

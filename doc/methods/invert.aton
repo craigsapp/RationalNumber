@@ -20,22 +20,10 @@
 
 @BRIEFCODE:
 var rn = new RationalNumber('2/3');
-rn.invert();
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('2/3');
-console.log('Value of number before .invert():', rn.toString());
-rn.invert();
-console.log('Value of number after .invert():', rn.toString());
-
-@LONGOUTPUT:
-Value of number before .invert(): 2/3
-Value of number after .invert(): 3/2
+rn.invert().toString();
 
 @@END:	EXAMPLE
+"3/2"
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

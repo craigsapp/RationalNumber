@@ -1,7 +1,7 @@
 
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
-@METHOD:	isNan
+@METHOD:	isNaN
 @PARAMETERS:	none
 @PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
@@ -17,7 +17,7 @@
 
 @BRIEFCODE:
 var rn = new RationalNumber(0,0);
-rn.isNan();
+rn.isNaN();
 
 @BRIEFOUTPUT:
 true
@@ -32,7 +32,7 @@ true
 
 @BRIEFCODE:
 var rn = new RationalNumber(1,2);
-rn.isNan();
+rn.isNaN();
 
 @BRIEFOUTPUT:
 false
@@ -47,7 +47,7 @@ false
 
 @BRIEFCODE:
 var rn = new RationalNumber(1,0);
-rn.isNan();
+rn.isNaN();
 
 @BRIEFOUTPUT:
 false
