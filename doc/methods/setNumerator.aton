@@ -7,7 +7,7 @@
 @FILE:		RationalNumber-base.js
 @SEEALSO:	setValue
 @SEEALSO:	setDenominator
-@SHORTDESC:	Set the numerator, reducing if necessary.
+@SHORTDESC:	Set the numerator, reducing fraction if necessary.
 @LONGDESC:	Assigns a new value for the numerator, including an
 		optional sign, and the check to see if the number
 		needs to be reduced.

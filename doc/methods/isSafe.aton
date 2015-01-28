@@ -7,7 +7,7 @@
 @FILE:		RationalNumber-base.js
 @SEEALSO:	checkOverflow
 @SEEALSO:	isSafe
-@SHORTDESC:	Numerator and denominator less than 2<sup>53</sup>.
+@SHORTDESC:	Numerator and denominator both less than 2<sup>53</sup>.
 @LONGDESC:	Fractions can only be represented in the RationalNumber
 		class properly when the numerator is in the range
 		from &ndash;(2<sup>53</sup>&ndash;1) to

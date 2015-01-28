@@ -2,25 +2,8 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	negation
-@PARAMETERS:	
-@PROTOTYPE:	
-@FILE:		RationalNumber-math.js
-@SEEALSO:	
-@SHORTDESC:	Alias of getNegation method.
-@LONGDESC:
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@BEGIN: EXAMPLE
-@DESCRIPTION:
-@BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
-@@END:	EXAMPLE
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@END:	FunctionDocumentation
-
+@ALIASOF:	getNegation
+@SHORTDESC:	Alias for getNegation method.
+@@END:		FunctionDocumentation
 
 

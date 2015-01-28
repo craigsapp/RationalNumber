@@ -7,7 +7,7 @@
 @FILE:		RationalNumber-base.js
 @SEEALSO:	checkOverflowOn
 @SEEALSO:	checkOverflow
-@SHORTDESC:	Turn off overflow validity checks.
+@SHORTDESC:	Turn off automatic overflow validity checks.
 @LONGDESC:	Suppress validity check for every operation which
 		may cause the numerator or denominator to overflow
 		the maximum representable integer (2<sup>53</sup>&nbsp;1).

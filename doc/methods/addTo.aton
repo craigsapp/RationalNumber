@@ -2,20 +2,29 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	addTo
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	RationalNumber+
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-math.js
-@SEEALSO:	
+@SEEALSO:	add
 @SHORTDESC:	To this RationalNumber, add additional numbers.
-@LONGDESC:
+@LONGDESC:	Add all of the numbers from the argument list to the
+		current value of the object.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Add the numbers from 1 to 10
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber(1, 3);
+var rn2 = new RationalNumber(1, 2);
+rn.addTo(rn2);
+rn.toString();
+
+@BRIEFOUTPUT:
+"5/6"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

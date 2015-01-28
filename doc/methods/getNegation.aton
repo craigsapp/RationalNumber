@@ -2,20 +2,29 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	getNegation
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-math.js
-@SEEALSO:	
+@SEEALSO:	negate
 @SHORTDESC:	Return a copy of the object, with sign reversed.
-@LONGDESC:
+@LONGDESC:	Return a copy of the object, with the sign reversed.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Get a negated copy of a number.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('1/2');
+var rn2 = rn.getNegation();
+rn.toString();
+rn2.toString();
+
+@BRIEFOUTPUT:
+"1/2"
+"-1/2"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

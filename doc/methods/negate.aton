@@ -2,20 +2,26 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	negate
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-math.js
 @SEEALSO:	
 @SHORTDESC:	Make positive values negative and vice-versa.
-@LONGDESC:
+@LONGDESC:	Flip the sign of the rational number.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Make positive number negative.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('1/2');
+rn.negate().toString();
+
+@BRIEFOUTPUT:
+-1/2
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

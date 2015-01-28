@@ -2,23 +2,48 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	isInteger
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
 @SEEALSO:	
 @SHORTDESC:	Returns true if denominator is 1.
-@LONGDESC:
+@LONGDESC:	Returns true if the denominator is 1, which implies that
+		the number is an integer.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: 	Test if non-integer is an integer.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('1/4');
+rn.isInteger();
+
+@BRIEFOUTPUT:
+false
+
 @@END:	EXAMPLE
 
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: 	Test if integer is an integer.
+
+@BRIEFCODE:
+var rn = new RationalNumber('14');
+rn.isInteger();
+
+@BRIEFOUTPUT:
+true
+
+@@END:	EXAMPLE
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 @@END:	FunctionDocumentation
 

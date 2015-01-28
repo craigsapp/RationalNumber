@@ -2,20 +2,45 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	isPositive
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	none
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	isNegative
 @SHORTDESC:	Returns true if larger than 0.
-@LONGDESC:
+@LONGDESC:	Return true if the rational number is larger than 0.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Test if postive value is positive.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('3/5');
+rn.toString();
+rn.isPositive();
+
+@BRIEFOUTPUT:
+"3/5"
+false
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Test if negative value is positive.
+
+@BRIEFCODE:
+var rn = new RationalNumber('-3/5');
+rn.toString();
+rn.isNegative();
+
+@BRIEFOUTPUT:
+"-3/5"
+false
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
