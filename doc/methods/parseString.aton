@@ -2,25 +2,49 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	parseString
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	String
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
-@SHORTDESC:	same as fromString(), but returns a new RationalNumber rather than changing current object.
-@LONGDESC:
+@SEEALSO:	fromString
+@SHORTDESC:	Return a new RationalNumber rather than changing current object.
+@LONGDESC:	Converts a string into a RationalNumber like
+		the fromString method, but this function does not
+		alter the calling object.  Instead a new RationalNumber
+		object is created from the string argument.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Read a rational number from a string.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber('7/8');
+rn.parseString('2/3').toString();
+rn.toString();
+
+@BRIEFOUTPUT:
+"2/3"
+"7/8"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Parse string directly from prototype.
+
+@BRIEFCODE:
+RationalNumber.prototype.parseString('2/3').toString();
+
+@BRIEFOUTPUT:
+"2/3"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@END:	FunctionDocumentation
-
 
 

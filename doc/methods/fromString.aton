@@ -2,23 +2,51 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	fromString
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	String
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	fromStringNoReduce
+@SEEALSO:	parseString
 @SHORTDESC:	Read number from string.
-@LONGDESC:
+@LONGDESC:	Set the rational number value from a text string,
+		reducing the fraction if necessary.  The string can
+		contain a regular fraction such as "1/2", or it may contain
+		a mixed fraction provided it is formatted in one of the
+		standard ways.  Also, "Infinity" will be interpreted as
+		"1/0", "-Infinity" as "-1/0", and "NaN" as "0/0".
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Read a rational number from a string.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber();
+rn.fromString("8/16").toString();
+
+@BRIEFOUTPUT:
+"1/2"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Read a rational number from a mixed-fraction string.
+
+@BRIEFCODE:
+var rn = new RationalNumber();
+rn.fromString("-7 1/2").toString();
+
+@BRIEFOUTPUT:
+"-15/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 @@END:	FunctionDocumentation
 

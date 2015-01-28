@@ -2,23 +2,46 @@
 @@BEGIN:	FunctionDocumentation
 @OBJECT:	RationalNumber
 @METHOD:	fromStringNoReduce
-@PARAMETERS:	
-@PROTOTYPE:	
+@PARAMETERS:	String
+@PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
-@SEEALSO:	
+@SEEALSO:	fromString
 @SHORTDESC:	Read number from string without reducing.
-@LONGDESC:
+@LONGDESC:	Similar to the fromString method, but the parsed
+		rational number will not be reduced.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @@BEGIN: EXAMPLE
-@DESCRIPTION:
+
+@DESCRIPTION: Read a rational number from a string.
+
 @BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+var rn = new RationalNumber();
+rn.fromStringNoReduce("8/16").toString();
+
+@BRIEFOUTPUT:
+"8/16"
+
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@BEGIN: EXAMPLE
+
+@DESCRIPTION: Read a rational number from a mixed-fraction string.
+
+@BRIEFCODE:
+var rn = new RationalNumber();
+rn.fromStringNoReduce("-7 4/2").toString();
+
+@BRIEFOUTPUT:
+"-18/2"
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 @@END:	FunctionDocumentation
 
