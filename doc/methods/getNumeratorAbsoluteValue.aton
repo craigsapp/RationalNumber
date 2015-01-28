@@ -17,11 +17,11 @@
 
 @DESCRIPTION:	Get absolute value of numerator of a negative rational number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('-4/5');
 var numerator = rn.getNumeratorAbsoluteValue();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 4
 
 @@END:	EXAMPLE

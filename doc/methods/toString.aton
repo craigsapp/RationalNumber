@@ -25,22 +25,12 @@
 
 @DESCRIPTION: Convert a RationalNumber into a String.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(4, 11);
 rn.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "4/11"
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber(4, 11);
-console.log("RationalNumber(4, 11) == ", rn.toString());
-
-@LONGOUTPUT:
-RationalNumber(4, 11) ==  4/11
 
 @@END:	EXAMPLE
 
@@ -51,24 +41,13 @@ RationalNumber(4, 11) ==  4/11
 
 @DESCRIPTION: Convert a RationalNumber to a String and use it to set another RationalNumber value.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(4, 11);
 var rn2 = new RationalNumber(rn.toString());
 rn2.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "4/11"
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber(4, 11);
-var rn2 = new RationalNumber(rn.toString());
-console.log("rn =", rn.toString(), " rn2 =", rn2.toString());
-
-@LONGOUTPUT:
-rn = 4/11  rn2 = 4/11
 
 @@END:	EXAMPLE
 
@@ -79,31 +58,15 @@ rn = 4/11  rn2 = 4/11
 
 @DESCRIPTION: Print toString versions of Infinity, -Infinity and NaN.
 
-@BRIEFCODE:
+@CODE:
 new RationalNumber(1,0).toString();
 new RationalNumber(-1,0).toString();
 new RationalNumber(0,0).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/0"
 "-1/0"
 "0/0"
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var infinity = new RationalNumber(1,0);
-var ninfinity = new RationalNumber(-1,0);
-var nan = new RationalNumber(0,0);
-console.log("Infinity =", infinity.toString());
-console.log("-Infinity =", ninfinity.toString());
-console.log("NaN =", nan.toString());
-
-@LONGOUTPUT:
-Infinity = 1/0
--Infinity = -1/0
-NaN = 0/0
 
 @@END:	EXAMPLE
 
@@ -114,12 +77,12 @@ NaN = 0/0
 
 @DESCRIPTION: Loading from "Infinity", "-Infinity" and "NaN" strings.
 
-@BRIEFCODE:
+@CODE:
 new RationalNumber("Infinity").toString();
 new RationalNumber("-Infinity").toString();
 new RationalNumber("NaN").toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/0"
 "-1/0"
 "0/0"

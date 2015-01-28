@@ -15,13 +15,13 @@
 
 @DESCRIPTION: Get a negated copy of a number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('1/2');
 var rn2 = rn.getNegation();
 rn.toString();
 rn2.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 "-1/2"
 

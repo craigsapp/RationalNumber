@@ -23,12 +23,12 @@
 @@BEGIN: EXAMPLE
 @DESCRIPTION:	Make value negative by giving any negative number as the argument.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(1, 2);
 rn.toString();
 rn.setSign(-19).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 "-1/2"
 
@@ -38,14 +38,14 @@ rn.setSign(-19).toString();
 
 @@BEGIN:	EXAMPLE
 @DESCRIPTION:	The sign can be set by another RationalNumber.
-@BRIEFCODE:
+@CODE:
 var rn  = new RationalNumber('1/2');
 var rn2 = new RationalNumber('-7/3');
 rn..toString();
 rn2.toString();
 rn.setSign(rn2).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 "-7/3"
 "-1/2"
@@ -57,12 +57,12 @@ rn.setSign(rn2).toString();
 @@BEGIN:	EXAMPLE
 @DESCRIPTION:	Make value positive by giving any non-negative number as the argument.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(-1, 2);
 rn.toString();
 rn.setSign(1).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-1/2"
 "1/2"
 
@@ -72,13 +72,13 @@ rn.setSign(1).toString();
 
 @@BEGIN:	EXAMPLE
 @DESCRIPTION:	Use a text string to set the sign.
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(1, 2);
 rn.toString();
 rn.setSign('negative').toString();
 rn.setSign('positive').toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 "-1/2"
 "1/2"
@@ -93,13 +93,13 @@ rn.setSign('positive').toString();
 		If the string is '+', or anything, other than 'negative', the value
 		will be set to positive.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(1, 2);
 rn.toString();
 rn.setSign('-').toString();
 rn.setSign('+').toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 "-1/2"
 "1/2"

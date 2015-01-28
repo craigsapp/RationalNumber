@@ -15,11 +15,11 @@
 
 @DESCRIPTION:   Check if 0/0 is NaN.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(0,0);
 rn.isNaN();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 true
 
 @@END:	EXAMPLE
@@ -30,11 +30,11 @@ true
 
 @DESCRIPTION:   Check if finite number is a NaN.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(1,2);
 rn.isNaN();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE
@@ -45,11 +45,11 @@ false
 
 @DESCRIPTION:   Check if an infinite number is a NaN.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(1,0);
 rn.isNaN();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE

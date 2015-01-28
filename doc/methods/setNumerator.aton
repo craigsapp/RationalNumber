@@ -18,11 +18,11 @@
 
 @DESCRIPTION: Set the numerator, forcing the denominator to change due to simpilfying the fract.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('5/6');
 rn.setNumerator(10).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "5/3"
 
 @@END:	EXAMPLE

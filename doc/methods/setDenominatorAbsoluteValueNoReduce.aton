@@ -21,11 +21,11 @@
 
 @DESCRIPTION: Set teh denominator but do not try to reduece the fraction.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('6/3');
 rn.setDenominatorAbsoluteValueNoReduce(4).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "2/4"
 
 @@END:	EXAMPLE

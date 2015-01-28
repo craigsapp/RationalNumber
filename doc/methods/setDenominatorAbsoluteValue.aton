@@ -19,11 +19,11 @@
 
 @DESCRIPTION: Set the denominator, forcing a check for reducing the fraction.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('3/7');
 rn.setDenominatorAbsoluteValue(6).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 
 @@END:	EXAMPLE

@@ -15,7 +15,7 @@
 
 @DESCRIPTION: Copy another rational number's value.
 
-@BRIEFCODE:
+@CODE:
 var rn  = new RationalNumber('1/2');
 var rn2 = new RationalNumber('3/7');
 rn.toString();
@@ -23,7 +23,7 @@ rn2.toString();
 rn2.copy(rn);
 rn2.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 "3/7"
 "1/2"

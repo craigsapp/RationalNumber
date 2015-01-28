@@ -25,11 +25,11 @@
 
 @DESCRIPTION: Set the number with a numerator and denominator as arguments.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.setValue(6, 12).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 
 @@END:	EXAMPLE
@@ -40,11 +40,11 @@ rn.setValue(6, 12).toString();
 
 @DESCRIPTION: Set the number with only a numerator.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.setValue(6).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "6"
 
 @@END:	EXAMPLE
@@ -55,11 +55,11 @@ rn.setValue(6).toString();
 
 @DESCRIPTION: Set the number with a string argument.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.setValue('-6/-12').toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 
 @@END:	EXAMPLE
@@ -70,12 +70,12 @@ rn.setValue('-6/-12').toString();
 
 @DESCRIPTION: Set the number with another rational number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 var rn2 = new RationalNumber('5/7');
 rn.setValue(rn2).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "5/7"
 
 @@END:	EXAMPLE

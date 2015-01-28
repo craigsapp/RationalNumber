@@ -19,12 +19,12 @@
 
 @DESCRIPTION: Reduce a fraction.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.setValueNoReduce(4*63, 7*63).toString();
 rn.reduce.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "252/411"
 "4/7"
 

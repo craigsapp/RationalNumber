@@ -21,7 +21,7 @@
 
 @DESCRIPTION:	Generate an unsafe number, but don't check while creating it.
 
-@BRIEFCODE:
+@CODE:
 RationalNumber.prototype.checkOverflowOn();
 var rn1 = new RationalNumber(Math.pow(2, 53)-2);
 var rn2 = new RationalNumber(7);
@@ -29,7 +29,7 @@ RationalNumber.prototype.checkOverflowOff();
 rn1.addTo(rn2).toString();
 rn1.isSafe();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "9007199254740996"
 false
 

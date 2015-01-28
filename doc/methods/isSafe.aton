@@ -55,12 +55,12 @@
 
 @DESCRIPTION: Catch an unsafe rational number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.setDenominatorAbsoluteValueNoReduce(Math.pow(2, 53));
 rn.isSafe();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE
@@ -71,12 +71,12 @@ false
 
 @DESCRIPTION: Catch an unsafe rational number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.setDenominatorAbsoluteValueNoReduce(Math.pow(2, 53));
 rn.isSafe();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE

@@ -16,11 +16,11 @@
 
 @DESCRIPTION: 	Test if non-integer is an integer.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('1/4');
 rn.isInteger();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE
@@ -32,11 +32,11 @@ false
 
 @DESCRIPTION: 	Test if integer is an integer.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('14');
 rn.isInteger();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 true
 
 @@END:	EXAMPLE

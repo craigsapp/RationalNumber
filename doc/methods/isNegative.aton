@@ -15,12 +15,12 @@
 
 @DESCRIPTION: Test if positive value is negative.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('3/5');
 rn.toString();
 rn.isNegative();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "3/5"
 false
 

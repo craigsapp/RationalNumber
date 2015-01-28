@@ -18,12 +18,12 @@
 
 @DESCRIPTION: Read a rational number from a string.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('7/8');
 rn.parseString('2/3').toString();
 rn.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "2/3"
 "7/8"
 
@@ -35,10 +35,10 @@ rn.toString();
 
 @DESCRIPTION: Parse string directly from prototype.
 
-@BRIEFCODE:
+@CODE:
 RationalNumber.prototype.parseString('2/3').toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "2/3"
 
 @@END:	EXAMPLE

@@ -15,12 +15,12 @@
 
 @DESCRIPTION: Make positive number negative.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('1/2');
 rn.negate().toString();
 
-@BRIEFOUTPUT:
--1/2
+@OUTPUT:
+"-1/2"
 
 @@END:	EXAMPLE
 

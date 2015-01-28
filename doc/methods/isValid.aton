@@ -22,11 +22,11 @@
 
 @DESCRIPTION: Check if a finite number is valid.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('174/123521');
 rn.isValid();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 true
 
 @@END:	EXAMPLE
@@ -37,11 +37,11 @@ true
 
 @DESCRIPTION: Check if infinity is valid.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('Infinity');
 rn.isValid();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE
@@ -52,11 +52,11 @@ false
 
 @DESCRIPTION: Check if an unsafe number is valid.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(Math.pow(2, 53));
 rn.isValid();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 false
 
 @@END:	EXAMPLE

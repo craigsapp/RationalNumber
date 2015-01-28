@@ -17,11 +17,11 @@
 
 @DESCRIPTION: Set the numerator, ignoring the sign and not reducing.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('1/2');
 rn.setNumeratorAbsoluteValueNoReduce(-4).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "4/2"
 
 @@END:	EXAMPLE

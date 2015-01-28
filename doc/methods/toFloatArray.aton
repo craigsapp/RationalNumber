@@ -69,10 +69,10 @@
 
 @DESCRIPTION: Create a float array number from "13/11".
 
-@BRIEFCODE:
+@CODE:
 new RationalNumber(13,11).toFloatArray();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 [1.1818181818181819, 2, 11]
 
 @@END:	EXAMPLE

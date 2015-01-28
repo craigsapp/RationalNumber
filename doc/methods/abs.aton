@@ -18,11 +18,11 @@
 
 @DESCRIPTION:	Get the absolute value of a RationalNumber.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('-1/2')
 rn.abs().toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 
 @@END:	EXAMPLE

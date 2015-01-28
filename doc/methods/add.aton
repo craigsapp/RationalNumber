@@ -13,9 +13,8 @@
 
 @@BEGIN: EXAMPLE
 @DESCRIPTION:
-@BRIEFCODE:
-@LONGCODE:
-@LONGOUTPUT:
+@CODE:
+@OUTPUT:
 @@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

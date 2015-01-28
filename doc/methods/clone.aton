@@ -17,7 +17,7 @@
 
 @DESCRIPTION:	Compare cloning to reference copying behavior.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('4/9');
 var rn2 = rn.clone();
 var rn3 = rn2.clone();
@@ -26,30 +26,8 @@ rn4.setValue('5/3');
 rn2.setValue('1/6');
 console.log(rn.toString(), rn2.toString(), rn3.toString(), rn4.toString());
 
-@BRIEFOUTPUT:
+@OUTPUT:
 4/9 1/6 5/3 5/3
-
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('4/9');
-var rn2 = rn;
-console.log('Value of numbers:', rn.toString(), rn2.toString());
-rn2.setValue('2/3');
-console.log('Numbers after changing second one:', rn.toString(), rn2.toString());
-rn2 = rn.clone();
-console.log('Value of numbers:', rn.toString(), rn2.toString());
-rn2.setValue('5/3');
-console.log('Numbers after changing second one:', rn.toString(), rn2.toString());
-
-@LONGOUTPUT:
-Value of numbers: 4/9 4/9
-Numbers after changing second one: 2/3 2/3
-Value of numbers: 2/3 2/3
-Numbers after changing second one: 2/3 5/3
-
 
 @@END:	EXAMPLE
 

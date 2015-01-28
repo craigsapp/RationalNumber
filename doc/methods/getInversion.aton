@@ -16,13 +16,13 @@
 @@BEGIN: EXAMPLE
 @DESCRIPTION: Get the reciprocal of a number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('3/7');
 var rn2 = rn.getInversion();
 rn.toString();
 rn2.toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "3/7"
 "7/3"
 

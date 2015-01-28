@@ -22,21 +22,11 @@
 
 @DESCRIPTION:	Print the rational and floating-point forms of a fraction.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('15/16');
 console.log(rn.toString(), '=', rn.valueOf());
 
-@BRIEFOUTPUT:
-15/16 = 0.9375
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('15/16');
-console.log(rn.toString(), '=', rn.valueOf());
-
-@LONGOUTPUT:
+@OUTPUT:
 15/16 = 0.9375
 
 @@END:	EXAMPLE
@@ -48,28 +38,14 @@ console.log(rn.toString(), '=', rn.valueOf());
 @DESCRIPTION:	Add a RationalNumber object to a Number, using an implicit
 		call to valueOf().
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('1/2');
 5 + rn
 rn + 3
 
-@BRIEFOUTPUT:
+@OUTPUT:
 5.5
 3.5
-
-@LONGCODE:
-<<node>>
-var RationalNumber = require('rational-number');
-<</node>>
-var rn = new RationalNumber('1/2');
-var result1 = 5 + rn;
-var result2 = rn + 3;
-console.log("5 + rn =", result1);
-console.log("rn + 3 =", result2);
-
-@LONGOUTPUT:
-5 + rn = 5.5
-rn + 3 = 3.5
 
 @@END:	EXAMPLE
 

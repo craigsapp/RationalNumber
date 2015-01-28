@@ -22,12 +22,12 @@
 
 @DESCRIPTION: Create a JSON string with different numerator and denominator property names.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('-3/56');
 rn.toJSON();
 rn.toJSON('numerator', 'denominator');
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "{"n":-3, "d":56}"
 "{"numerator":-3, "denominator":56}"
 

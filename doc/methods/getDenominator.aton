@@ -18,11 +18,11 @@
 
 @DESCRIPTION: Get the denominator of a rational number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('44/31');
 rn.getDenominator();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 31
 
 @@END:	EXAMPLE
@@ -34,11 +34,11 @@ rn.getDenominator();
 
 @DESCRIPTION: Get the denominator of a negative rational number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('-44/31');
 rn.getDenominator();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 31
 
 @@END:	EXAMPLE

@@ -17,11 +17,11 @@
 
 @DESCRIPTION: Identify an unsafe number by throwing an error.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(Math.pow(2,53));
 rn.checkOverflow();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 Uncaught Error: RationalNumber is not safe: 9007199254740992
 
 @@END:	EXAMPLE

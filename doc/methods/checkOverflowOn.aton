@@ -26,13 +26,13 @@
 
 @DESCRIPTION: Automatically check of rational number goes out of bounds.
 
-@BRIEFCODE:
+@CODE:
 RationalNumber.prototype.checkOverflowOn();
 var rn1 = new RationalNumber(Math.pow(2, 53)-2);
 var rn2 = new RationalNumber(7);
 rn1.addTo(rn2);
 
-@BRIEFOUTPUT:
+@OUTPUT:
 Uncaught Error: RationalNumber is not safe: 9007199254740996
 
 @@END:	EXAMPLE

@@ -19,12 +19,12 @@
 
 @DESCRIPTION: Check if &ndash;Infinity is infinite.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber("-Infinity");
 rn.toString();
 rn.isInfinite();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-1/0"
 true
 

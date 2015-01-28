@@ -18,11 +18,11 @@
 @@BEGIN: EXAMPLE
 @DESCRIPTION: Get the sign of a negative number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(-23);
 rn.getSign();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 -1
 
 @@END:	EXAMPLE

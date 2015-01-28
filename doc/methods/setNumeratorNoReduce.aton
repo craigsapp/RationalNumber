@@ -19,11 +19,11 @@
 
 @DESCRIPTION: Set the numerator so that the new rational number is not in simple form
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('1/2');
 rn.setNumeratorNoReduce(-2).toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-2/2"
 
 @@END:	EXAMPLE

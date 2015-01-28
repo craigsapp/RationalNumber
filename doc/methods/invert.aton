@@ -18,12 +18,14 @@
 
 @DESCRIPTION: Invert a number.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber('2/3');
 rn.invert().toString();
 
-@@END:	EXAMPLE
+@OUTPUT:
 "3/2"
+
+@@END:	EXAMPLE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

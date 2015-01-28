@@ -55,12 +55,12 @@
 @@BEGIN: EXAMPLE
 @DESCRIPTION: Default mixed fraction style for positive numbers.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(21, 2);
 rn.toString();
 rn.toStringMixed();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "21/2"
 "10+1/2"
 
@@ -75,12 +75,12 @@ rn.toStringMixed();
 
 @DESCRIPTION: Print default mixed fraction style for negative numbers.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(21, -2);
 rn.toString();
 rn.toStringMixed();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-21/2"
 "-10-1/2"
 
@@ -96,12 +96,12 @@ rn.toStringMixed();
 
 @DESCRIPTION: Print positive mixed fraction with space in middle.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(21, 2);
 rn.toString();
 rn.toStringMixed(' ');
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "21/2"
 "10 1/2"
 
@@ -116,12 +116,12 @@ rn.toStringMixed(' ');
 
 @DESCRIPTION: Print negative mixed fraction with space in middle.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(21, -2);
 rn.toString();
 rn.toStringMixed(' ');
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-21/2"
 "-10 1/2"
 
@@ -137,12 +137,12 @@ rn.toStringMixed(' ');
 
 @DESCRIPTION: Print mixed fraction as list of integer and fractional parts.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(21, 2);
 rn.toString();
 rn.toStringMixed(', ', ', -', '(', ')');
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "21/2"
 "(10, 1/2)"
 
@@ -157,12 +157,12 @@ rn.toStringMixed(', ', ', -', '(', ')');
 
 @DESCRIPTION: Print negative mixed fraction as list of integer and fractional parts.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber(21, 2);
 rn.toString();
 rn.toStringMixed(', ', ', -', '(', ')');
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-21/2"
 "(-10, -1/2)"
 

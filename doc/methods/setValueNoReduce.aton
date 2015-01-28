@@ -25,7 +25,7 @@
 
 @DESCRIPTION: Create an unreduced fraction with various input types.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 var rn2 = new RationalNumber();
 rn.setValueNoReduce(2, 4).toString();
@@ -36,7 +36,7 @@ rn3 = new RationalNumber();
 rn3.setValue(rn).toString();
 
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "2/4"
 "2/4"
 "2/4"

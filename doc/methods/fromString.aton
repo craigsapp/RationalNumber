@@ -21,11 +21,11 @@
 
 @DESCRIPTION: Read a rational number from a string.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.fromString("8/16").toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "1/2"
 
 @@END:	EXAMPLE
@@ -36,11 +36,11 @@ rn.fromString("8/16").toString();
 
 @DESCRIPTION: Read a rational number from a mixed-fraction string.
 
-@BRIEFCODE:
+@CODE:
 var rn = new RationalNumber();
 rn.fromString("-7 1/2").toString();
 
-@BRIEFOUTPUT:
+@OUTPUT:
 "-15/2"
 
 @@END:	EXAMPLE
