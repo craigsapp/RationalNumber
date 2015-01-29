@@ -2,18 +2,18 @@
 //
 // Programmer:    Craig Stuart Sapp <craig.stanford.edu>
 // Creation Date: Wed Jan 28 01:45:01 PST 2015
-// Last Modified: Wed Jan 28 01:45:03 PST 2015
-// Filename:      RationalNumber/_includes/method-doc.html
+// Last Modified: Wed Jan 28 23:22:27 PST 2015
+// Filename:      RationalNumber/_includes/docslot/docslot.html
 // Syntax:        JavaScript 1.5 (EMCAScript 5)
 // vim:           ts=3 ft=javascript hlsearch
 //
-// Description:   This file generats documentation for the RationalNumber
-//                methods documention. To display the documentation for
+// Description:   This file generates documentation for the RationalNumber
+//                methods document ion. To display the documentation for
 //                a specific function, place this div element where you
 //                want the documentation on the page:
 //                   <div class="docslot" id="setSign"></div>
 //                The code in this file will automatically insert the
-//                documentaiton for the given function inside of the div.
+//                documentation for the given function inside of the div.
 //                In this case the documentation for
 //                RationalNumber.prototype.abs will be inserted.
 //
@@ -27,7 +27,7 @@
 // Event listeners that manage events related to the documentation.
 //
 
-// This variable is used to keep track of wether or not all
+// This variable is used to keep track of whether or not all
 // examples are currently being shown.  If they are hidden then
 // the examples can be viewed individual by click on the triangle
 // icon to the left of the example's title.  Used with control-E
@@ -45,7 +45,7 @@ var ExampleView = false;
 
 document.addEventListener("DOMContentLoaded", function () {
 	var docslots = document.querySelectorAll(".docslot");
-	var source   = document.getElementById("method-doc").textContent;
+	var source   = document.getElementById("docslot-main").textContent;
 	var template = Handlebars.compile(source);
 	for (var i=0; i<docslots.length; i++) {
 		insertDocumentation(docslots[i], template);
@@ -92,7 +92,7 @@ document.addEventListener('keydown', function(event) {
 
 //////////////////////////////
 //
-// delegated click event listener -- shift-click on a function heading
+// delegated click event listener -- Shift-clicking on a function heading
 //    will close all other documentation entries and fully open the targeted
 //    one.
 //
@@ -115,9 +115,8 @@ document.addEventListener('click', function (event) {
 		if (!id) {
 			continue;
 		}
-		showSlotDocumentation(id);
+		exclusiveSlotShow(id);
 		event.preventDefault();
-		return false;
 	}
 });
 
@@ -125,23 +124,10 @@ document.addEventListener('click', function (event) {
 
 
 <style>
-/* CSS controling style of the documentation */
+/* CSS controlling style of the documentation */
 
 summary {
 	outline:none; /* prevent a box from showing around summary text */
-}
-
-.example-output {
-	padding-left:5px;
-	margin-right:-20px !important;
-	background: #888888; /* Old browsers */
-	background: -moz-linear-gradient(left,  #888888 0%, #888888 3%, #3a3c42 91%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#888888), color-stop(3%,#888888), color-stop(91%,#3a3c42)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* IE10+ */
-	background: linear-gradient(to right,  #888888 0%,#888888 3%,#3a3c42 91%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
 }
 
 /* For displaying keyboard short-cut keys. */
@@ -174,6 +160,19 @@ summary {
 	float: right;
 }
 
+.example-output {
+	padding-left:5px;
+	margin-right:-20px !important;
+	background: #888888; /* Old browsers */
+	background: -moz-linear-gradient(left,  #888888 0%, #888888 3%, #3a3c42 91%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#888888), color-stop(3%,#888888), color-stop(91%,#3a3c42)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* IE10+ */
+	background: linear-gradient(to right,  #888888 0%,#888888 3%,#3a3c42 91%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
+}
+
 </style>
 
 
@@ -185,7 +184,7 @@ summary {
 //
 </script>
 
-<script id="method-doc" type="text/x-handlebars-template">
+<script id="docslot-main" type="text/x-handlebars-template">
 	{{#if LONGDESC}}
 		<a name="{{METHOD}}"> </a>
 		<details ontoggle='showOrHideShortDescriptionReverse(this);'>
@@ -305,7 +304,7 @@ function displaySourceBox (method, file) {
 	sourcebox += method;
 	sourcebox += '/.sourcebox.js';
 	var testing = '<script src=' + sourcebox + '>';
-	testing += "</scr'; testing += 'ipt> xxx";
+	testing += "</scr'; testing += 'ipt> ";
 	target.innerHTML = testing;
 }
 
@@ -372,7 +371,7 @@ function showOrHideShortDescriptionReverse(target) {
 		return;
 	}
 
-	// go to the first subelement which has a class of "short-desc":
+	// go to the first sub-element which has a class of "short-desc":
 	var shortdesc = target.querySelector('.short-desc');
 	if (!shortdesc) {
 		return;
@@ -548,7 +547,44 @@ function showSlotDocumentation(id) {
 	for (var i=0; i<details.length; i++) {
 		details[i].setAttribute('open', true);
 	}
+	target.scrollIntoView();
 }
+
+
+
+//////////////////////////////
+//
+// exclusiveSlotShow -- interface to showSlotDocumentation which
+//     suppresses text selection due to shift-clicking.
+//
+
+function exclusiveSlotShow(id) {
+	if (typeof id !== 'string') {
+		var element = id;
+		while (element) {
+			if (element.nodeName !== 'DIV') {
+				element = element.parentNode;
+				continue;
+			}
+			id = element.id;
+			if (!id) {
+				element = element.parentNode;
+				continue;
+			}
+			break;
+		}
+	}
+	if (!id) {
+		return;
+	}
+	if (document.selection && document.selection.empty) {
+		document.selection.empty();
+	} else if (window.getSelection) {
+		window.getSelection().removeAllRanges();
+	}
+	showSlotDocumentation(id);
+}
+
 
 </script>
 

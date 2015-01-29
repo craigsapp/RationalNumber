@@ -3,7 +3,7 @@
 # Programmer:    Craig Stuart Sapp <craig.stanford.edu>
 # Creation Date: Sun Jan 25 05:33:38 PST 2015
 # Last Modified: Sun Jan 25 23:02:23 PST 2015
-# Filename:      doc/insertDescriptions
+# Filename:      RationalNumber/_includes/docslot/insertDescriptions
 # Syntax:        perl 5
 # vim:           ts=3 expandtab
 #
@@ -27,7 +27,6 @@ open(INDEX, $indexfile) or die "Cannot read $indexfile\n";
 my @contents = <INDEX>;
 close INDEX;
 
-# <div class="docslot" id="abs"></div>
 foreach my $line (@contents) {
    if ($line !~ /<div.*class.*docslot.*id=["']([^'"]+)['"].*>(.*)<\/div>\s*$/) {
       print $line;

@@ -3,7 +3,7 @@ layout: index
 vim:	  ts=3
 ---
 
-{% include method-doc.html %}
+{% include docslot/docslot.html %}
 
 <!-- BEGINNING OF TEXT --------------------------------------- -->
 
@@ -41,7 +41,7 @@ mathematical calculations using the two rational numbers is given
 further below.  Try typing a very large number to see what happens
 when any number has an absolute value greater or equal to 2<sup>53</sup>.
 
-{% include rat-test.html %}
+{% include rational-number-demo.html %}
 
 
 
@@ -132,23 +132,9 @@ $ cd test; mocha
 <a name=doc> </a>
 ## RationalNumber methods
 
-Click on the entries below to view documentation and examples for
-each RationalNumber method.  Code examples can be run in the JavaScript
-console for this page since it has already loaded a copy of the
-RationalNumber code.  Press <span
-onclick="(function(e){openAllDocumentation();e.preventDefault()})(event)"><span
-class="keyboard-char">ctrl</span>+<span
-class="keyboard-char">+/=</span></span> to open all documentation,
-<span
-onclick="(function(e){closeAllDocumentation();e.preventDefault()})(event)"><span
-class="keyboard-char">ctrl</span>+<span
-class="keyboard-char">&ndash;</span></span> to close all documentation,
-and <span onclick="(function(e){toggleAllExamplesDisplay()})(event)"><span
-class="keyboard-char">ctrl</span>+<span
-class="keyboard-char">e</span></span> to toggle display of all
-examples.
+{% include docslot/keyboard-commands-text.html %}
 
-{% include method-list-1.html %}
+{% include docslot/method-list-1.html %}
 
 <span style="height:30px;">&nbsp;</span>
 
@@ -157,7 +143,7 @@ examples.
 The following RationalNumber methods provide additional arithmetic
 processing from the optional [RationalNumber-math.js](https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-math.js) file:
 
-{% include method-list-2.html %}
+{% include docslot/method-list-2.html %}
 
 
 
