@@ -36,7 +36,7 @@ class in the file
 
 <span style="height:30px;">&nbsp;</span>
 
-### Additional functions
+### Mathematical functions
 
 The following RationalNumber methods provide additional arithmetic
 processing from the optional <a href=https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-math.js>RationalNumber-math.js</a> file:

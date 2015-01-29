@@ -138,7 +138,7 @@ $ cd test; mocha
 
 <span style="height:30px;">&nbsp;</span>
 
-### Additional functions
+### Mathematical functions
 
 The following RationalNumber methods provide additional arithmetic
 processing from the optional [RationalNumber-math.js](https://github.com/craigsapp/RationalNumber/blob/master/lib/RationalNumber-math.js) file:
