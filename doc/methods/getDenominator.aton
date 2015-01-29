@@ -6,7 +6,7 @@
 @PROTOTYPE:	yes
 @FILE:		RationalNumber-base.js
 @SEEALSO:	getNumerator
-@SHORTDESC:	Return the denominator (always positive).
+@SHORTDESC:	Return the denominator (always non-negative).
 @LONGDESC:	Returns the bottom number in a rational number fraction.
 		If the rational number is negative, then the returned
 		denominator value will be positive, as sign will be
