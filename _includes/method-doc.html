@@ -83,14 +83,7 @@ document.addEventListener('keydown', function(event) {
 			}
 			break;
 		case EKey:
-				if (ExampleView && (typeof hideAllExamples !== 'undefined')) {
-					hideAllExamples();
-					ExampleView = !ExampleView;
-				} else if (!ExampleView &&
-						(typeof showAllExamples !== 'undefined')) {
-					showAllExamples();
-					ExampleView = !ExampleView;
-				}
+				toggleAllExamplesDisplay();
 			break;
 	}
 });
@@ -516,6 +509,24 @@ function showAllExamples() {
 	var examples = document.querySelectorAll("details.example-details");
 	for (var i=0; i<examples.length; i++) {
 		examples[i].setAttribute('open', true);
+	}
+}
+
+
+
+//////////////////////////////
+//
+// toggleAllExamplesDisplay --
+//
+
+function toggleAllExamplesDisplay() {
+	if (ExampleView && (typeof hideAllExamples !== 'undefined')) {
+		hideAllExamples();
+		ExampleView = !ExampleView;
+	} else if (!ExampleView &&
+			(typeof showAllExamples !== 'undefined')) {
+		showAllExamples();
+		ExampleView = !ExampleView;
 	}
 }
 

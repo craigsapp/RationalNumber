@@ -11,7 +11,12 @@
 		the divisor will be removed from both.  When the numerator
 		is set to 0, the denominator will be reduced to 1.  When
 		the denominator is set to 0, the numerator will be
-		reduced to 1.
+		reduced to 1.  Mostly this function is called automatically
+		when dealing with RationalNumber objects, and it is not
+		necessary to call it manually.  Functions with "NoReduce"
+		in their name will allow the rational numbers to be set
+		in a non-reduced format, such as 2/4.  In this case
+		the reduce method will convert the number to 1/2.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
