@@ -106,7 +106,7 @@ And the corresponding GitHub repository is
 Here is a brief description of the function prototypes provided in 
 the RationalNumber class (see the website for more details):
 
-* **setSign** &mdash; Set the sign to positive or negative.
+* [**setSign**](http://rationalnumber.sapp.org/#setSign) &mdash; Set the sign to positive or negative.
 * **getSign** &mdash; Returns +1 if positive, &ndash;1 if negative.
 * **getNumerator** &mdash; Return the numerator, including sign.
 * **getNumeratorAbsoluteValue** &mdash; Return the numerator, excluding sign.
