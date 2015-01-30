@@ -8,9 +8,10 @@
 // vim:           ts=3 ft=javascript hlsearch
 //
 // Description:   This file generates documentation for the RationalNumber
-//                methods document ion. To display the documentation for
-//                a specific function, place this div element where you
-//                want the documentation on the page:
+//                methods documention. To display the documentation for
+//                a specific function, place a div element such as the
+//                following example where you want the documentation
+//                for the method to appear:
 //                   <div class="docslot" id="setSign"></div>
 //                The code in this file will automatically insert the
 //                documentation for the given function inside of the div.
@@ -39,8 +40,7 @@ var ExampleView = false;
 //////////////////////////////
 //
 // DOMContentLoaded event listener -- After the page has loaded,
-//    download the documentation and insert it into the docslots 
-//    after the page has loaded.
+//    download the documentation and insert it into the docslots.
 //
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // control-plus  == show full details for all functions on the page.
 // control-minus == hide full details for all functions on the page.
 // control-E     == hide/show all examples in the documentation.
+// shift-click is handled in the next event listener below.
 //
 
 document.addEventListener('keydown', function(event) {
@@ -163,14 +164,14 @@ summary {
 .example-output {
 	padding-left:5px;
 	margin-right:-20px !important;
-	background: #888888; /* Old browsers */
-	background: -moz-linear-gradient(left,  #888888 0%, #888888 3%, #3a3c42 91%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#888888), color-stop(3%,#888888), color-stop(91%,#3a3c42)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #888888 0%,#888888 3%,#3a3c42 91%); /* IE10+ */
-	background: linear-gradient(to right,  #888888 0%,#888888 3%,#3a3c42 91%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
+	background: #888; /* Old browsers */
+	background: -moz-linear-gradient(left,  #888 0%, #888 3%, #3a3c42 91%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#888), color-stop(3%,#888), color-stop(91%,#3a3c42)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #888 0%,#888 3%,#3a3c42 91%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #888 0%,#888 3%,#3a3c42 91%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #888 0%,#888 3%,#3a3c42 91%); /* IE10+ */
+	background: linear-gradient(to right,  #888 0%,#888 3%,#3a3c42 91%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888', endColorstr='#3a3c42',GradientType=1 ); /* IE6-9 */
 }
 
 </style>
@@ -354,11 +355,10 @@ Handlebars.registerHelper('showExamples', function (entry) {
 
 
 
-
 </script>
 
 <script>
-// 
+//
 // Various JavaScript functions for processing/displaying documentation.
 //
 

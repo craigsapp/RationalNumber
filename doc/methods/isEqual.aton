@@ -11,7 +11,9 @@
 		is not reduced, but they represent the same floating-point
 		value, then the numbers are not considered equivalent.  So
 		comparing 4/5 and 8/10 with the isEqual method would return
-		false.
+		false.  If you want to detect equality in such 
+		reduced/nonreduced situations, just use the regular equality
+		tests for numbers, such as rn1.valueOf() == rn2.valueOf().
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -35,7 +37,26 @@ true
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-@@END:	FunctionDocumentation
+@@BEGIN: EXAMPLE
 
+@DESCRIPTION:	See if two rational numbers are numerically equal if one is 
+		not reduced.
+
+@CODE:
+var rn = new RationalNumber('4/5');
+var rn2 = new RationalNumber();
+rn2.setValueNoReduce('8/10');
+rn.isEqual(rn2);
+rn.valueOf() == rn2.valueOf()
+
+@OUTPUT:
+false
+true
+
+@@END:	EXAMPLE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@END:	FunctionDocumentation
 
 
