@@ -47,7 +47,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	var docslots = document.querySelectorAll(".docslot");
 	var source   = document.getElementById("docslot-main").textContent;
 	var template = Handlebars.compile(source);
+	var matches = window.location.href.match(/#([^\/]+)$/);
+	if (matches) {
+		// have a download preference for the specific function documetation
+		// that should be viewed.
+		for (var i=0; i<docslots.length; i++) {
+			if (docslots[i].id === matches[1]) {
+				insertDocumentation(docslots[i], template);
+			}
+		}
+	}
 	for (var i=0; i<docslots.length; i++) {
+		if (matches && (matches[i].id === docslots[i].id)) {
+			continue;
+		}
 		insertDocumentation(docslots[i], template);
 	}
 });
