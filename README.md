@@ -21,7 +21,7 @@ detection is included, with the methods checkOverflowOn()
 and CheckOverflowOff() turning this feature on and off.
 
 
-## Usage in Node applications
+## Using in node applications
 
 This code can be installed for use in [node](http://nodejs.org) by 
 installing globally with the command:
@@ -61,7 +61,7 @@ The above code should output the following text to the console:
 ```
 
 
-## Browser
+## Using in web browsers
 
 The JavaScript files for RationalNumber can also be used within
 a webpage by including these two files:
@@ -106,59 +106,59 @@ And the corresponding GitHub repository is
 Here is a brief description of the function prototypes provided in 
 the RationalNumber class (see the website for more details):
 
+* [**getNumerator**](http://rationalnumber.sapp.org/#getNumerator) &mdash; Return the numerator, including sign.
+* [**getNumeratorAbsoluteValue**](http://rationalnumber.sapp.org/#getNumeratorAbsoluteValue) &mdash; Return the numerator, excluding sign.
+* [**setNumerator**](http://rationalnumber.sapp.org/#setNumerator) &mdash; Set the numerator, reducing if necessary.
+* [**setNumeratorNoReduce**](http://rationalnumber.sapp.org/#setNumeratorNoReduce) &mdash; Set the numerator but don't reduce fraction.
+* [**setNumeratorAbsoluteValueNoReduce**](http://rationalnumber.sapp.org/#setNumeratorAbsoluteValueNoReduce) &mdash; Sets the numerator, but does not try to reduce or change the sign of the current value.
+* [**getDenominator**](http://rationalnumber.sapp.org/#getDenominator) &mdash; Return the denominator (always positive).
+* [**setDenominatorAbsoluteValue**](http://rationalnumber.sapp.org/#setDenominatorAbsoluteValue) &mdash; Set the denominator (sign ignored).
+* [**setDenominatorAbsoluveValueNoReduce**](http://rationalnumber.sapp.org/#setDenominatorAbsoluteValueNoReduce) &mdash; Set denominator, not trying to reduce.
+* [**setValue**](http://rationalnumber.sapp.org/#setValue) &mdash; Set the numerator and denominator (sign can be on either or both).
+* [**setValueNoReduce**](http://rationalnumber.sapp.org/#setValueNoReduce) &mdash; Set the numerator and denominator, but don't try to reduce.
 * [**setSign**](http://rationalnumber.sapp.org/#setSign) &mdash; Set the sign to positive or negative.
-* **getSign** &mdash; Returns +1 if positive, &ndash;1 if negative.
-* **getNumerator** &mdash; Return the numerator, including sign.
-* **getNumeratorAbsoluteValue** &mdash; Return the numerator, excluding sign.
-* **getDenominator** &mdash; Return the denominator (always positive).
-* **setNumeratorNoReduce** &mdash; Set the numerator but don't reduce fraction.
-* **setNumerator** &mdash; Set the numerator, reducing if necessary.
-* **setNumeratorAbsoluteValueNoReduce** &mdash; Sets the numerator, but does not try to reduce or change the sign of the current value.
-* **setDenominatorAbsoluteValue** &mdash; Set the denominator (sign ignored).
-* **setDenominatorAbsoluveValueNoReduce** &mdash; Set denominator, not trying to reduce.
-* **reduce** &mdash; Reduce the fraction to its simplest form if needed.
-* **setValue** &mdash; Set the numerator and denominator (sign can be on either or both).
-* **setValueNoReduce** &mdash; Set the numerator and denominator, but don't try to reduce.
-* **isSafe** &mdash; Check that numerator and denominator are less than 2^53.
-* **isNan** &mdash; Returns true if equal to 0/0.
-* **isInfinite** &mdash; Returns true denominator is 0 and numerator is not.
-* **isValid** &mdash; Returns true if safe, finite and not NaN.
-* **checkOverflow** &mdash; Same as isSafe(), but throws an error.
-* **checkOverflowOn** &mdash; Force automatic validity checks for overflows.
-* **checkOverflowOff** &mdash; Turn off overflow validity checks.
-* **toFloat** &mdash; Alias for valueOf().
-* **toNumber** &mdash; Alias for valueOf().
-* **valueOf** &mdash; Return the floating-point version of fraction.
-* **toString** &mdash; Convert to a string in the form "n/d".
-* **toStringMixed** &mdash; Return a mixed fraction string.
-* **toJSON** &mdash; Create a JSON string.
-* **fromString** &mdash; Read number from string.
-* **fromStringNoReduce** &mdash; Read number from string without reducing.
-* **parseString** &mdash; Same as fromString(), but returns a new RationalNumber rather than changing current object.
-* **clone** &mdash; Make a new copy of the RationalNumber.
-* **copy** &mdash; Copy internal contents from another RationalNumber.
-* **isEqual** &mdash; Returns true if the sign, numerator and denominator are the same as another rational number.
-* **isPositive** &mdash; Returns true if larger than 0.
-* **isNegative** &mdash; Returns true if smaller than 0.
-* **isInteger** &mdash; Returns true if denominator is 1.
+* [**getSign**](http://rationalnumber.sapp.org/#getSign) &mdash; Returns +1 if positive, &ndash;1 if negative.
+* [**reduce**](http://rationalnumber.sapp.org/#reduce) &mdash; Reduce the fraction to its simplest form if needed.
+* [**toFloat**](http://rationalnumber.sapp.org/#toFloat) &mdash; Alias for valueOf().
+* [**toNumber**](http://rationalnumber.sapp.org/#toNumber) &mdash; Alias for valueOf().
+* [**valueOf**](http://rationalnumber.sapp.org/#valueOf) &mdash; Return the floating-point version of fraction.
+* [**toString**](http://rationalnumber.sapp.org/#toString) &mdash; Convert to a string in the form "n/d".
+* [**toStringMixed**](http://rationalnumber.sapp.org/#toStringMixed) &mdash; Return a mixed fraction string.
+* [**toJSON**](http://rationalnumber.sapp.org/#toJSON) &mdash; Create a JSON string.
+* [**fromString**](http://rationalnumber.sapp.org/#fromString) &mdash; Read number from string.
+* [**fromStringNoReduce**](http://rationalnumber.sapp.org/#fromStringNoReduce) &mdash; Read number from string without reducing.
+* [**parseString**](http://rationalnumber.sapp.org/#parseString) &mdash; Same as fromString(), but returns a new RationalNumber rather than changing current object.
+* [**clone**](http://rationalnumber.sapp.org/#clone) &mdash; Make a new copy of the RationalNumber.
+* [**copy**](http://rationalnumber.sapp.org/#copy) &mdash; Copy internal contents from another RationalNumber.
+* [**isSafe**](http://rationalnumber.sapp.org/#isSafe) &mdash; Check that numerator and denominator are less than 2^53.
+* [**isNaN**](http://rationalnumber.sapp.org/#isNaN) &mdash; Returns true if equal to 0/0.
+* [**isInfinite**](http://rationalnumber.sapp.org/#isInfinite) &mdash; Returns true denominator is 0 and numerator is not.
+* [**isValid**](http://rationalnumber.sapp.org/#isValid) &mdash; Returns true if safe, finite and not NaN.
+* [**checkOverflow**](http://rationalnumber.sapp.org/#checkOverflow) &mdash; Same as isSafe(), but throws an error.
+* [**checkOverflowOn**](http://rationalnumber.sapp.org/#checkOverflowOn) &mdash; Force automatic validity checks for overflows.
+* [**checkOverflowOff**](http://rationalnumber.sapp.org/#checkOverflowOff) &mdash; Turn off overflow validity checks.
+* [**isEqual**](http://rationalnumber.sapp.org/#isEqual) &mdash; Returns true if the sign, numerator and denominator are the same as another rational number.
+* [**isPositive**](http://rationalnumber.sapp.org/#isPositive) &mdash; Returns true if larger than 0.
+* [**isNegative**](http://rationalnumber.sapp.org/#isNegative) &mdash; Returns true if smaller than 0.
+* [**isInteger**](http://rationalnumber.sapp.org/#isInteger) &mdash; Returns true if denominator is 1.
 
 Additional methods provided in RationalNumber-math.js:
 
-* **abs** &mdash; Return a copy of the RationalNumber which is non-negative.
-* **invert** &mdash; Switch the numerator and denominator.
-* **inversion** &mdash; Alias for getInversion().
-* **getInversion** &mdash; Return new RationalNumber which is reciprocal of the called object.
-* **negate** &mdash; Make positive values negative and vice-versa.
-* **negation** &mdash; Alias of getNegation().
-* **getNegation** &mdash; Return a copy of the object, with sign reversed.
-* **addTo** &mdash; To this RationalNumber, add additional numbers.
-* **add** &mdash; Similar to addTo(), but returns sum rather than altering contents.
-* **subtractTo** &mdash; To this RationalNumber, subtract values.
-* **subtract** &mdash; Similar to subtractTo(), but returns result rather than altering calling object.
-* **multiplyTo** &mdash; To this RationalNumber, multiply values.
-* **multiply** &mdash; Similar to multiplyTo(), but returns result rather than altering calling object.
-* **divideTo** &mdash; To this RationalNumber, divide values.
-* **divide** &mdash; Similar to divideTo(), but returns result rather than altering calling object.
+* [**abs**](http://rationalnumber.sapp.org/#abs) &mdash; Return a copy of the RationalNumber which is non-negative.
+* [**invert**](http://rationalnumber.sapp.org/#invert) &mdash; Switch the numerator and denominator.
+* [**inversion**](http://rationalnumber.sapp.org/#inversion) &mdash; Alias for getInversion().
+* [**getInversion**](http://rationalnumber.sapp.org/#getInversion) &mdash; Return new RationalNumber which is reciprocal of the called object.
+* [**negate**](http://rationalnumber.sapp.org/#negate) &mdash; Make positive values negative and vice-versa.
+* [**negation**](http://rationalnumber.sapp.org/#negation) &mdash; Alias of getNegation().
+* [**getNegation**](http://rationalnumber.sapp.org/#getNegation) &mdash; Return a copy of the object, with sign reversed.
+* [**addTo**](http://rationalnumber.sapp.org/#addTo) &mdash; To this RationalNumber, add additional numbers.
+* [**add**](http://rationalnumber.sapp.org/#add) &mdash; Similar to addTo(), but returns sum rather than altering contents.
+* [**subtractTo**](http://rationalnumber.sapp.org/#subtractTo) &mdash; To this RationalNumber, subtract values.
+* [**subtract**](http://rationalnumber.sapp.org/#subtract) &mdash; Similar to subtractTo(), but returns result rather than altering calling object.
+* [**multiplyTo**](http://rationalnumber.sapp.org/#multiplyTo) &mdash; To this RationalNumber, multiply values.
+* [**multiply**](http://rationalnumber.sapp.org/#multiply) &mdash; Similar to multiplyTo(), but returns result rather than altering calling object.
+* [**divideTo**](http://rationalnumber.sapp.org/#divideTo) &mdash; To this RationalNumber, divide values.
+* [**divide**](http://rationalnumber.sapp.org/#divide) &mdash; Similar to divideTo(), but returns result rather than altering calling object.
 
 
 
