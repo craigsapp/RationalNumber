@@ -101,10 +101,9 @@ And the corresponding GitHub repository is
 [https://github.com/craigsapp/RationalNumber](https://github.com/craigsapp/RationalNumber).
 
 
-## Function list
+## List of RationalNumber methods
 
-Here is a brief description of the function prototypes provided in 
-the RationalNumber class (see the website for more details):
+Click on the method name to view documentation for that function.
 
 * [**getNumerator**](http://rationalnumber.sapp.org/#getNumerator) &mdash; Return the numerator, including sign.
 * [**getNumeratorAbsoluteValue**](http://rationalnumber.sapp.org/#getNumeratorAbsoluteValue) &mdash; Return the numerator, excluding sign.
