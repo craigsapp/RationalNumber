@@ -27,13 +27,22 @@ open(INDEX, $indexfile) or die "Cannot read $indexfile\n";
 my @contents = <INDEX>;
 close INDEX;
 
+my $id;
+my $newdesc;
 foreach my $line (@contents) {
    if ($line !~ /<div.*class.*docslot.*id=["']([^'"]+)['"].*>(.*)<\/div>\s*$/) {
-      print $line;
-      next;
+      # * [**abs**](http://rationalnumber.sapp.org/#abs) &mdash; DOCUMENTATION
+      if ($line !~ /^\*\s+[[]\*\*([^*]+)[^&]*http:\/\/rationalnumber\.sapp\.org[^&]*&mdash;/) {
+         print $line;
+         next;
+      } else {
+         $id = $1;
+         $newdesc = getDescription2($id, $srcdir);
+      }
+   } else {
+      $id = $1;
+      $newdesc = getDescription($id, $srcdir);
    }
-   my $id = $1;
-   my $newdesc = getDescription($id, $srcdir);
    if ($line =~ /^\s*(<div[^>]*class[^>]*docslot[^>]*id[^>]*>)(.*)<\/div>\s*$/) {
       my $div = $1;
       if ($newdesc =~ /Alias for/) {
@@ -41,6 +50,9 @@ foreach my $line (@contents) {
       } else {
          print "$div$newdesc</div>\n";
       }
+   } elsif ($line =~ /^(\*[^&]*http:\/\/rationalnumber\.sapp\.org[^&]*&mdash;)/) {
+      # * [**abs**](http://rationalnumber.sapp.org/#abs) &mdash; DOCUMENTATION
+      print "$1 $newdesc\n";
    } else {
       print $line;
    }
@@ -53,11 +65,11 @@ exit(0);
 
 ##############################
 ##
-## getDescription --
+## getDescription2 --
 ##   @SHORTDESC:	Return a copy of the RationalNumber which is non-negative.
 ##
 
-sub getDescription {
+sub getDescription2 {
    my ($id, $srcdir) = @_;
    die "Cannot find description for $id\n" if !-r "$srcdir/$id.aton";
    my $shortdesc = `grep '^\@SHORTDESC:' $srcdir/$id.aton`;
@@ -67,11 +79,7 @@ sub getDescription {
       die "Description for $id is empty.\n";
    }
    my $output;
-   $output = "<span style=\"padding-left:19px; font-weight:900\">$id</span>";
-   $output .= "<span class='short-desc'>";
-   $output .= " &mdash; ";
    $output .= $description;
-   $output .= "</span>";
    return $output;
 }
 
