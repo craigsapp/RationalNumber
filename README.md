@@ -1,36 +1,35 @@
 rational-number
 ===============
 
-RationalNumber is an implementation for rational numbers in JavaScript
-that manages fractions consisting of two integers.  Mathematical
-operations such as addition, subtraction, multiplication and division
-are provided.  Division by zero is allowed and should produce correct
-mathematical results according to the use of Infinity and NaN in
-JavaScript.
+RationalNumber is an implementation for fractions in JavaScript
+consisting of two integers.  Mathematical operations such as addition,
+subtraction, multiplication and division are provided.  Division
+by zero is allowed and should produce correct mathematical results
+according to the use of Infinity and NaN in JavaScript.
 
 Fractions are maintained by default in reduced form.  For example,
 setting the value to 2/4 will automatically be reduced (simplified)
-to 1/2; However, functions for forcing non-reduced fractions are
-provided, particularly to avoid speed issues for intermediate
+to 1/2. However functions forcing non-reduced fractions are
+provided, particularly to avoid speed issues in intermediate
 calculations (although the current mathematical functions will reduce
 the fraction after every calculation to minimize the chance of overflow).
 
-This implementation limits the numerator and denominator to the
-range from 0 to 2^53&ndash;1 plus a sign.  Optional overflow
-detection is included, with the methods checkOverflowOn()
+This implementation of rational numbers limits the numerator and
+denominator to the range from 0 to 2^53&ndash;1 plus a sign.  Optional
+overflow detection is included, with the methods checkOverflowOn()
 and CheckOverflowOff() turning this feature on and off.
 
 
 ## Using in node applications
 
-This code can be installed for use in [node](http://nodejs.org) by 
-installing globally with the command:
+The RationalNumber module can be installed globally for use in
+[node](http://nodejs.org) with the command:
 
 ``` bash
 $ npm install -g rational-number
 ```
 
-If you want to install locally in a node project, then install as a package
+If you want only to use locally in a node project, then install as a package
 dependency with the command:
 
 ``` bash
