@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 	for (var i=0; i<docslots.length; i++) {
 		if (matches && (matches[1] === docslots[i].id)) {
-console.log("SKIPPING", matches[1]);
 			continue;
 		}
 		insertDocumentation(docslots[i], template);
